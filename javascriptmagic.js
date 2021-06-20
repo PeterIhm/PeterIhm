@@ -26,12 +26,12 @@ var jsonLeft = [{skill: "C#", Rating: 90},
 
 function onloading(){
     loaddata();
+    skills();     
 
     if (window.innerWidth < 1400) {
         navbar.remove();
     }
     else{   
-        skills();     
     }
 }
 
@@ -72,37 +72,37 @@ function skills(){
 }
 
 window.onscroll = function (e) {  
-    if(window.scrollY != 0)
-    {        
-        coloring = "black";
-        navbar.style.transition = "1s";
-        navbar.style.position = "fixed";
-        navbar.style.width = "100%";
-        navbar.style.background = "white";
-        navbar.style.paddingTop = "0";
-        navbar.style.zIndex = "2";
-        navbar.style.borderBottom = "1px solid rgb(110, 112, 194)";
+    if (window.innerWidth > 1400) {
+        if(window.scrollY != 0)
+        {        
+            coloring = "black";
+            navbar.style.transition = "1s";
+            navbar.style.position = "fixed";
+            navbar.style.width = "100%";
+            navbar.style.background = "white";
+            navbar.style.paddingTop = "0";
+            navbar.style.zIndex = "2";
+            navbar.style.borderBottom = "1px solid rgb(110, 112, 194)";
 
-        for (let index = 1; index < 6; index++) {   
-            highlight(index.toString(), "black");
+            for (let index = 1; index < 6; index++) {   
+                highlight(index.toString(), "black");
+            }
+        }
+        else
+        {
+            for (let index = 1; index < 6; index++) {   
+                highlight(index.toString(), "white");
+            }
+
+            coloring = "white";
+            navbar.style.transition = "1s";
+            navbar.style.position = "relative";
+            navbar.style.background = "transparent";      
+            navbar.style.width = "68%";
+            navbar.style.paddingTop = "2em";
+            navbar.style.borderBottom = "none"
         }
     }
-    else
-    {
-        for (let index = 1; index < 6; index++) {   
-            highlight(index.toString(), "white");
-        }
-
-        coloring = "white";
-        navbar.style.transition = "1s";
-        navbar.style.position = "relative";
-        navbar.style.background = "transparent";      
-        navbar.style.width = "68%";
-        navbar.style.paddingTop = "2em";
-        navbar.style.borderBottom = "none"
-    }
-
-
 } 
 
 function highlight(name,color) {
