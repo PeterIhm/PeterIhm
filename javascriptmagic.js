@@ -25,14 +25,13 @@ var jsonLeft = [{skill: "C#", Rating: 90},
             ];
 
 function onloading(){
-    skills();
     loaddata();
 
     if (window.innerWidth < 1200) {
-        navbar.style.width = "100%";
+        navbar.remove();
     }
-    else{        
-        navbar.style.width = "68%";
+    else{   
+        skills();     
     }
 }
 
@@ -97,13 +96,8 @@ window.onscroll = function (e) {
         coloring = "white";
         navbar.style.transition = "1s";
         navbar.style.position = "relative";
-        navbar.style.background = "transparent";
-        if (window.innerWidth < 1200) {
-            navbar.style.width = "100%";
-        }
-        else{        
-            navbar.style.width = "68%";
-        }
+        navbar.style.background = "transparent";      
+        navbar.style.width = "68%";
         navbar.style.paddingTop = "2em";
         navbar.style.borderBottom = "none"
     }
