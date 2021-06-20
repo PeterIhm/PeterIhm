@@ -25,12 +25,18 @@ var jsonLeft = [{skill: "C#", Rating: 90},
             ];
 
 function onloading(){
-    test();
+    skills();
     loaddata();
+
+    if (window.innerWidth < 1200) {
+        navbar.style.width = "100%";
+    }
+    else{        
+        navbar.style.width = "68%";
+    }
 }
 
-
-function test(){
+function skills(){
 
     for (let index = 0; index < jsonLeft.length; index++) {
         var a = document.createElement("div");
@@ -78,13 +84,13 @@ window.onscroll = function (e) {
         navbar.style.zIndex = "2";
         navbar.style.borderBottom = "1px solid rgb(110, 112, 194)";
 
-        for (let index = 1; index < 5; index++) {   
+        for (let index = 1; index < 6; index++) {   
             highlight(index.toString(), "black");
         }
     }
     else
     {
-        for (let index = 1; index < 5; index++) {   
+        for (let index = 1; index < 6; index++) {   
             highlight(index.toString(), "white");
         }
 
@@ -92,10 +98,17 @@ window.onscroll = function (e) {
         navbar.style.transition = "1s";
         navbar.style.position = "relative";
         navbar.style.background = "transparent";
-        navbar.style.width = "68%";
+        if (window.innerWidth < 1200) {
+            navbar.style.width = "100%";
+        }
+        else{        
+            navbar.style.width = "68%";
+        }
         navbar.style.paddingTop = "2em";
         navbar.style.borderBottom = "none"
     }
+
+
 } 
 
 function highlight(name,color) {

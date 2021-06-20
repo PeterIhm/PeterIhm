@@ -76,6 +76,7 @@ Stuff for Header
 }
 
 .headertext{
+    width: 60%;
     font-weight: 100;
     overflow: hidden;
     padding-top: 7em;
@@ -97,7 +98,6 @@ Stuff for Header
 .headcontent img{
     filter: grayscale(100%);
 }
-
 
 /*
 Stuff for HI
@@ -371,9 +371,29 @@ Stuff for End
     text-align: center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px){
     .projects, .hi , .education, .skills{
         width: 90%;
         margin: auto;
+    }
+
+    .headertext{
+        padding-left: 0 !important;
+    }
+
+    .headcontent img{
+        right: 20px;
+    }
+
+    #mobil{
+        margin-top: -4em;
+        width: 100%;
+        margin: auto;
+        text-align: start;
+    }
+
+    #mobil .headertext h1{
+        font-size: 46px;
+        font-weight: 700;
     }
 }
