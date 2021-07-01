@@ -27,12 +27,6 @@ var jsonLeft = [{skill: "C#", Rating: 90},
 function onloading(){
     loaddata();
     skills();     
-
-    if (window.innerWidth < 1400) {
-        navbar.remove();
-    }
-    else{   
-    }
 }
 
 function skills(){
@@ -69,60 +63,6 @@ function skills(){
         myhtml2.appendChild(a);
         myhtml2.appendChild(b);        
     }
-}
-
-window.onscroll = function (e) {  
-    if (window.innerWidth > 1400) {
-        if(window.scrollY != 0)
-        {        
-            coloring = "black";
-            navbar.style.transition = "1s";
-            navbar.style.position = "fixed";
-            navbar.style.width = "100%";
-            navbar.style.background = "white";
-            navbar.style.paddingTop = "0";
-            navbar.style.zIndex = "2";
-            navbar.style.borderBottom = "1px solid rgb(110, 112, 194)";
-
-            for (let index = 1; index < 6; index++) {   
-                highlight(index.toString(), "black");
-            }
-        }
-        else
-        {
-            for (let index = 1; index < 6; index++) {   
-                highlight(index.toString(), "white");
-            }
-
-            coloring = "white";
-            navbar.style.transition = "1s";
-            navbar.style.position = "relative";
-            navbar.style.background = "transparent";      
-            navbar.style.width = "68%";
-            navbar.style.paddingTop = "2em";
-            navbar.style.borderBottom = "none"
-        }
-    }
-} 
-
-function highlight(name,color) {
-    var a = document.getElementById(name);
-    a.style.color = color;
-}
-
-function onHover(a){
-    a.style.color = "rgb(200, 200, 200)";
-    a.innerHTML += "_";
-}
-
-function onOut(a){
-    a.style.color = coloring;
-    var temp = a.innerHTML.slice(0, - 1);
-    a.innerHTML = temp;
-}
-
-function scrollto(a){
-    document.getElementById(a).scrollIntoView();
 }
 
 var games = [{name: "Vital", Descirption : "This game was created during the LBS Game Awards which took place at my school every year. It was a competetive way of showing us students on what it ment to be a Game Developer. The game we created to participate with was a fighting game similar to Super Smash Bros.", 
