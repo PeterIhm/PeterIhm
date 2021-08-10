@@ -380,6 +380,11 @@ Stuff for Projects
 }
 
 @media screen and (max-width: 1024px){
+    
+    .hi{
+        line-height: 1.25;
+    }
+    
     .projects, .hi , .education, .skills, .cv{
         width: 90%;
         margin: auto;
