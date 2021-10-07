@@ -1,218 +1,221 @@
-.topsvg{
-    position: absolute;
-    top: 400px;
-    z-index:0;
-}
-
-body{
-    margin: 0;
-    font-family: 'Roboto Mono', monospace;
-    color: gray;
-}
-
 html{
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 700;
-    background-color: rgb(255, 255, 255);
-    margin: 0;
-    padding-top: 0;
-    padding-left: 0;    
-    padding-right: 0;
-    scroll-behavior: smooth;
-
-}
-
-ul {
-    padding-top: 2em;
-    padding-left: 6em;
-    margin:auto;
-    width: 68%;
-    list-style-type: none;
-    overflow: hidden;
-}
-  
-li {
-    float: left;
-    padding-right: 50px;
-}
-  
-li a {
-    font-weight: 100;
-    display: block;
-    color: rgb(255, 255, 255);
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 15px;
-    cursor: pointer;
-}
-  
-li a:hover {
-    color: rgb(175, 175, 175);
-    transition: 0.3s;
-}
-
-/*
-Stuff for Header
-*/
-
-.header{  
-    background-image: linear-gradient(to right, rgba(74, 76, 179, 0.8), rgba(206, 156, 156, 0.8)),url('background_spiegel.jpg');
-    background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 5em;
-    padding-bottom: 5em;
-}
-
-.header .profil{
-    width:300px;
-    height:300px;
-}
-
-.headcontent{
-    width: 60%;
-    margin:auto;
-    display: flex;
+    font-family: 'Roboto Mono', monospace !important;
+    background-color: rgb(34, 37, 41);
     color: white;
 }
 
-.headcontent img{
-    position: relative;
-    top: 30px;
-    
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.281);
+#nav{
+    font-size: 20px;
+    z-index:10;
 }
 
-.headertext{
-    width: 60%;
-    font-weight: 100;
-    overflow: hidden;
-    padding-top: 7em;
-    padding-left: 2em;
-    position: relative;
-    top: 30px;
-    display: block;
+#nav li{
+    z-index:10;
 }
 
-.headertext h1{   
-    font-size: 44px;
-    font-weight: 900;
-}
-
-.headertext p{
-    font-size: 16px;
-}
-
-.headcontent img{
+#home{
     z-index:1;
-    filter: grayscale(100%);
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    margin-top: 10%;
 }
 
-/*
-Stuff for HI
-*/
+#home .hometext{
+    padding-top: 0.5em;
+    width: 50%;
+    float: left;
+    font-size: 25px;
+}
 
-.hi{
-    width: 60%;
-    margin: auto;
-    line-height: 1.6;
+#home .hometext p{
+    margin-top: -1em;
+    font-size: 20px;
+}
+
+#home .name{
+    color:tomato;
+}
+
+#home img{
+    width: 450px;
+    height: 450px;
+    float: right;
     position: relative;
-    z-index:1;
 }
 
-.hi h1{
-    font-size: 36px;
-    font-weight: 500;
-}
-
-.hi p{
-    font-size: 18px;
-    font-weight: 100;
-}
-
-/*
-Stuff for CV Button
-*/
-.cv{
-    padding-top: 3em;
-    width: 60%;
-    margin:auto;
-    padding-bottom: 2em;
-    border-bottom: 1px solid rgb(190, 190, 190);
-}
-
-.cv button{
-    cursor: pointer;
-    color: white;
-    background-color:rgb(110, 112, 194);
-    border:none;
-    border-radius: 25px;
+#home button{
+    width: 150px;
     height: 50px;
-    width: 200px;
-    font-size: 14px;
-    text-transform: uppercase;
-    line-height: 20px;
-    font-weight: 600;
+    float: left;
+    color: tomato;
+    font-size: 15px;
+    background-color: transparent;
+    border: solid tomato 2px;
 }
 
-.cv button:hover{
-    background-color:rgb(88, 89, 153);
+#home button:hover{
+    color: rgb(139, 54, 39);
+    border: solid rgb(139, 54, 39) 2px;
+    cursor: pointer;
 }
 
-.cv button img{
-    height: 14px;
+/*smoothtrans*/
+
+.smoothtrans{
+    animation: smoothtrans 1s; 
 }
 
-/*
-Stuff for Education
-*/
-
-.education{
-    padding-top: 1em;
-    margin:auto;
-    width: 60%;
-    padding-bottom: 2em;
-    border-bottom: 1px solid rgb(190, 190, 190);
+@keyframes smoothtrans {
+    0%{        
+        transform: translateX(-200%);
+    }
+    100%  {
+        transform: translateX(0%);
+    }
 }
 
-.education h1{
+.smoothtransdis{
+    animation: smoothtransdis 1s; 
+    transform: translateX(-200%);
+    display: none;
+}
+
+@keyframes smoothtransdis {
+    0%{        
+        transform: translateX(0%);        
+        display: none !important; 
+
+    }
+    100%{
+        transform: translateX(-200%);        
+        display: none !important; 
+
+    }
+}
+/*Contact*/
+
+#contactme{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    margin-top: 10%;
+}
+
+#contactme .userName, #contactme .usermail{
+    outline:none;
+    height: 40px;
+    width: 100%;
+    border: solid tomato 2px;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    margin-bottom: 0.5em;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+ 
+
+#contactme .userMessage{
+    outline:none;
+    height: 300px;
+    width: 100%;
+    border: solid tomato 2px;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    margin-bottom: 0.5em;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#contactme button{
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 15px;
+    background-color: tomato;
+    border: solid tomato 2px;
+    cursor: pointer;
+}
+
+#contactme button:active  {
+    background-color: rgb(170, 68, 49);
+    border: solid rgb(170, 68, 49);
+}
+
+/*education*/
+
+#education{
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    margin-top: 10%;
+}
+
+#education h1{
     font-size: 36px;
     font-weight: 500;
 }
 
-.education .school{
-    content: "";
-    border-left: 2px solid rgb(110, 112, 194);
+#education .school{
+    border-left: 2px solid tomato;
     padding-left: 20px;
 }
 
-.education .school .title{
-    color:rgb(110, 112, 194);
+#education .school .title{
+    color:tomato;
     text-transform: uppercase;
 }
 
-.education .school .year{
+#education .school .year{
     font-size: 12px;
 }
 
-.education .school .program{
+#education .school .program{
     font-size: 15px;
 }
-/*
-Stuff for Skills 
-*/
-.skills{
-    border-bottom: 1px solid rgb(190, 190, 190);
-    padding-top: 1em;
-    padding-bottom: 4em;
-    margin:auto;
-    width: 60%;
+
+/*About me*/
+
+#aboutme{
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    margin-top: 10%;
+}
+
+#aboutme embed{
+    float:left;
+    width: 48%;
+}
+
+#aboutme .aboutmyselft{
+    margin-top: 4px;
+    float:right;
+    width: 50%;
+}
+
+#aboutme .tools{
+    margin-top: 3em;
+    float:right;
+    width: 50%;
+}
+
+/*Skills*/
+
+#skills{
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    margin-top: 10%;
     font-size: 20px;
     font-weight: 100;
 }
 
-.skills h1{
+#skills h1{
     font-size: 36px;
     font-weight: 500;
 }
@@ -226,187 +229,114 @@ Stuff for Skills
     width: 50%;
 }
 
-.skills .skillingright{
+#skills .skillingright{
     float: right;
     margin-top: 10px;
 }
 
-.skills .skillingleft{
+#skills .skillingleft{
     float: left;
     margin-top: 10px;
 }
 
-.skills .level{
+#skills .level{
     width: 80%;
     height: 5px;
-    background-color: rgb(209, 209, 209);
+    background-color: rgb(58, 58, 58);
 }
 
-.skills .level .ranklevel{
+#skills .level .ranklevel{
     width: 80%;
     height: 5px;
-    background-color: rgb(110, 112, 194);
+    background-color: tomato;
 }
 
 
-.skills .rank p .value{
+#skills .rank p .value{
     width: 27%;
     float: right;
 }
 
-/*
-Stuff for Projects 
-*/
-.projects{
+/*MY WORK*/
+
+#work{
+    position: absolute;
+    left: 10%;
+    width: 70%;
+    margin-top: 10em;
+    overflow: scroll;
+    height: 680px;
+    padding-left: 5em;
+    padding-right: 5em;
+    overflow-x: hidden;
+}
+
+
+
+#work::-webkit-scrollbar-track
+{
+	background-color: rgb(23, 25, 27);
+}
+
+#work::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: rgb(23, 25, 27);
+}
+
+#work::-webkit-scrollbar-thumb
+{
+	background-color: tomato;
+}
+
+#work .game{
+    width: 100%;
+    margin-bottom: 3em;
+    padding-right: 3em;
+    background-color: rgb(27, 29, 32);
+    height: 400px;
+}
+
+#work .game img{
+    float:left;
+    width:250px;
+    height:250px;
+}
+
+#work .game h1, 
+#work .game p, 
+#work .game .role, 
+#work .game .rolename,
+#work .game a
+{
+    float: right;
+    width:70%;
+}
+
+#work .game h1{
+    color:tomato;
+    font-size: 30px;
+}
+
+#work .game .role, 
+#work .game .rolename,
+#work .game a{
+    text-align: right;
+}
+
+#work .game .role{
     font-size: 20px;
-    padding-top: 2em;
-    margin:auto;
-    width: 60%;
-    padding-bottom: 4em;
+    text-align: left;
+    line-height: 0;
 }
 
-.projects h1{
-    font-size: 36px;
-    font-weight: 500;
-}
-.projects p{
-    font-size: 18px;
-    font-weight: 100;
+#work .game .rolename{
+    font-size: 20px;
+    text-align: left;
+    line-height: 0;
 }
 
-
-.scroll{
-    border: 1px solid rgb(243, 243, 243);
-    height: 600px;
-    overflow-y: scroll;
+#work .game a{
+    color:white;
 }
 
-.scroll::-webkit-scrollbar {
-    width: 10px;
-}
-  
-  /* Track */
-.scroll::-webkit-scrollbar-track {
-    background-color: rgb(240, 240, 240);
-}
-  
-  /* Handle */
-.scroll::-webkit-scrollbar-thumb {
-    background: rgb(110, 112, 194);
-}
-
-.scroll .game .role{
-    font-size: 12px;
-    padding-left: 1.5em;
-}
-
-.scroll .game .rolename{
-    display: inline;
-    padding: 7px;
-    border-radius: 5px;
-    border: 1px solid rgb(219, 219, 219);
-    box-shadow: 1px 1px 2px 2px rgba(207, 207, 207, 0.281);
-    margin-top: -1em;
-    font-size: 12px;
-    margin-left: 1.5em;
-}
-
-.projects img{
-    height: 315px;
-    width: 315px;
-    background-color: rgb(235, 235, 235);
-}
-
-.projects .game{
-    width: 99%;
-    position: relative;
-    margin-bottom: 2em;
-    display: flex;
-    border: 1px solid rgb(219, 219, 219);
-    background-color: rgb(252, 252, 252);
-}
-.projects .game h1{
-    padding-left: 1em;
-    font-size: 18px;
-    line-height: 30px;
-    font-family: 'Roboto Mono',monospace;
-    text-transform: uppercase;
-    font-weight: 100px;
-}
-.projects .game p{
-    width: 90%;
-    padding-left: 1em;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-}
-
-.projects .game a{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    padding-right: 1em;
-    padding-bottom: 1em;
-    color: rgb(110, 112, 194);
-    bottom: 0px;
-    right: 0px;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-}
-
-.end{
-    position: relative;
-    background: linear-gradient(to right, rgba(74, 76, 179, 0.8), rgba(206, 156, 156, 0.8)),url('giphy.gif');
-    background-size: cover;
-    background-position-y: 60%;
-    height: 500px;
-}
-
-.end p{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    padding-right: 1em;
-    color: rgba(0, 0, 0, 0.404);
-    font-weight: 100;
-    text-align: center;
-}
-
-.endsvg{
-    position: absolute;
-    top: 0;
-    z-index:0;
-}
-
-@media screen and (max-width: 1024px){
-    
-    .hi{
-        line-height: 1.25;
-    }
-    
-    .projects, .hi , .education, .skills, .cv{
-        width: 90%;
-        margin: auto;
-    }
-
-    .headertext{
-        padding-left: 0 !important;
-    }
-
-    .headcontent img{
-        right: 20px;
-    }
-
-    #mobil{
-        margin-top: -4em;
-        width: 100%;
-        margin: auto;
-        text-align: start;
-    }
-
-    #mobil .headertext h1{
-        font-size: 46px;
-        font-weight: 700;
-    }
-}

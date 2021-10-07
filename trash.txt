@@ -1,0 +1,85 @@
+function typingEffect(element,speed,timer){
+
+    setTimeout(function()
+    { 
+        element.style.display = "flex";
+        
+        let text=element.innerHTML;
+
+        element.innerHTML="";
+        var i = 0;
+
+        var timer = setInterval(function(){
+
+        if(i < text.length){
+            element.append(text.charAt(i))
+            i++;
+        }else{
+            clearInterval(timer);
+            }
+        },speed)        
+    },timer);
+}
+
+const h1=document.getElementById('hello');
+typingEffect(h1,150, 0);
+
+const h2=document.getElementById('naming');
+typingEffect(h2,150, 1200);
+
+
+
+
+
+
+.intro #naming p{
+    display: inline;
+}
+
+.intro #naming #name{
+    color:orange;
+}
+
+.intro img{
+    width: 300px;
+    height: 300px;
+    color: red;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.bla{
+    animation: abomination1 7.5s linear 1;
+    overflow: hidden;
+}
+
+body {
+    padding-top: 5em;
+}
+
+#intro{
+    position: absolute;
+    left: 45%;
+    top: 35%;
+}
+  
+  /* DEMO-SPECIFIC STYLES */
+.intro h1 {
+    display:none;
+    border-right: .15em solid #fff; 
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: blink .5s step-end infinite alternate;;
+}
+
+.intro p{
+    display:none;
+}
+  
+  
+  
+  /* The typewriter cursor effect */
+@keyframes blink {
+    50% { border-color: transparent}
+}
