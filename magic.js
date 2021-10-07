@@ -24,10 +24,10 @@ function switchdiv(current, buttonhighlight){
 }
 
 function start(){
-  switchdiv("education", document.getElementById("navul").childNodes.item(7).childNodes.item(0));  
+  switchdiv("home", document.getElementById("navul").childNodes.item(9).childNodes.item(0));  
   skills();
 
-  document.getElementById("navul").childNodes.item(7).childNodes.item(0).className = "active";
+  document.getElementById("navul").childNodes.item(9).childNodes.item(0).className = "active";
 
   workload();
 }
