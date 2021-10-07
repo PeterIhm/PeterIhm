@@ -1,0 +1,209 @@
+<<<<<<< HEAD
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style_dropdown.css">
+        <link rel="stylesheet" href="style_navbar.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/81aa6c728f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body onload="start()">
+        <script src="magic.js"></script>
+        <script src="skills.js"></script>
+        <script src="work.js"></script>
+        <script src="contactmepage.js"></script>
+
+        <div class="nav" id="nav">
+            <ul id="navul">
+                <li onclick="switchdiv('work',this)"><a class="notactive" href="#work">MY WORK</a></li>
+                <li onclick="switchdiv('skills',this)"><a class="notactive" href="#skills">SKILLS</a></li>
+                <li onclick="switchdiv('aboutme',this)"><a class="notactive" href="#aboutme">ABOUT ME & CV</a></li>
+                <li onclick="switchdiv('education',this)"><a class="notactive" href="#education">EDUCATION</a></li>
+                <li onclick="switchdiv('home',this)"><a class="active" href="#home">HOME</a></li>
+
+            </ul>
+        </div>
+        <div class="home" id="home">
+            <div class="hometext">            
+                <h1>Hi! <br> I'm <span class="name">Peter</span>, <br> Game Developer, Java Enterprise Developer</h1>
+                <p style=color:gray><strong>UNITY3D / MAYA3D / KRITA</strong></p>
+                <button onclick="switchdiv('contactme')"><strong>CONTACT ME!</strong></button>  
+            </div>
+
+            <img src="profilpic2.png" alt="Profil">
+        </div>
+        <div class="aboutme" id="aboutme">       
+            <h1>ABOUT<span style=color:tomato>ME</span>!</h1>
+            
+            <embed src="CV.pdf" width="50%" height="500px" />     
+
+            <p class="aboutmyselft">
+                Born in <span style=color:tomato>Immenstadt, Germany</span>. Moved to <span style=color:tomato>Strömsfors, Sweden</span> in 2008.
+                I'm a passionate game developer, developing smaller games/programs for 7 Years<br> in total.
+                For work environment I like work in smaller groups because of an more focused<br> and <span style=color:tomato>family-oriented atmosphere</span>.<br>
+                I always give 100% in my work.<br> I hate leaving work undone,<br>
+                so from time to time it<br> happends that I lose myseft in hour<br> long <span style=color:tomato>programming</span> sessions totally<br> forgetting about time.<br>
+                My hobbies besides<br> <span style=color:tomato>game development</span> are cars,<br> music, instruments,<br> 3D moddeling and<br> photography.
+            </p>
+            <p class="tools">
+                My preferred tools for development:<br> <span style=color:tomato>Unity3D</span>,
+                <span style=color:tomato>Visual Studio</span> (for <span style=color:tomato>Unity3D</span>), <br>
+                <span style=color:tomato>Visual Code</span>, <span style=color:tomato>MAYA AUTODEST</span>,<br>
+                <span style=color:tomato>KRITA</span>, <span style=color:tomato>GIMP</span>.
+            </p>
+        </div>
+
+        <div class="education" id="education">            
+            <h1>EDUCATION</h1>
+            <br>
+            <div class="school">
+                <p class="title">lbs kreativa gymnasiet, borås</p>
+                <p class="year">2014 - 2017</p>
+                <p class="program">Game Developer</p>
+            </div>
+            <br>
+            <div class="school">
+                <p class="title">Yrgo, högre yrkesutbildning, Göteborg</p>
+                <p class="year">2017 - 2019</p>
+                <p class="program">Game Programmer</p>
+                <p class="program">Intership > VOLVO CARS (VR)</p>
+            </div>
+            <br>
+            <div class="school">
+                <p class="title">Yrgo, högre yrkesutbildning, Göteborg</p>
+                <p class="year">2019 - 2021</p>
+                <p class="program">Java Enterprise Developer</p>
+                <p class="program">Intership > Informer Svenska AB</p>
+            </div>
+        </div>
+
+
+        <div class="skills" id="skills">            
+            <h1>GENERAL SKILLS</h1>
+
+            <div class="skillgroups">
+                <div class="skillingleft" id="skillingleft"></div>     
+                
+                <div class ="skillingright" id="skillingright"></div>     
+            </div>
+        </div>
+
+        <div class="work" id="work"></div>
+
+        <div class="contactme" id="contactme">       
+            <textarea class="userName" id="username" placeholder="NAME" required></textarea>
+            <textarea class="userMail" type="email" id="usermail" placeholder="MAIL" required></textarea>
+            <textarea class="userMessage" id="usermessage" placeholder="MESSAGE" required></textarea>
+            <button id="sendmessage" onclick="sendmessage()">SEND</button>
+        </div>
+    </body>
+
+</html>
+=======
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style_dropdown.css">
+        <link rel="stylesheet" href="style_navbar.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/81aa6c728f.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body onload="start()">
+        <script src="magic.js"></script>
+        <script src="skills.js"></script>
+        <script src="work.js"></script>
+        <script src="contactmepage.js"></script>
+
+        <div class="nav" id="nav">
+            <ul id="navul">
+                <li onclick="switchdiv('work',this)"><a class="notactive" href="#work">MY WORK</a></li>
+                <li onclick="switchdiv('skills',this)"><a class="notactive" href="#skills">SKILLS</a></li>
+                <li onclick="switchdiv('aboutme',this)"><a class="notactive" href="#aboutme">ABOUT ME & CV</a></li>
+                <li onclick="switchdiv('education',this)"><a class="notactive" href="#education">EDUCATION</a></li>
+                <li onclick="switchdiv('home',this)"><a class="active" href="#home">HOME</a></li>
+
+            </ul>
+        </div>
+        <div class="home" id="home">
+            <div class="hometext">            
+                <h1>Hi! <br> I'm <span class="name">Peter</span>, <br> Game Developer</h1>
+                <p style=color:gray><strong>UNITY3D / MAYA3D / KRITA</strong></p>
+                <button onclick="switchdiv('contactme')"><strong>CONTACT ME!</strong></button>  
+            </div>
+
+            <img src="profilpic2.png" alt="Profil">
+        </div>
+        <div class="aboutme" id="aboutme">       
+            <h1>ABOUT<span style=color:tomato>ME</span>!</h1>
+            
+            <embed src="CV.pdf" width="50%" height="500px" />     
+
+            <p class="aboutmyselft">
+                Born in <span style=color:tomato>Immenstadt, Germany</span>. Moved to <span style=color:tomato>Strömsfors, Sweden</span> in 2008.
+                I'm a passionate game developer, developing smaller games/programs for 7 Years<br> in total.
+                For work environment I like work in smaller groups because of an more focused<br> and <span style=color:tomato>family-oriented atmosphere</span>.<br>
+                I always give 100% in my work.<br> I hate leaving work undone,<br>
+                so from time to time it<br> happends that I lose myseft in hour<br> long <span style=color:tomato>programming</span> sessions totally<br> forgetting about time.<br>
+                My hobbies besides<br> <span style=color:tomato>game development</span> are cars,<br> music, instruments,<br> 3D moddeling and<br> photography.
+            </p>
+            <p class="tools">
+                My preferred tools for development:<br> <span style=color:tomato>Unity3D</span>,
+                <span style=color:tomato>Visual Studio</span> (for <span style=color:tomato>Unity3D</span>), <br>
+                <span style=color:tomato>Visual Code</span>, <span style=color:tomato>MAYA AUTODEST</span>,<br>
+                <span style=color:tomato>KRITA</span>, <span style=color:tomato>GIMP</span>.
+            </p>
+        </div>
+
+        <div class="education" id="education">            
+            <h1>EDUCATION</h1>
+            <br>
+            <div class="school">
+                <p class="title">lbs kreativa gymnasiet, borås</p>
+                <p class="year">2014 - 2017</p>
+                <p class="program">Game Developer</p>
+            </div>
+            <br>
+            <div class="school">
+                <p class="title">Yrgo, högre yrkesutbildning, Göteborg</p>
+                <p class="year">2017 - 2019</p>
+                <p class="program">Game Programmer</p>
+                <p class="program">Intership > VOLVO CARS (VR)</p>
+            </div>
+            <br>
+            <div class="school">
+                <p class="title">Yrgo, högre yrkesutbildning, Göteborg</p>
+                <p class="year">2019 - 2021</p>
+                <p class="program">Java Enterprise Developer</p>
+                <p class="program">Intership > Informer Svenska AB</p>
+            </div>
+        </div>
+
+
+        <div class="skills" id="skills">            
+            <h1>GENERAL SKILLS</h1>
+
+            <div class="skillgroups">
+                <div class="skillingleft" id="skillingleft"></div>     
+                
+                <div class ="skillingright" id="skillingright"></div>     
+            </div>
+        </div>
+
+        <div class="work" id="work"></div>
+
+        <div class="contactme" id="contactme">       
+            <textarea class="userName" id="username" placeholder="NAME" required></textarea>
+            <textarea class="userMail" type="email" id="usermail" placeholder="MAIL" required></textarea>
+            <textarea class="userMessage" id="usermessage" placeholder="MESSAGE" required></textarea>
+            <button id="sendmessage" onclick="sendmessage()">SEND</button>
+        </div>
+    </body>
+
+</html>
+>>>>>>> origin/master
