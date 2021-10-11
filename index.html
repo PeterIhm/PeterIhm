@@ -14,22 +14,14 @@
         <script src="skills.js"></script>
         <script src="work.js"></script>
         <script src="contactmepage.js"></script>
+        <script src="dropdown.js"></script>
 
-        <div class="nav" id="nav">
-            <ul id="navul">
-                <li onclick="switchdiv('work',this)"><a class="notactive" href="#work">MY WORK</a></li>
-                <li onclick="switchdiv('skills',this)"><a class="notactive" href="#skills">SKILLS</a></li>
-                <li onclick="switchdiv('aboutme',this)"><a class="notactive" href="#aboutme">ABOUT ME & CV</a></li>
-                <li onclick="switchdiv('education',this)"><a class="notactive" href="#education">EDUCATION</a></li>
-                <li onclick="switchdiv('home',this)"><a class="active" href="#home">HOME</a></li>
-
-            </ul>
-        </div>
+        <div class="nav" id="nav"></div>
         <div class="home" id="home">
             <div class="hometext">            
-                <h1>Hi! <br> I'm <span class="name">Peter</span>, <br> Game Developer, Java Enterprise Developer</h1>
+                <h1>Hi! <br> I'm <span class="name">Peter</span>, <br>Game Developer</h1>
                 <p style=color:gray><strong>UNITY3D / MAYA3D / KRITA</strong></p>
-                <button onclick="switchdiv('contactme')"><strong>CONTACT ME!</strong></button>  
+                <button onclick="switchdiv('contactme')"><strong>CONTACT ME</strong></button>
             </div>
 
             <img src="profilpic2.png" alt="Profil">
@@ -41,7 +33,7 @@
 
             <p class="aboutmyselft">
                 Born in <span style=color:tomato>Immenstadt, Germany</span>. Moved to <span style=color:tomato>Strömsfors, Sweden</span> in 2008.
-                I'm a passionate game developer, developing smaller games/programs for 7 Years<br> in total.
+                I'm a passionate game developer, developing smaller games/programs for 7 Years in total.
                 For work environment I like work in smaller groups because of an more focused<br> and <span style=color:tomato>family-oriented atmosphere</span>.<br>
                 I always give 100% in my work.<br> I hate leaving work undone,<br>
                 so from time to time it<br> happends that I lose myseft in hour<br> long <span style=color:tomato>programming</span> sessions totally<br> forgetting about time.<br>
@@ -68,14 +60,14 @@
                 <p class="title">Yrgo, högre yrkesutbildning, Göteborg</p>
                 <p class="year">2017 - 2019</p>
                 <p class="program">Game Programmer</p>
-                <p class="program">Intership > VOLVO CARS (VR)</p>
+                <p class="program">Intership: VOLVO CARS (VR)</p>
             </div>
             <br>
             <div class="school">
                 <p class="title">Yrgo, högre yrkesutbildning, Göteborg</p>
                 <p class="year">2019 - 2021</p>
                 <p class="program">Java Enterprise Developer</p>
-                <p class="program">Intership > Informer Svenska AB</p>
+                <p class="program">Intership: Informer Svenska AB</p>
             </div>
         </div>
 

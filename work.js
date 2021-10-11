@@ -4,27 +4,27 @@ var games = [{name: "Vital", Descirption : "This game was created during the LBS
                                 role: ["Programmer"], 
                                 link: "https://www.indiedb.com/games/vitalgame",
                                 linkname: "indiedb.com" ,
-                                img: "Vital.png"},
+                                img: "./games/Vital.png"},
             {name: "Abiela's Journey", Descirption : "This project is one of my favorits. It was created during my time at YRGO Yrkeshögskolan. We were a group of 4 programmers and 6 artist. We had huge success during the development phase with an alpha done in less than 3 week. Unfortunately the only thing thats left of this project is a badly rendered trailer of our alpha.", 
                                 role: ["Lead Programmer", "3D Artist"], 
                                 link: "https://www.youtube.com/watch?v=d7HEFKSRuX8&ab_channel=PeterI", 
                                 linkname: "youtube.com" ,
-                                img: "aj.png"},
+                                img: "./games/aj.png"},
             {name: "City of Duelists", Descirption : "Every project forward were made during my time at YRGO Yrkeshögskolan. This was the first project we had. the group consists exclusively of programmers. I jumped in as a 2d artist and Programmer. It was my first project where i had to create 2d sprites and animation",
                                 role: ["Programmer ","2D Artist"], 
                                 link: "https://yrgo-game-creator.itch.io/city-of-duelist", 
                                 linkname: "itch.io",
-                                img: "cod.png"},
+                                img: "./games/cod.png"},
             {name: "Medival Archer", Descirption : "This was our first VR game we created. We were handed some 3d assets to use. My role in this whole project was to create the function for the players bow with modelling and rigging plus writing the script for it.", 
                                 role: ["Programmer", "3D Artist"], 
                                 link: "https://yrgo-game-creator.itch.io/medieval-archer", 
                                 linkname: "itch.io",
-                                img: "ma.png"},
+                                img: "./games/ma.png"},
             {name: "Agent Gone Fishing", Descirption : "This game was created by my friends group. I mainly helped them out with moddeling some items that they needed like a fishing rod and so on.",
                                 role: ["3D Artist"], 
                                 link: "https://yrgo-game-creator.itch.io/agent-gone-fishing", 
                                 linkname: "itch.io",
-                                img: "agf.png"}];
+                                img: "./games/agf.png"}];
 
 
 function workload(){
