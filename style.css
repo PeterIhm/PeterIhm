@@ -496,10 +496,10 @@ html{
 /*work*/
 
     #work{
-        font-size: 15px;
+        font-size: 12px;
         position: absolute;
         width: 90%;
-        left: 0;
+        left: 5;
         padding-left: 0;
         padding-right: 5em;
         height: 70%;

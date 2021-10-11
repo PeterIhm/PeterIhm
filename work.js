@@ -5,7 +5,7 @@ var games = [{name: "Vital", Descirption : "This game was created during the LBS
                                 link: "https://www.indiedb.com/games/vitalgame",
                                 linkname: "indiedb.com" ,
                                 img: "./games/Vital.png"},
-            {name: "Abiela's Journey", Descirption : "This project is one of my favorits. It was created during my time at YRGO Yrkeshögskolan. We were a group of 4 programmers and 6 artist. We had huge success during the development phase with an alpha done in less than 3 week. Unfortunately the only thing thats left of this project is a badly rendered trailer of our alpha.", 
+            {name: "Abiela's Journey", Descirption : "This project is one of my favorits. It was created during my time at YRGO Yrkeshögskolan. We were a group of 4 programmers and 6 artist. We had huge success during the development phase with an alpha done in less than 3 week.", 
                                 role: ["Lead Programmer", "3D Artist"], 
                                 link: "https://www.youtube.com/watch?v=d7HEFKSRuX8&ab_channel=PeterI", 
                                 linkname: "youtube.com" ,
