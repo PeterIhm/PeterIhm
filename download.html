@@ -27,15 +27,9 @@
 
     <script>
         function navigateMobileOperatingSystem() {
-            try{
-                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-                
-                window.location.href = 'lova://'
+                var userAgent = navigator.userAgent || navigator.vendor || window.opera;                
 
-
-
-                setTimeout(() => {
-                    if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+                if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
                 }
                 else if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
@@ -46,13 +40,11 @@
                 }
                 else{
                     window.location.href = 'https://www.lovaapp.com/';
-                }      
+                }     
+
+                setTimeout(() => {
+                    window.location.href = 'lova://'
                 }, 30);
-        
-            }
-            catch(error){
-                console.log(error);
-            }
         }        
     </script>
 </html>
