@@ -28,30 +28,33 @@
 
     <script>
         function navigateMobileOperatingSystem() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            
+            try{
+                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                
+                    window.location.href = 'lova://'
 
-                window.location.href = 'lova://'
-
-            document.getElementById("testText").innerHTML = window.location.href = 'lova://';
+                document.getElementById("testText").innerHTML = window.location.href = 'lova://';
 
 
-            setTimeout(() => {
-                if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
-            window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
+                setTimeout(() => {
+                    if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
+                }
+                else if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
+                    window.location.href = 'https://apps.apple.com/se/app/lova/id1442553810?l=en';
+                }
+                else if(navigator.userAgent.toLowerCase().indexOf("huawei") > -1){
+                    window.location.href = 'https://appgallery.huawei.com/#/app/C104147125';
+                }
+                else{
+                    window.location.href = 'https://www.lovaapp.com/';
+                }      
+                }, 1000);
+        
             }
-            else if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
-                window.location.href = 'https://apps.apple.com/se/app/lova/id1442553810?l=en';
+            catch(error){
+                console.log(error);
             }
-            else if(navigator.userAgent.toLowerCase().indexOf("huawei") > -1){
-                window.location.href = 'https://appgallery.huawei.com/#/app/C104147125';
-            }
-            else{
-                window.location.href = 'https://www.lovaapp.com/';
-            }      
-            }, 1000);
-      
-            
         }        
     </script>
 </html>
