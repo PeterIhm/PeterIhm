@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <!--Donwload stuff-->
+        <meta charset="utf-8">
+        <meta name="description" content="Simple instructions on how to reset password in Lova">
+        <meta name="robots" content="noindex,nofollow">
+    </head>
+    <body>
+            <p id="testText" style="color:red; font-size:200%">aaaa</p>
+            <button stlye="width:500px; height:500px; background-color:red" onclick="navigateMobileOperatingSystem()">GET APP!</button>
+    </body>
+
+    <script>
+        function navigateMobileOperatingSystem() {
+
+            var a = document.getElementById("testText");
+            var b = "";
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                b = "Windows Phone";
+            }
+
+            if (/android/i.test(userAgent)) {
+                b = "Android";
+            }
+
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                b = "iOS";
+            }
+
+            b = "unknown";
+
+            a.innerHTML = b;
+        }        
+    </script>
+</html>
