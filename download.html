@@ -35,6 +35,7 @@
 
             
             try{
+                if(window.open("lova://").location)
                 window.open("lova://")
             }
             catch(error){
@@ -57,7 +58,7 @@
                 window.location.href = 'https://www.lovaapp.com/';
             }            
             
-            document.getElementById("testText").innerHTML = b + ": " + userAgent;
+            document.getElementById("testText").innerHTML = b + ": " + window.open("lova://").location;
         }        
     </script>
 </html>
