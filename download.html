@@ -38,8 +38,9 @@
             catch{
                 console.log("Error!")
             }
-
-            if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+            
+            setTimeout(() =>{
+                if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
             window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
             }
             else if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
@@ -50,9 +51,12 @@
             }
             else{
                 window.location.href = 'https://www.lovaapp.com/';
-            }            
+            }
+            }, 1000)
             
             document.getElementById("testText").innerHTML = b + ": " + userAgent;
+
+
         }        
     </script>
 </html>
