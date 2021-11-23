@@ -33,8 +33,9 @@
             var b = "0";
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            
-            try{
+            document.getElementById("testText2").innerHTML = window.location("lova://");
+
+            /*            try{
                 if(window.open("lova://").location)
                 window.open("lova://")
             }
@@ -42,7 +43,7 @@
                 console.log("Error!")
                 console.log(error)
                 document.getElementById("testText2").innerHTML = error;
-            }
+            }*/
 
             
             if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
