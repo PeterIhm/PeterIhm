@@ -17,6 +17,8 @@
                         <h1 class="title">Lova</h1>
                         <button onclick="navigateMobileOperatingSystem()">GET LOVA APP!</button>
                         <p id="testText"></p>
+                        <p id="testText2"></p>
+
                     </div>
                     <div class="downloadimg">
                         <img src="content/Layer 1.png" alt="Phone">
@@ -30,6 +32,17 @@
         function navigateMobileOperatingSystem() {
             var b = "0";
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            
+            try{
+                window.open("lova://")
+            }
+            catch(error){
+                console.log("Error!")
+                console.log(error)
+                document.getElementById("testText2").innerHTML = error;
+            }
+
             
             if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
             window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
@@ -42,10 +55,9 @@
             }
             else{
                 window.location.href = 'https://www.lovaapp.com/';
-            }
-                        
+            }            
+            
             document.getElementById("testText").innerHTML = b + ": " + userAgent;
-
         }        
     </script>
 </html>
