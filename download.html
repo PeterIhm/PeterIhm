@@ -16,7 +16,6 @@
                     <div class="downloadlable">
                         <h1 class="title">Lova</h1>
                         <button onclick="navigateMobileOperatingSystem()">GET LOVA APP!</button>
-                        <h2 id="testText"></h2>
                     </div>
                     <div class="downloadimg">
                         <img src="content/Layer 1.png" alt="Phone">
@@ -32,7 +31,8 @@
                 var userAgent = navigator.userAgent || navigator.vendor || window.opera;
                 
                 window.location.href = 'lova://'
-                window.addEventListener("hashchange", e=>document.getElementById("testText").innerHTML = e, {});
+
+
 
                 setTimeout(() => {
                     if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
@@ -47,7 +47,7 @@
                 else{
                     window.location.href = 'https://www.lovaapp.com/';
                 }      
-                }, 1000);
+                }, 300);
         
             }
             catch(error){
