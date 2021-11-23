@@ -28,7 +28,7 @@
 
     <script>
         function navigateMobileOperatingSystem() {
-            var b = "";
+            var b = "0";
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
             try{
@@ -46,11 +46,11 @@
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
                 b = "2"
             }
-            else if (/iPad|iPhone|iPod/.test(userAgent)) {
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = 'https://apps.apple.com/se/app/lova/id1442553810?l=en';
                 b = "3"
             }else{
-                window.location.href = 'https://www.lovaapp.com';
+                window.location.href = 'https://www.lovaapp.com/';
             }
             }, 1000)
             
