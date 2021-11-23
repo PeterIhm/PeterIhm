@@ -33,7 +33,7 @@
             var b = "0";
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            document.getElementById("testText2").innerHTML = window.location("lova://");
+            document.getElementById("testText2").innerHTML = window.open("lova://").onmessage;
 
             /*            try{
                 if(window.open("lova://").location)
