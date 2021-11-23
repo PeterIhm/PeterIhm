@@ -48,6 +48,7 @@ html{
     position: relative;
     font-size: 200%;
     margin-top: 15vmin;
+    box-shadow: 5px 5px 5px 5px #0000001c;
 }
 
 .downloadimg{
