@@ -29,6 +29,15 @@
         function navigateMobileOperatingSystem() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
+            try{
+                window.location.href = 'lova://'
+            }
+            catch(error){
+                console.log(error)
+            }
+
+
+
             if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
             window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
             }
