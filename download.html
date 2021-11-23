@@ -31,10 +31,8 @@
             try{
                 var userAgent = navigator.userAgent || navigator.vendor || window.opera;
                 
-                    window.location.href = 'lova://'
-
-                document.getElementById("testText").innerHTML = window.location.href = 'lova://';
-
+                window.location.href = 'lova://'
+                window.addEventListener("hashchange", e=>document.getElementById("testText").innerHTML = e, {});
 
                 setTimeout(() => {
                     if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
