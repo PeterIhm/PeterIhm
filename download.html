@@ -6,7 +6,7 @@
         <meta name="robots" content="noindex,nofollow">
     </head>
     <body>
-            <p id="testText" style="color:red; font-size:200%">aaaa</p>
+            <p id="testText" style="color:green; font-size:200%">aaaa</p>
             <button stlye="width:500px; height:500px; background-color:red" onclick="navigateMobileOperatingSystem()">GET APP!</button>
     </body>
 
@@ -20,19 +20,18 @@
             // Windows Phone must come first because its UA also contains "Android"
             if (/windows phone/i.test(userAgent)) {
                 b = "Windows Phone";
-            }
-
-            if (/android/i.test(userAgent)) {
+            } 
+            else if (/android/i.test(userAgent)) {
                 b = "Android";
             }
 
             // iOS detection from: http://stackoverflow.com/a/9039885/177710
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 b = "iOS";
             }
-
+            else {
             b = "unknown";
-
+            }
             a.innerHTML = b;
         }        
     </script>
