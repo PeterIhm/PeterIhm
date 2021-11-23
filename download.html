@@ -16,6 +16,7 @@
                     <div class="downloadlable">
                         <h1 class="title">Lova</h1>
                         <button onclick="navigateMobileOperatingSystem()">GET LOVA APP!</button>
+                        <p id="testText"></p>
                     </div>
                     <div class="downloadimg">
                         <img src="content/Layer 1.png" alt="Phone">
@@ -43,12 +44,12 @@
             else if (/android/i.test(userAgent)) {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
             }
-            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            else if (/iPad|iPhone|iPod/.test(userAgent)) {
                 window.location.href = 'https://apps.apple.com/app/lova/id1442553810';
             }
             }, 10000)
             
-
+            document.getElementById("testText").innerHTML = "https://apps.apple.com/app/lova/id1442553810";
 
         }        
     </script>
