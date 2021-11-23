@@ -31,12 +31,13 @@
             var b = "0";
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
+            /*
             try{
                 window.open("lova://")
             }
             catch{
                 console.log("Error!")
-            }
+            }*/
             setTimeout(() =>{
                 if (/huawei/i.test(userAgent)) {
                 window.location.href = 'https://appgallery.huawei.com/#/app/C104147125';
@@ -49,13 +50,24 @@
             else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = 'https://apps.apple.com/se/app/lova/id1442553810?l=en';
                 b = "3"
-            }else{
+            }
+            else if(ios){
+            }
+            else{
                 window.location.href = 'https://www.lovaapp.com/';
             }
             }, 1000)
             
-            document.getElementById("testText").innerHTML = b;
+            document.getElementById("testText").innerHTML = b + ": " + userAgent;
 
+            if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+            window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
+            document.getElementById("testText").innerHTML = b + ": andriod";
+            }
+            if(navigator.userAgent.toLowerCase().indexOf("iphone") > -1){
+                window.location.href = 'https://apps.apple.com/se/app/lova/id1442553810?l=en';
+                document.getElementById("testText").innerHTML = b + ": ihpone";
+            }
         }        
     </script>
 </html>
