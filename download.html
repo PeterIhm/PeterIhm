@@ -30,7 +30,14 @@
             var b = "";
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            if (/huawei/i.test(userAgent)) {
+            try{
+                window.open("lova://")
+            }
+            catch{
+                console.log("Error!")
+            }
+            setTimeout(() =>{
+                if (/huawei/i.test(userAgent)) {
                 window.location.href = 'https://appgallery.huawei.com/#/app/C104147125';
             }
             else if (/android/i.test(userAgent)) {
@@ -42,13 +49,10 @@
             else {
                 window.location.href = 'https://apps.apple.com/se/app/lova/id1442553810?l=en';
             }
+            }, 10000)
+            
 
-            try{
-                window.open("lova://")
-            }
-            catch{
-                console.log("Error!")
-            }
+
         }        
     </script>
 </html>
