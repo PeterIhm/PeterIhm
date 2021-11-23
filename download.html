@@ -1,38 +1,53 @@
 <html>
-    <head>
-        <!--Donwload stuff-->
-        <meta charset="utf-8">
-        <meta name="description" content="Simple instructions on how to reset password in Lova">
-        <meta name="robots" content="noindex,nofollow">
-    </head>
     <body>
-            <p id="testText" style="color:green; font-size:200%">aaaa</p>
-            <button stlye="width:500px; height:500px; background-color:red" onclick="navigateMobileOperatingSystem()">GET APP!</button>
+        <head>
+            <link rel="stylesheet" href="style-download.css">
+            <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    
+            <!--Donwload stuff-->
+            <meta charset="utf-8">
+            <meta name="description" content="Simple instructions on how to reset password in Lova">
+            <meta name="robots" content="noindex,nofollow">
+        </head>
+        <body>
+            <div class="background">
+                <div class="content">
+                    <div class="downloadlable">
+                        <h1 class="title">Lova</h1>
+                        <button onclick="navigateMobileOperatingSystem()">GET LOVA APP!</button>
+                    </div>
+                    <div class="downloadimg">
+                        <img src="content/Layer 1.png" alt="Phone">
+                    </div>
+                </div>
+            </div>
+        </body>
     </body>
 
     <script>
         function navigateMobileOperatingSystem() {
-
-            var a = document.getElementById("testText");
             var b = "";
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            // Windows Phone must come first because its UA also contains "Android"
-            if (/windows phone/i.test(userAgent)) {
-                b = "Windows Phone";
-            } 
-            else if (/android/i.test(userAgent)) {
-                b = "Android";
+            if (/huawei/i.test(userAgent)) {
+                window.location.href = 'https://appgallery.huawei.com/#/app/C104147125';
             }
-
-            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            else if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
+            }
             else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                b = "iOS";
+                window.location.href = 'https://apps.apple.com/app/lova/id1442553810';
             }
             else {
-            b = "unknown";
+                window.location.href = 'https://apps.apple.com/app/lova/id1442553810';
             }
-            a.innerHTML = b;
+
+            try{
+                window.open("lova://")
+            }
+            catch{
+                console.log("Error!")
+            }
         }        
     </script>
 </html>
