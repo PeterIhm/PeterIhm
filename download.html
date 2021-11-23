@@ -29,13 +29,10 @@
         function navigateMobileOperatingSystem() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
-            try{
+            if (window.location.href.indexOf("lova://") != -1)
                 window.location.href = 'lova://'
-            }
-            catch(error){
+            else
                 console.log(error)
-            }
-
 
             setTimeout(() => {
                 if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
@@ -50,7 +47,7 @@
             else{
                 window.location.href = 'https://www.lovaapp.com/';
             }      
-            }, 10000);
+            }, 1000);
       
             
         }        
