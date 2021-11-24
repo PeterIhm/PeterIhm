@@ -47,7 +47,8 @@
                     window.location.href = 'lova://'
                 }, 30);
 */
-                window.location.replace("lova://"); setTimeout(function () {
+                
+                
 
                     if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.instant.lovapayapp';
@@ -60,7 +61,10 @@
                 }
                 else{
                     window.location.href = 'https://www.lovaapp.com/';
-                }      }, 2000);
+                }      
+                setTimeout(function () {
+                window.location.replace("lova://"); 
+            }, 1000);
         }        
     </script>
 </html>
