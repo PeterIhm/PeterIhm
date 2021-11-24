@@ -15,17 +15,59 @@ html{
     font-family: 'Poppins', sans-serif;
 }
 
-.content{
+.background{
     background-image: url("content/Mask Group 3.png");
     background-repeat: no-repeat;
     background-size: 100%;
     margin: auto;
 }
 
+/*
+.smoothtransto{
+    transform: translateX(0%);
+    animation: smoothtransto 1s; 
+}
+
+@keyframes smoothtransto {
+    0%{        
+        transform: translateX(-200%);
+    }
+    100%  {
+        transform: translateX(0%);
+    }
+}
+
+.smoothtransaway{    
+    transform: translateX(-200%);
+    animation: smoothtransaway 1s; 
+}
+
+@keyframes smoothtransaway {
+    0%{        
+        transform: translateX(0%);
+    }
+    100%  {
+        transform: translateX(-200%);
+    }
+}
+*/
 
 .downloadlable{
     width:50%;
     margin:auto;
+}
+
+.downloadlable p{
+    font-size: 200%;
+    color:black;
+    padding-top: 10vmin;
+}
+
+.downloadlable option{
+    width: 150%;
+    background-color: white;
+    border: 0;
+    border-color: transparent;
 }
 
 .downloadlable .title{
@@ -36,7 +78,7 @@ html{
     padding-top: 15%;
 }
 
-.downloadlable button{
+.downloadlable button, .downloadlable .btn{
     font-family: 'Poppins', sans-serif;
     width:100%;
     background-color: white;
@@ -47,7 +89,22 @@ html{
     color: var(--lova-purple);
     position: relative;
     font-size: 200%;
-    margin-top: 15vmin;
+    margin-top: 5vmin;
+    box-shadow: 5px 5px 5px 5px #0000001c;
+}
+
+.downloadlable .btn{
+    font-family: 'Poppins', sans-serif;
+    width:100%;
+    background-color: white;
+    border:0;
+    padding: 2vmin;
+    border-radius: 5px;
+    font-weight: bold;
+    color: var(--lova-purple);
+    position: relative;
+    font-size: 200%;
+    margin-top: 5vmin;
     box-shadow: 5px 5px 5px 5px #0000001c;
 }
 
