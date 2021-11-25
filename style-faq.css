@@ -39,13 +39,12 @@ html{
 #faq-questions{
     position: relative;
     left: 25%;
-    width: 80%;
+    width: 60%;
 }
 
 #quest-div{
     color:black;
     margin-left: 5vmin;
-    width: 60%;
 }
 
 #faq-questions h1{
@@ -110,7 +109,7 @@ html{
 .contactinfo{
     margin-top: 7vmin;
     position: relative;
-    right: 75%;
+    right: 60%;
     height: 46vmin;
     background-color: rgb(233, 233, 233);
     margin-left: 5vmin;
