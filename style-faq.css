@@ -71,6 +71,15 @@ html{
     border-radius: 5px;
 }
 
+.questionbutton{
+    margin-bottom: 2vmin;
+    background-color: white;
+    border-radius: 5px;
+    /*box-shadow: rgb(0 0 0 / 29%) 3px 3px 5px 0px;*/
+    box-shadow: "3px 3px 5px 0 #0000004b";
+
+}
+
 #quest-div .plus{
     color: #78d2a3;
     padding: 2vmin;
@@ -166,6 +175,10 @@ html{
 
     #quest-div{
         margin-left: 0;
+    }
+
+    .questionbutton{
+        margin-bottom: 5vmin;
     }
 
     #faq-questions{
