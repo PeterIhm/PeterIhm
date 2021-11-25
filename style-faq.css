@@ -1,9 +1,9 @@
-@font-face {
+/*@font-face {
     font-family: 'Nexa';
     font-weight: normal;
     font-style: normal;
     src: url("fonts/Nexa-Bold.otf") format("opentype");
-}
+}*/
 
 body{
     margin: 0;
@@ -27,7 +27,7 @@ html{
     text-align: center;
     color: #78d2a3;
     font-size: 1000%;
-    font-family: 'Nexa', sans-serif;
+    /*font-family: 'Nexa', sans-serif;*/
     padding-top: 5vmin;
     padding-bottom: 10vmin;
 }
