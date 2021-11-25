@@ -151,7 +151,17 @@ html{
 @media (max-width:1260px) {
 
     #quest-div .question {
-        font-size: 150%;
+        font-size: 200%;
+        padding: 2vmin;
+    }
+
+    #quest-div .plus {
+        font-size: 200%;
+        padding: 2vmin;    
+    }
+
+    #quest-div .answer {
+        font-size: 200%;
     }
 
     #quest-div{
