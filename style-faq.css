@@ -17,7 +17,7 @@ html{
 }
 
 .background{
-    background-image: url("Mask Group 3.png");
+    background-image: url("content/Mask Group 3.png");
     background-repeat: no-repeat;
     background-size: 100% 28rem;
     margin: auto;
@@ -110,7 +110,7 @@ html{
     margin-top: 7vmin;
     position: relative;
     right: 60%;
-    height: 46vmin;
+    height: 25em;    
     background-color: rgb(233, 233, 233);
     margin-left: 5vmin;
     width: 20%;
@@ -200,7 +200,7 @@ html{
         margin: auto;
         right:0;
         margin-top: 10vmin;
-        height: 65vmin;
+        height: 25em;
     }
     .innercontent{
         display: block;
