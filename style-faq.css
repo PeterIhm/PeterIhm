@@ -152,7 +152,18 @@ html{
 
     #quest-div .question {
         font-size: 150%;
+    }
 
+    #quest-div{
+        margin-left: 0;
+    }
+
+    #faq-questions{
+        width: 90%;
+    }
+
+    #faq-questions h1{
+        margin-left: 0;
     }
 
     .contactinfo{
@@ -170,7 +181,7 @@ html{
     }
 
     #quest-div{
-        width: 90%;
+        width: 100%;
     }
 
     #faq-questions {
