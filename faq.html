@@ -1,0 +1,150 @@
+<html>
+    <body>
+        <head>
+            <link rel="stylesheet" href="style-faq.css">
+            <link rel="stylesheet" href="app.css">
+            <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    
+            <!--Donwload stuff-->
+            <meta charset="utf-8">
+            <meta name="description" content="Simple instructions on how to reset password in Lova">
+            <meta name="robots" content="noindex,nofollow">
+        </head>
+        <body onload= "loaddata()">
+            <div class="background">
+                    <div class="content">
+                            <h1 class="title">Lova</h1>
+                            <div class="innercontent">
+
+                            <div id="faq-questions">
+                                    <h1>FAQ</h1>
+                                <div id="quest-div">                                    
+                                </div>
+                            </div>
+
+                            <div class="contactinfo">
+                                <h1>NEED ASSISTANCE?</h1>
+                                <hr style="width: 90%;">
+                                <div class="contactTime">
+                                    <h3>Monday - Friday</h3>
+                                    <p>🕐 7:00am - 5:00pm EST</p>
+                                    <h3>Saturday - Sunday</h3>
+                                    <p>🕐 None</p>
+                                </div>
+                                <h1>CONTACT US</h1>
+                                <div class="contactmail">
+                                    <p class="icon">✉</p>
+                                    <p>mail@instantsystems.se</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+
+        <script>
+                var questJson = [
+                {
+                    "question":"Did you know!", 
+                    "answer":"the 3 most common languages in the world are Mandarin Chinese, Spanish and English"
+                },
+                {
+                    "question":"How do i get a cow to love me", 
+                    "answer":"Feed it! Feed it! Get yourseft an egg and eat it!"
+                },
+                {
+                    "question":"Did you know!", 
+                    "answer":"11% of people are left handed"
+                },
+                {
+                    "question":"Did you know!", 
+                    "answer":"the 3 most common languages in the world are Mandarin Chinese, Spanish and English"
+                },
+                {
+                    "question":"How do i get a cow to love me", 
+                    "answer":"Feed it! Feed it! Get yourseft an egg and eat it!"
+                },
+                {
+                    "question":"How do i get a cow to love me", 
+                    "answer":"Feed it! Feed it! Get yourseft an egg and eat it!"
+                },
+                {
+                    "question":"Did you know!", 
+                    "answer":"11% of people are left handed"
+                },
+                {
+                    "question":"Did you know!", 
+                    "answer":"the 3 most common languages in the world are Mandarin Chinese, Spanish and English"
+                },
+                {
+                    "question":"How do i get a cow to love me", 
+                    "answer":"Feed it! Feed it! Get yourseft an egg and eat it!"
+                },
+                {
+                    "question":"Did you know!", 
+                    "answer":"11% of people are left handed"
+                }
+            ]
+            
+            function loaddata(){
+                for (let index = 0; index < questJson.length; index++) {
+                var questdiv = document.getElementById("quest-div");
+
+                var clickableDropdown = document.createElement("div")
+                clickableDropdown.setAttribute("onclick", "openAnswer(this)")
+                clickableDropdown.style.marginBottom = "2vmin"
+                clickableDropdown.style.backgroundColor = "white"
+                clickableDropdown.style.borderRadius = "5px"
+                clickableDropdown.style.boxShadow = "3px 3px 5px 0 #0000004b";
+                var dropdownContent = document.createElement("div")
+                dropdownContent.style.display = "flex"
+
+                var questionText = document.createElement("a")
+                questionText.className = "question"
+                questionText.innerHTML = questJson[index].question
+
+                var plusIcon = document.createElement("a")
+                plusIcon.className = "plus"
+                plusIcon.innerHTML = "+"
+
+                var answerText = document.createElement("a")
+                answerText.className = "answer"
+                answerText.style.display = "none"
+                answerText.style.color = "black"
+                answerText.innerHTML = questJson[index].answer
+
+                dropdownContent.append(questionText)
+                dropdownContent.append(plusIcon)
+
+                clickableDropdown.append(dropdownContent)
+                clickableDropdown.append(answerText)
+                
+                questdiv.append(clickableDropdown)                    
+                }              
+            }
+        </script>
+
+        <script>
+            function openAnswer(x){
+                console.log(x.childNodes[1].style.display);
+
+                if(x.childNodes[1].style.display === 'block'){
+                    x.childNodes[0].childNodes[1].innerHTML = "+"
+                    x.childNodes[1].style.display = 'none'
+                }
+                else if(x.childNodes[1].style.display === 'none'){
+                    x.childNodes[0].childNodes[1].innerHTML = "-"
+                    x.childNodes[1].style.display = 'block'
+                }
+
+                y = document.getElementsByClassName("answer")
+
+                for (let index = 0; index < y.length; index++) {
+                    if(x.childNodes[1] != y.item(index))
+                    y.item(index).style.display = "none";
+                } 
+            }
+        </script>
+</html>
