@@ -89,6 +89,12 @@ html{
     font-weight: bold;
 }
 
+.dropdownContent{
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+}
+
 #quest-div .answer{
     padding: 2vmin;
     background-color: white;
@@ -104,7 +110,7 @@ html{
 .contactinfo{
     margin-top: 7vmin;
     position: relative;
-    right: 78%;
+    right: 75%;
     height: 46vmin;
     background-color: rgb(233, 233, 233);
     margin-left: 5vmin;
@@ -182,7 +188,7 @@ html{
     }
 
     #faq-questions{
-        width: 90%;
+        width: 70%;
     }
 
     #faq-questions h1{
