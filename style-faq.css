@@ -149,13 +149,21 @@ html{
 }
 
 @media (max-width:1260px) {
+
+    #quest-div .question {
+        font-size: 150%;
+
+    }
+
     .contactinfo{
+        font-size: 150%;
         padding-top: 1vmin;
         width: 50%;
         position: relative;
         margin: auto;
         right:0;
         margin-top: 10vmin;
+        height: 65vmin;
     }
     .innercontent{
         display: block;
@@ -173,9 +181,5 @@ html{
     }
 } 
 
-@media (min-width:1260px) {
-    /*html{
-        background-color: green !important;
-    }*/
-} 
+
 
