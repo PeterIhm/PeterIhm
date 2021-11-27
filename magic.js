@@ -45,7 +45,7 @@ function start(){
   mynavbar();
 
   setTimeout(function () {
-    switchdiv("5", document.getElementsByClassName("home_nav").item(0));
+    switchdiv("0", document.getElementsByClassName("home_nav").item(0));
   }, 400);
 
   skills();
