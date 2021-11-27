@@ -1,18 +1,32 @@
 var divs = ["home", "aboutme", "education", "skills", "work", "contactme"];
 
-function switchdiv(current, buttonhighlight){  
+function MessageMailSend(){
+    alert("Message Send!")
+}
+
+function switchdiv(b, buttonhighlight){  
   
+  var c = parseInt(b);
+
   for (let index = 0; index < divs.length; index++) {
-    if(current == divs[index]){
-      document.getElementById(divs[index]).className = "smoothtrans";
-      document.getElementById(divs[index]).style.display = "block";      
-    }
-    else{
-      document.getElementById(divs[index]).className = "smoothtransdis";
-      
-      setTimeout(() => {  document.getElementById(divs[index]).style.display = "none"; }, 500);
-    }
-  }
+      if(c == index){         
+        console.log("hello!")
+        document.getElementById(divs[index]).classList.add("smoothtransto") 
+        document.getElementById(divs[index]).classList.remove("smoothtransaway") 
+
+        setTimeout(function () {
+            document.getElementById(divs[index]).style.display = "block";
+        }, 400);
+      }                   
+      else if(c != index){
+        document.getElementById(divs[index]).classList.add("smoothtransaway")
+        document.getElementById(divs[index]).classList.remove("smoothtransto")  
+
+        setTimeout(function () {
+            document.getElementById(divs[index]).style.display = "none";
+        }, 400);
+      }
+  } 
 
   var temp = document.getElementById("navul");
   try{ 
@@ -21,21 +35,21 @@ function switchdiv(current, buttonhighlight){
     temp.childNodes.item(index).childNodes.item(0).className = "notactive";
   }
 
-   buttonhighlight.childNodes.item(0).className = "active";
+  if(buttonhighlight != null)
+  buttonhighlight.childNodes.item(0).className = "active";
   }
   catch{}
 }
 
 function start(){
   mynavbar();
-  try{
-    switchdiv("home", document.getElementById("navul").childNodes.item(0).childNodes.item(0));  
-    document.getElementById("navul").childNodes.item(0).childNodes.item(0).className = "active";
-  }
-  catch{}
 
-  switchdiv("home", "home");
+  setTimeout(function () {
+    switchdiv("5", document.getElementsByClassName("home_nav").item(0));
+  }, 400);
 
   skills();
   workload();
+
+  
 }

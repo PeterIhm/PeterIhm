@@ -17,16 +17,16 @@
         <script src="dropdown.js"></script>
 
         <div class="nav" id="nav"></div>
-        <div class="home" id="home">
+        <div class="home smoothtransto" id="home">
             <div class="hometext">            
                 <h1>Hi! <br> I'm <span class="name">Peter</span>, <br>Game Developer</h1>
                 <p style=color:gray><strong>UNITY3D / MAYA3D / KRITA</strong></p>
-                <button onclick="switchdiv('contactme')"><strong>CONTACT ME</strong></button>
+                <button onclick="switchdiv('5', null)"><strong>CONTACT ME</strong></button>
             </div>
 
             <img src="profilpic2.png" alt="Profil">
         </div>
-        <div class="aboutme" id="aboutme">
+        <div class="aboutme" id="aboutme" style="display: none;">
             <h1>ABOUT<span style=color:tomato>ME</span>!</h1>
             
             <embed src="CV.pdf" width="50%" height="500px" />     
@@ -47,7 +47,7 @@
             </p>
         </div>
 
-        <div class="education" id="education">
+        <div class="education" id="education" style="display: none;">
             <h1>WORK</h1>
             <div class="school">
                 <p class="title">Instant Systems Sweden AB</p>
@@ -80,7 +80,7 @@
         </div>
 
 
-        <div class="skills" id="skills">            
+        <div class="skills" id="skills" style="display: none;">            
             <h1>GENERAL SKILLS</h1>
 
             <div class="skillgroups">
@@ -90,13 +90,21 @@
             </div>
         </div>
 
-        <div class="work" id="work"></div>
+        <div class="work" id="work" style="display: none;"></div>
 
         <div class="contactme" id="contactme">       
-            <textarea class="userName" id="username" placeholder="NAME" required></textarea>
-            <textarea class="userMail" type="email" id="usermail" placeholder="MAIL" required></textarea>
-            <textarea class="userMessage" id="usermessage" placeholder="MESSAGE" required></textarea>
-            <button id="sendmessage" onclick="sendmessage()">SEND</button>
+            <form action="https://formsubmit.co/663a182ea2cd1a399b4f4dc8c1672f7d" method="POST">
+                <input type="hidden" name="_subject" value="Website Message!">
+                <div style="display: inline;">
+                    <input style="padding-right: 1em;" class="userName" type="text" name="name" class="form-control" placeholder="Full Name" required>                
+                    <input class="usermail" type="email" name="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <textarea class="userMessage" placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_autoresponse" value="Your message was send">
+                <button type="submit">Send</button>
+           </form>
         </div>
     </body>
 

@@ -63,11 +63,12 @@ html{
 
 /*smoothtrans*/
 
-.smoothtrans{
-    animation: smoothtrans 1s; 
+.smoothtransto{
+    transform: translateX(0%);
+    animation: smoothtransto 1s; 
 }
 
-@keyframes smoothtrans {
+@keyframes smoothtransto {
     0%{        
         transform: translateX(-200%);
     }
@@ -76,22 +77,17 @@ html{
     }
 }
 
-.smoothtransdis{
-    animation: smoothtransdis 1s; 
+.smoothtransaway{    
     transform: translateX(-200%);
-    display: none;
+    animation: smoothtransaway 1s; 
 }
 
-@keyframes smoothtransdis {
+@keyframes smoothtransaway {
     0%{        
-        transform: translateX(0%);        
-        display: none !important; 
-
+        transform: translateX(0%);
     }
-    100%{
-        transform: translateX(-200%);        
-        display: none !important; 
-
+    100%  {
+        transform: translateX(-200%);
     }
 }
 /*Contact*/
@@ -106,17 +102,21 @@ html{
 #contactme .userName, #contactme .usermail{
     outline:none;
     height: 40px;
-    width: 100%;
+    width: 49%;
     border: solid tomato 2px;
     background-color: transparent;
     color: white;
     text-align: left;
     margin-bottom: 0.5em;
-    font-size: 15px;
-    padding-top: 10px;
     padding-left: 10px;
 }
- 
+
+#contactme .userName{
+    float:left;
+}
+#contactme .usermail{
+    float:right;
+}
 
 #contactme .userMessage{
     outline:none;
@@ -127,18 +127,23 @@ html{
     color: white;
     text-align: left;
     margin-bottom: 0.5em;
-    padding-top: 10px;
     padding-left: 10px;
 }
 
 #contactme button{
-    width: 100%;
+    float:right;
+    width: 50%;
     height: 50px;
     color: white;
     font-size: 15px;
     background-color: tomato;
     border: solid tomato 2px;
     cursor: pointer;
+}
+
+#contactme button:hover{
+    background-color: rgb(201, 77, 56);
+    border: solid rgb(201, 77, 56) 2px;
 }
 
 #contactme button:active  {
@@ -519,24 +524,36 @@ html{
 /*contact me*/
 
     #contactme{
+        padding-top: 10em;
+        position: relative;
         width: 95%;
-        left: 5;
+        margin:auto;
+        left:0;
     }
 
     #contactme .username{
         width: 100%;
         height: 50px;
+        height:100px;
+        font-size: 200%;
     }
 
-    #contactme #usermail{
+    #contactme .usermail{
         width: 100%;
-        height: 50px;
+        height:100px;  
+        font-size: 200%;  
     }
 
-    #contactme #usermessage{
+    #contactme .usermessage{
         width: 100%;
-        height: 400px;
+        height: 800px;
+        font-size: 200%; 
     }
 
+    #contactme button{
+        width: 100%;
+        height: 100px;
+        font-size: 200%; 
+    }
 }
 
