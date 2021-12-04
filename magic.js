@@ -1,4 +1,4 @@
-var divs = ["home", "aboutme", "education", "skills", "work", "contactme"];
+var divs = ["home", "education", "aboutme", "skills", "work", "contactme"];
 
 function MessageMailSend(){
     alert("Message Send!")
@@ -50,6 +50,4 @@ function start(){
 
   skills();
   workload();
-
-  
 }

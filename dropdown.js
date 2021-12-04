@@ -9,8 +9,8 @@ function mynavbar(){
         <a href="#home" class="active"></a>
         <div id="myLinks" style="dislay:none">
           <a onclick="chooseclose('0',null)" href="#home">HOME</a>
-          <a onclick="chooseclose('2',null)" href="#education">EDUCATION</a>
-          <a onclick="chooseclose('1',null)" href="#aboutme">ABOUT ME & CV</a>
+          <a onclick="chooseclose('1',null)" href="#education">EDUCATION</a>
+          <a onclick="chooseclose('2',null)" href="#aboutme">ABOUT ME & CV</a>
           <a onclick="chooseclose('3',null)" href="#skills">SKILLS</a>
           <a onclick="chooseclose('4',null)" href="#work">MY WORK</a>
         </div>
