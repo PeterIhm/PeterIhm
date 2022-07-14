@@ -7,6 +7,21 @@ html{
     font-weight: 100;
     background-attachment: fixed;
 }
+
+#agb{
+    display: grid;
+    grid-template-columns: auto 20px;
+    position: relative;
+}
+
+#agb input{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    right: 2%;
+}
     
 #header{
     display: none;
@@ -150,7 +165,7 @@ color: white;
 }
 
 .info p span{
-    color:rgb(95,96,101);
+    color:rgb(139, 140, 145);
 }
 
 .contact{
@@ -158,12 +173,19 @@ color: white;
     grid-template-columns: 5em auto;
 }
 
+.info{
+    position: relative;
+}
+
 .socialmedia{
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 60%;
+    width: 50%;
     margin: auto;
     padding-top: 5vw;
+    bottom:10%;
+    left: 25%;
+    position: absolute;
 }
 
 .socialmedia a{
@@ -309,5 +331,35 @@ color: white;
         width: 100%;
         margin: auto;
         padding-top: 10vw;
+    }
+
+    #agb{
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+
+    #agb a{
+        color: rgb(43, 188, 230);
+    }
+
+    #agb input{
+        align-self: flex-end;
+        padding-top: 10em !important;
+        width: 5vw;
+        height: 5vw;
+        position: relative;
+    }
+
+    .socialmedia{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 100%;
+        margin: auto;
+        padding-top: 10vw;
+        left: 0%;
+        position: relative;
     }
 }
