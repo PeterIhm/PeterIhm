@@ -118,7 +118,7 @@ color: white;
     background-color: rgb(28, 29, 34);
     border-radius: 10px;
     position: absolute;
-    top: 10%;
+    top: 5%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     -ms-transform: translateX(10%);
@@ -146,7 +146,6 @@ color: white;
 }
 
 #bottompart{
-    position: absolute;
     bottom: 0;
     color:rgb(95,96,101);
     left:20%;
@@ -209,11 +208,10 @@ color: white;
     grid-template-columns: auto auto auto;
     width: 70%;
     margin: auto;
-    padding-top: 5vw;
-    padding-bottom: 3vw;
+    padding-top: 2vw;
+    padding-bottom: 1vw;
     bottom:10%;
     left: 16%;
-    position: absolute;
 }
 .socialmedia img{
     padding-bottom: 0.5em;
@@ -230,7 +228,7 @@ color: white;
         background-color: rgb(28, 29, 34);
         border-radius: 10px;
         position: absolute;
-        top: 10%;
+        top: 5%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
         -ms-transform: translateX(10%);
