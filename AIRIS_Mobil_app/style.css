@@ -6,12 +6,17 @@ html{
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     background-attachment: fixed;
+    user-select: none;
 }
 
 #agb{
     display: grid;
     grid-template-columns: auto 20px;
-    position: relative;
+    position: relative;    
+}
+
+#agb a{
+    color: rgb(43, 188, 230);
 }
 
 #agb input{
@@ -21,6 +26,15 @@ html{
     position: absolute;
     top: 30%;
     right: 2%;
+}
+
+#contactheader{
+    text-align:center; 
+    font-size:22px;
+}
+
+.info{
+    width: 100%;
 }
     
 #header{
@@ -35,7 +49,6 @@ html{
 form{
     background-color:rgb(39, 42, 51);
     display: grid;
-    width: 80%;
     margin:auto;
     padding: 2em;
     color: white;
@@ -127,8 +140,22 @@ color: white;
 
 .info {
     padding-top: 3.2em;
+    text-align: center;
+    padding-left: 0;
+    margin-left: 0;
 }
 
+#bottompart{
+    position: absolute;
+    bottom: 0;
+    color:rgb(95,96,101);
+    left:20%;
+    padding-bottom: 2vw;
+}
+#bottompart img{
+    width: auto;
+    height: 30px;
+}
 .info h1 span{
     color: rgb(43, 188, 230);
 }
@@ -169,8 +196,8 @@ color: white;
 }
 
 .contact{
-    display: grid;
-    grid-template-columns: 5em auto;
+  text-align: center;
+  line-height: 1.8em;
 }
 
 .info{
@@ -180,14 +207,17 @@ color: white;
 .socialmedia{
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 50%;
+    width: 70%;
     margin: auto;
     padding-top: 5vw;
+    padding-bottom: 3vw;
     bottom:10%;
-    left: 25%;
+    left: 16%;
     position: absolute;
 }
-
+.socialmedia img{
+    padding-bottom: 0.5em;
+}
 .socialmedia a{
     text-align: center;
     color:rgb(255, 255, 255);
@@ -228,11 +258,8 @@ color: white;
         border-radius: 5px;
         padding: 5vw;
         font-size: 30px;
-        padding-bottom: 5em;
     }
-    .socialmedia{
-        margin: auto;
-    }
+
     .info{
         width: 100%;
     }
@@ -285,7 +312,6 @@ color: white;
     }
 
     form{
-        width: 100% !important;
         border-radius: 5px;
         padding: 0;
         background-color: transparent;
@@ -325,20 +351,38 @@ color: white;
         color:rgb(43, 188, 230);
     }
 
+    #contactheader{
+        text-align:center; 
+        font-size:32px;
+    }
+
     .socialmedia{
         display: grid;
         grid-template-columns: auto auto auto;
-        width: 100%;
         margin: auto;
-        padding-top: 10vw;
+        padding-top: 5vw;
+        bottom:10%;
+        left: 25%;
+        position: absolute;
+        width: 100%;
+        padding-bottom: 2em;
+    }
+    .socialmedia img{
+        padding-bottom: 0.5em;
+        width: 6vw;
+        height: 6vw;
+    }
+    .socialmedia a{
+        text-align: center;
+        color:rgb(255, 255, 255);
+        text-decoration: none;
+        display: table-caption;
     }
 
     #agb{
-        padding-top: 4vw;
-        padding-bottom: 4vw;
-        display: block;
-        margin: auto;
-        text-align: center;
+        display: grid;
+        grid-template-columns: auto 20px;
+        position: relative;
     }
 
     #agb a{
@@ -347,19 +391,38 @@ color: white;
 
     #agb input{
         align-self: flex-end;
-        padding-top: 10em !important;
         width: 5vw;
         height: 5vw;
-        position: relative;
     }
 
     .socialmedia{
         display: grid;
         grid-template-columns: auto auto auto;
-        width: 100%;
         margin: auto;
         padding-top: 10vw;
         left: 0%;
         position: relative;
+    }
+
+    .socialmedia a{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    #bottompart{
+        padding-bottom: 3em;
+        position: relative;
+        width: 100%;
+        left:0%;
+    }
+
+    #bottompart p{
+        width: 100%;
+        text-align: center;
+    }
+
+    #bottompart img{
+        width: auto;
+        height: 100px;
     }
 }
