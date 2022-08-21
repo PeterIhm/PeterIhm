@@ -1,0 +1,81 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    color:white;
+    overflow: hidden;
+}
+
+.about-me{
+    position: relative;
+    width: 100%;
+    height: 100em;
+}
+
+.about-me .background{
+    position: absolute;
+    background: #2d3748;
+    top: 13%;
+    left: -10em;
+    height: 80em;
+    width: 250%;
+    transform: rotate(10deg);
+}
+
+.experience{
+    left: 10%;
+    width: 80%;
+    top: 20%;
+    position: absolute;
+    z-index: 1;
+}
+
+.experience h1{
+    font-size: 5em;
+}
+
+.experience h2{
+    font-size: 3em;
+}
+
+.experience p{
+    font-size: 2em;
+}
+
+@media (min-width:1400px) { 
+    .about-me .background {
+        position: absolute;
+        background: #2d3748;
+        top: 40%;
+        left: -10em;
+        height: 50em;
+        width: 250%;
+        transform: rotate(10deg);
+    }
+
+    .about-me{
+        position: relative;
+        width: 100%;
+        height: 100em;
+    }
+    
+    .experience {
+        left: 20%;
+        width: 60%;
+        top: 27%;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .experience h1{
+        font-size: 3em;
+    }
+    
+    .experience h2{
+        font-size: 2em;
+    }
+    
+    .experience p{
+        font-size: 1.5em;
+    }
+}

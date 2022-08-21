@@ -1,0 +1,136 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about-me{
+    position: relative;
+    width: 100%;
+    height: 120em;
+    overflow: hidden;
+}
+
+.about-me .background{
+    position: absolute;
+    background: linear-gradient(to right, slateblue 10%, deepskyblue 100%);
+    left: -10em;
+    height: 90em;
+    width: 250%;
+    transform: rotate(-10deg);
+}
+
+.about-me h1{
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    top: 18%;
+    overflow: visible;
+    white-space: nowrap;
+    z-index: 1;
+    color: white;
+    font-weight: 600;
+    font-size: 5em;
+}
+
+.experience{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    width: 100%;
+    left: 5%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto .2em auto;
+    color:white;
+}
+
+.experience h2{
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.work{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 20px auto;
+}
+
+.work h2{
+    font-weight: 500;
+    font-size: 2.5em;
+}
+
+.work p{
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+
+
+@media (min-width:1400px) { 
+    .about-me{
+        position: relative;
+        width: 100%;
+        height: 120em;
+        overflow: hidden;
+    }
+    
+    .about-me .background {
+        position: absolute;
+        background: linear-gradient(to right, slateblue 10%, deepskyblue 100%);
+        left: -10em;
+        height: 70em;
+        width: 250%;
+        transform: rotate(-10deg);
+    }
+    
+    .about-me h1 {
+        position: absolute;
+        width: 95%;
+        text-align: center;
+        top: 22%;
+        overflow: visible;
+        white-space: nowrap;
+        z-index: 1;
+        color: white;
+        font-weight: 600;
+        font-size: 3em;
+    }
+    
+    .experience {
+        position: absolute;
+        top: 30%;
+        margin: auto;
+        width: 60%;
+        left: 26%;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: auto 0.2em auto;
+        color: white;
+    }
+    
+    .experience h2{
+        font-weight: 600;
+        font-size: 2em;
+    }
+    
+    .work{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 20px auto;
+    }
+    
+    .work h2{
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+    
+    .work p{
+        font-size: 1em;
+        padding-top: 10px;
+    }
+}
