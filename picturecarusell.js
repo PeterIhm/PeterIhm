@@ -1,9 +1,9 @@
 let imageInfo = [
-    {title: "Vital",                year: "2015",       link: "https://www.indiedb.com/games/vitalgame",                linkname: "IndieDB",    image: "/Vital.png"}, 
-    {title: "Abiela's Journey",     year:"2017",        link:"https://www.youtube.com/watch?v=d7HEFKSRuX8",             linkname:"Youtube",     image: "/abiela.png"}, 
-    {title: "City of Duelists",     year:"2017",        link:"https://yrgo-game-creator.itch.io/city-of-duelist",       linkname:"Itch.io",     image: "/cod.png"}, 
-    {title: "Medival Archer",       year:"2018",        link:"https://yrgo-game-creator.itch.io/medieval-archer",       linkname:"Itch.io",     image: "/ma.png"}, 
-    {title: "Volvo 360c",        year:"2017-2018",   link:"https://www.youtube.com/watch?v=H5KNPQT72FA&ab_channel=VolvoCars",    linkname:"Youtube",     image: "/360c.png"}, 
+    {title: "Vital",                year: "2015",       link: "https://www.indiedb.com/games/vitalgame",                linkname: "IndieDB",    image: "Vital.png"}, 
+    {title: "Abiela's Journey",     year:"2017",        link:"https://www.youtube.com/watch?v=d7HEFKSRuX8",             linkname:"Youtube",     image: "abiela.png"}, 
+    {title: "City of Duelists",     year:"2017",        link:"https://yrgo-game-creator.itch.io/city-of-duelist",       linkname:"Itch.io",     image: "cod.png"}, 
+    {title: "Medival Archer",       year:"2018",        link:"https://yrgo-game-creator.itch.io/medieval-archer",       linkname:"Itch.io",     image: "ma.png"}, 
+    {title: "Volvo 360c",        year:"2017-2018",   link:"https://www.youtube.com/watch?v=H5KNPQT72FA&ab_channel=VolvoCars",    linkname:"Youtube",     image: "360c.png"}, 
 ]
 
 var selectedpic = 0;
