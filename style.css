@@ -152,6 +152,7 @@ body{
 
 .content-container h2{
     color:var(--headerone-color);
+
 }
 
 .work-inner-container, .work-inner-container-skills{
@@ -220,7 +221,12 @@ body{
         font-size: 34px;
     }
 
+    .content-container h2{
+        font-size: 48px;
+    }
+
     .work-inner-container h3{
+        font-size: 48px;
         line-height: 1.5em;
     }
 
@@ -231,11 +237,11 @@ body{
     .work-inner-container-skills h3 {
         font-size: 32px;
     }
-    .work-inner-container p, .work-inner-container-skills p {
+    .work-inner-container p {
         font-size: 32px;
     }
 
-    .work-inner-container span, .work-inner-container-skills span {
+    .work-inner-container span {
         font-size: 32px;
     }
 
