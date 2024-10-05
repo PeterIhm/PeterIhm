@@ -227,8 +227,19 @@ body{
     .work-inner-container p{
         line-height: 5em;
     }
+
+    .work-inner-container-skills h3 {
+        font-size: 32px;
+    }
+    .work-inner-container p, .work-inner-container-skills p {
+        font-size: 32px;
+    }
+
+    .work-inner-container span, .work-inner-container-skills span {
+        font-size: 32px;
+    }
+
     .work-inner-container-skills span{
-        line-height: 4em;
         font-size: 32px;
     }
 }
