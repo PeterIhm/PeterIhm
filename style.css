@@ -231,13 +231,12 @@ body{
     }
 
     .work-inner-container p{
-        line-height: 5em;
+        line-height: 2em;
+        font-size: 32px;
+
     }
 
     .work-inner-container-skills h3 {
-        font-size: 32px;
-    }
-    .work-inner-container p {
         font-size: 32px;
     }
 
