@@ -147,7 +147,6 @@ body{
 
 .content-container {
     height: 100%;
-    overflow-y: scroll;
 }
 
 .content-container h2{
