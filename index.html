@@ -21,11 +21,9 @@
 
             <div id="navbar">
                 <ul>
-                    <li onclick="ChangePage('work-experience')">Work Experience</li>
-                    <li onclick="ChangePage('education')">Education</li>
-                    <li onclick="ChangePage('internship')">Internship</li>
-                    <li onclick="ChangePage('skills')">Skills</li>
-                    <li onclick="ChangePage('languages')">Languages</li>
+                    <li onclick="ChangePage('work-experience', this)">Work Experience</li>
+                    <li onclick="ChangePage('education', this)">Education & Internship</li>
+                    <li onclick="ChangePage('skills', this)">Skills & Languages</li>
                 </ul>
             </div>
         </div>
@@ -35,92 +33,95 @@
             <div>
             </div>
             <div class="content-container">
-                <h2 id="work-experience">Work Experience</h2>
-                <div class="work-inner-container">
-                    <h3>Mindflower AB, Västerås — Software developer</h3>
-                    <p>Sep 2023 - now</p>
-                    <p>
-                        <span>Unity</span> 
-                        <span>C#</span>
-                        <span>Flutter Dart</span>
-                        <span>Ruby on Rails</span>
-                        <span>Lowcode</span>
-                    </p>
+                <div class="page-divider">
+                    <h2 id="work-experience">Work Experience</h2>
+                    <div class="work-inner-container">
+                        <h3>Mindflower AB, Västerås — Software developer</h3>
+                        <p>Sep 2023 - now</p>
+                        <p>
+                            <span>Unity</span> 
+                            <span>C#</span>
+                            <span>Flutter Dart</span>
+                            <span>Ruby on Rails</span>
+                            <span>Lowcode</span>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="work-inner-container">
+                        <h3>HEERO SPORS GmbH, Lippstadt — Software Developer</h3>
+                        <p>Mar 2022 - Jul 2023</p>
+                        <p>
+                            <span>Unity</span>
+                            <span>C#</span>
+                            <span>Java (Android)</span>
+                            <span>Flutter Dart</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>PHP</span><br><br>
+                            <span>Wordpress</span>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="work-inner-container">
+                        <h3>Instant Systems AB, Borås — Software Developer</h3>
+                        <p>Oct 2021 - Mar 2022</p>
+                        <p>
+                            <span>C# Razor</span> 
+                            <span>Visual basic</span>
+                        </p>
+                    </div>
                 </div>
-                <br>
-                <div class="work-inner-container">
-                    <h3>HEERO SPORS GmbH, Lippstadt — Software Developer</h3>
-                    <p>Mar 2022 - Jul 2023</p>
-                    <p>
-                        <span>Unity</span>
-                        <span>C#</span>
-                        <span>Java (Android)</span>
-                        <span>Flutter Dart</span>
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>PHP</span><br><br>
-                        <span>Wordpress</span>
-                    </p>
+                <div class="page-divider">
+                    <h2 id="education">Education</h2>
+                    <div class="work-inner-container">
+                        <h3>Yrgo Yrkeshögskola, Gothenburg — Java Ent. Developer</h3>
+                        <p>2019 Aug. - 2021 May.</p>
+                        <p>
+                            <span>Java</span>
+                            <span>Wilfly</span>
+                            <span>Apache TomEE</span>
+                        </p>
+                    </div><br>
+                    <div class="work-inner-container">
+                        <h3>Yrgo Yrkeshögskola, Gothenburg — Game Programmer</h3>
+                        <p>2017 Aug. - 2019 May.</p>
+                        <p>
+                            <span>Unity</span>
+                            <span>Unreal</span> 
+                            <span>C#</span>
+                            <span>C++</span>
+                        </p>
+                    </div><br>
+                    <div class="work-inner-container">
+                        <h3>LBS Ljud och BildSkola, Borås — Game Programmer
+                        </h3>
+                        <p>2014 Aug. - 2017 May.</p>
+                        <p>
+                            <span>Unity</span>
+                            <span>Unreal</span> 
+                            <span>C#</span>
+                            <span>C++</span>
+                            <span>Maya</span>
+                        </p>
+                    </div>
+                
+                    <h2 id="internship">Internship</h2>
+                    <div class="work-inner-container">
+                        <h3>Volvo Cars, Gothenburg</h3>
+                        <p>2018–2019 (6 Months)</p>
+                        <p>
+                            <span>Unity</span>
+                        </p>
+                    </div><br>
+                    <div class="work-inner-container">
+                        <h3>Informer Svenska AB, Gothenburg </h3>
+                        <p>2020–2020 (3 Months)</p>
+                        <p>
+                            <span>C#</span>
+                        </p>
+                    </div><br>
                 </div>
-                <br>
-                <div class="work-inner-container">
-                    <h3>Instant Systems AB, Borås — Software Developer</h3>
-                    <p>Oct 2021 - Mar 2022</p>
-                    <p>
-                        <span>C# Razor</span> 
-                        <span>Visual basic</span>
-                    </p>
-                </div>
-                <br> 
-                <h2 id="education">Education</h2>
-                <div class="work-inner-container">
-                    <h3>Yrgo Yrkeshögskola, Gothenburg — Java Ent. Developer</h3>
-                    <p>2019 Aug. - 2021 May.</p>
-                    <p>
-                        <span>Java</span>
-                        <span>Wilfly</span>
-                        <span>Apache TomEE</span>
-                    </p>
-                </div><br>
-                <div class="work-inner-container">
-                    <h3>Yrgo Yrkeshögskola, Gothenburg — Game Programmer</h3>
-                    <p>2017 Aug. - 2019 May.</p>
-                    <p>
-                        <span>Unity</span>
-                        <span>Unreal</span> 
-                        <span>C#</span>
-                        <span>C++</span>
-                    </p>
-                </div><br>
-                <div class="work-inner-container">
-                    <h3>LBS Ljud och BildSkola, Borås — Game Programmer
-                    </h3>
-                    <p>2014 Aug. - 2017 May.</p>
-                    <p>
-                        <span>Unity</span>
-                        <span>Unreal</span> 
-                        <span>C#</span>
-                        <span>C++</span>
-                        <span>Maya</span>
-                    </p>
-                </div><br>
-
-                <h2 id="internship">Internship</h2>
-                <div class="work-inner-container">
-                    <h3>Volvo Cars, Gothenburg</h3>
-                    <p>2018–2019 (6 Months)</p>
-                    <p>
-                        <span>Unity</span>
-                    </p>
-                </div><br>
-                <div class="work-inner-container">
-                    <h3>Informer Svenska AB, Gothenburg </h3>
-                    <p>2020–2020 (3 Months)</p>
-                    <p>
-                        <span>C#</span>
-                    </p>
-                </div><br>
-
+                <div class="page-divider">
                 <h2 id="skills">Skills</h2>
                 <div class="work-inner-container-skills">
                     <h3>Programming Languages</h3><br>
@@ -174,11 +175,11 @@
 </html>
 
 <script>
-    function ChangePage(sectionId) {
+    function ChangePage(sectionId, button) {
         console.log("Scrolling to section: " + sectionId);
-        
+    
         const section = document.getElementById(sectionId);
-        const offset = 200; // Use a 100px offset for the scroll position
+        const offset = 200; // Use a 200px offset for the scroll position
     
         // Get the section position and subtract the offset
         const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
@@ -190,47 +191,23 @@
         });
     }
     
-    function normalizeText(text) {
-        return text.replace(/\s+/g, '').toLowerCase();
+    let sections = Array.from(document.querySelectorAll('.page-divider, .content-container > div')); // Select sections
+    var positions = []
+
+    function logSectionPositions() {
+        sections.forEach((section, index) => {
+            const position = section.getBoundingClientRect().top + window.scrollY; // Get Y position relative to the viewport
+            positions.push(position);
+        });
     }
     
-    function observeSections() {
-        const sections = document.querySelectorAll("h2"); // Select all h2 headings as section titles
-        const navItems = document.querySelectorAll("#navbar ul li"); // Select all nav items
-    
-        const options = {
-            root: null, // viewport
-            rootMargin: "0px",
-            threshold: 0.5 // Trigger when 50% of the section is visible
-        };
-    
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const sectionId = entry.target.id; // Get the ID of the intersecting section
-                const activeNavItem = Array.from(navItems).find(item =>
-                    normalizeText(item.textContent) === normalizeText(sectionId)
-                );
-    
-                if (entry.isIntersecting) {
-                    // Add active class to the currently visible section's nav item
-                    navItems.forEach(item => item.classList.remove('active'));
-                    if (activeNavItem) {
-                        activeNavItem.classList.add('active');
-                    }
-                } else {
-                    // Remove active class when section is not in view
-                    if (activeNavItem) {
-                        activeNavItem.classList.remove('active');
-                    }
-                }
-            });
-        }, options);
-    
-        // Observe each section (h2)
-        sections.forEach(section => observer.observe(section));
-    }
-    
-    // Update observer on document ready
-    document.addEventListener('DOMContentLoaded', observeSections);
+    document.addEventListener('DOMContentLoaded', logSectionPositions);
+
+    window.addEventListener('scroll', () => {
+
+        document.querySelectorAll('#navbar ul li').forEach(x => x.classList.remove("active"));
+
+        document.querySelectorAll('#navbar ul li')[positions.findIndex(x => x > window.scrollY)].classList.add("active")
+    });
     </script>
     

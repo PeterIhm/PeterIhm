@@ -183,6 +183,10 @@ body{
     line-height: 2.6em;
 }
 
+.page-divider{
+     /* height:100vh; */
+     margin-top: 5em;
+}
 
 @media only screen and (max-width: 1000px) {
     #navbar{
@@ -246,4 +250,8 @@ body{
     .work-inner-container-skills span{
         font-size: 32px;
     }
+
+    .page-divider{
+        height:0;
+   }
 }
