@@ -234,7 +234,7 @@ body{
     }
 
     .work-inner-container p{
-        line-height: 2em;
+        line-height: 2.5em;
         font-size: 32px;
 
     }
@@ -252,6 +252,6 @@ body{
     }
 
     .page-divider{
-        height:0;
+        height:auto;
    }
 }
