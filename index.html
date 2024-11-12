@@ -21,7 +21,7 @@
 
             <div id="navbar">
                 <ul>
-                    <li onclick="ChangePage('work-experience', this)">Work Experience</li>
+                    <li class="active" onclick="ChangePage('work-experience', this)">Work Experience</li>
                     <li onclick="ChangePage('education', this)">Education & Internship</li>
                     <li onclick="ChangePage('skills', this)">Skills & Languages</li>
                 </ul>
@@ -178,30 +178,28 @@
 <script>
     function ChangePage(sectionId, button) {
         console.log("Scrolling to section: " + sectionId);
-    
+
         const section = document.getElementById(sectionId);
-        const offset = 200; // Use a 200px offset for the scroll position
-    
-        // Get the section position and subtract the offset
+        const offset = 200; 
+
         const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
-    
-        // Scroll to the calculated position
+
         window.scrollTo({
             top: sectionPosition,
             behavior: 'smooth'
         });
     }
-    
-    let sections = Array.from(document.querySelectorAll('.page-divider, .content-container > div')); // Select sections
+
+    let sections = Array.from(document.querySelectorAll('.page-divider, .content-container > div')); 
     var positions = []
 
     function logSectionPositions() {
         sections.forEach((section, index) => {
-            const position = section.getBoundingClientRect().top + window.scrollY; // Get Y position relative to the viewport
+            const position = section.getBoundingClientRect().top + window.scrollY;
             positions.push(position);
         });
     }
-    
+
     document.addEventListener('DOMContentLoaded', logSectionPositions);
 
     window.addEventListener('scroll', () => {
@@ -210,5 +208,8 @@
 
         document.querySelectorAll('#navbar ul li')[positions.findIndex(x => x > window.scrollY)].classList.add("active")
     });
-    </script>
+</script>
+
+
+
     

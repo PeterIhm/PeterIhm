@@ -5,158 +5,110 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap">
         <style>
-            img{
-                width: auto;
-            }
-
-            .games{
-                width: min-content;
-                margin: auto;
-            }
-
-            .games h3 a{
-                font-weight: 100;
-            }
-
-            .games a{
-                color: var(--span-color);
-                background-color: transparent;
-                padding: 0.0em;
-            }
-
-            a, a i{
-                color: var(--span-color);
-                background-color: transparent;
-                padding: 0.0em;
-            }
-
-            .games a:hover{
-                color: var(--span-color);
-                background-color: transparent;
-                padding: 0.0em;
-                cursor: pointer;
-            }
-
-            .content-container{
-                display: flex; width: 100%; gap:1em;justify-content: space-evenly;
-                height: fit-content;
-            }
-
-            
-
-            .games img{
-                }
-
+            img { width: inherit; }
+            .container-seperator{width: 75%; float: right;}
+            .games { width: 100%; margin: auto; }
+            .games h3 a { font-weight: 100; }
+            ul { color: var(--text-color); }
+            .games a, a, a i { color: var(--span-color); background-color: transparent; padding: 0; }
+            .games a:hover { color: var(--span-color); background-color: transparent; padding: 0; cursor: pointer; }
+            .content-container { display: flex; width: 100%; gap: 1em; justify-content: space-evenly; height: fit-content; }
             @media only screen and (max-width: 1000px) {
-                .content-container{
-                    display: block; 
-                    width: 100%; 
-                    gap:1em;
-                    height: fit-content;
-                }
-
-                .games{
-                    width: 100%;
-                }
-                .games img{
-                    width: 100%;
-                    height: auto;
-                }
+                .container-seperator{width: 100%; float: right;}
+                .content-container { display: block; width: 100%; gap: 1em; height: fit-content; }
+                .games { width: 100%; }
+                .games img { width: 100%; height: auto; }
             }
         </style>
     </head>
-
     <body>
-        <div class="work-inner-container">
-            <h3>Yrgo Game Projects</h3>
-
-            <div class="content-container">
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/c63m4rJJsKE/hqdefault.jpg" title="YouTube Video" alt="YouTube Video" />
-                    <h3>Agent Gone Fishing <a href="https://yrgo-game-creator.itch.io/agent-gone-fishing" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
-                    <p>A game project created by a group of friends, where I contributed by designing models. This game was developed alongside other projects. <a href="https://yrgo-game-creator.itch.io/medieval-archer" target="_blank">Medival Archer</a></p>
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/d7HEFKSRuX8/hqdefault.jpg" title="YouTube Video" alt="YouTube Video" />
-                    <h3>Abielas Journey <a href="https://www.youtube.com/watch?v=d7HEFKSRuX8" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
-                    <p>Abiela's Journey is inspired by the game Journey, offering an emotional adventure through vast desert landscapes. It focuses on exploration, puzzle-solving, and connecting with other players in a shared, immersive world.</p>
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/xB9J2xMFPIo/hqdefault.jpg" title="YouTube Video" alt="YouTube Video" />
-                    <h3>Medieval Archer <a href="https://yrgo-game-creator.itch.io/medieval-archer" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
-                    <p>Medieval Archer is a wave shooter game set in a medieval world, built with the Unity engine. Developed in 2018, it immerses players in defending against waves of enemies with archery skills.</p>
+        <div>
+            <div class="sideinfo">    
+                <div id="navbar">
+                    <ul>
+                        <li class="active" onclick="ChangePage('yrgo', this)">YRGO Game Projects</li>
+                        <li onclick="ChangePage('internship', this)">Internship</li>
+                        <li onclick="ChangePage('jobs', this)">Jobs</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="work-inner-container">
-            <h3>Internship</h3>
-            <div class="games">
-                <div class="content-container">
-                    <object class="pdf" data="portfoliostuff/volvo360c.pdf" width="800" height="500"></object>
-                    <img src="portfoliostuff/AgXd6K9Q.gif">
+            <div class="container-seperator">
+                <div class="work-inner-container yrgo">
+                    <h3>Yrgo Game Projects</h3>
+                    <div class="content-container">
+                        <div class="games">
+                            <img src="http://img.youtube.com/vi/c63m4rJJsKE/hqdefault.jpg" title="YouTube Video" alt="YouTube Video">
+                            <h3>Agent Gone Fishing <a href="https://yrgo-game-creator.itch.io/agent-gone-fishing" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                            <p>A game project created by a group of friends, where I contributed by designing models. This game was developed alongside other projects. <a href="https://yrgo-game-creator.itch.io/medieval-archer" target="_blank">Medieval Archer</a></p>
+                        </div>
+                        <div class="games">
+                            <img src="http://img.youtube.com/vi/d7HEFKSRuX8/hqdefault.jpg" title="YouTube Video" alt="YouTube Video">
+                            <h3>Abielas Journey <a href="https://www.youtube.com/watch?v=d7HEFKSRuX8" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                            <p>Abiela's Journey is inspired by the game Journey, offering an emotional adventure through vast desert landscapes. It focuses on exploration, puzzle-solving, and connecting with other players in a shared, immersive world.</p>
+                        </div>
+                        <div class="games">
+                            <img src="http://img.youtube.com/vi/xB9J2xMFPIo/hqdefault.jpg" title="YouTube Video" alt="YouTube Video">
+                            <h3>Medieval Archer <a href="https://yrgo-game-creator.itch.io/medieval-archer" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></h3>
+                            <p>Medieval Archer is a wave shooter game set in a medieval world, built with the Unity engine. Developed in 2018, it immerses players in defending against waves of enemies with archery skills.</p>
+                        </div>
+                    </div>
                 </div>
-                <h3>Volvo Cars</h3>
-                <p>During my internship at Volvo, I worked on developing a virtual reality experience for the Volvo 360C, an autonomous vehicle concept. <br>
-                    The project involved using a fully equipped VR rig with headsets to simulate the experience of riding in the 360C, <br>
-                    focusing on how passengers would feel in a self-driving car environment. Our goal was to make the experience as realistic as possible, <br>
-                    capturing the sense of movement and comfort that the 360C aims to provide, while also exploring user interactions within an autonomous ride </p>
+                <br>
+                <div class="work-inner-container internship">
+                    <h3>Internship</h3>
+                    <div class="games">
+                        <div class="content-container">
+                            <object class="pdf" data="portfoliostuff/volvo360c.pdf" width="800" height="500"></object>
+                            <img src="portfoliostuff/AgXd6K9Q.gif">
+                        </div>
+                        <h3>Volvo Cars</h3>
+                        <p>During my internship at Volvo, I worked on developing a virtual reality experience for the Volvo 360C, an autonomous vehicle concept. The project involved using a fully equipped VR rig with headsets to simulate the experience of riding in the 360C, focusing on how passengers would feel in a self-driving car environment. Our goal was to make the experience as realistic as possible, capturing the sense of movement and comfort that the 360C aims to provide, while also exploring user interactions within an autonomous ride.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="work-inner-container jobs">
+                    <h3>HEERO Sports GmbH</h3>
+                    <div style="display: flex; width: 100%; justify-content: space-evenly; overflow-x: scroll;">
+                        <div class="games"><img src="http://img.youtube.com/vi/KfLkL0hu7Vo/hqdefault.jpg"></div>
+                        <div class="games"><img src="http://img.youtube.com/vi/FXrJG8lCl08/hqdefault.jpg"></div>
+                        <div class="games"><img src="http://img.youtube.com/vi/1aqCUCayuPA/hqdefault.jpg"></div>
+                        <div class="games"><img src="http://img.youtube.com/vi/iFCoz9ri6YY/hqdefault.jpg"></div>
+                        <div class="games"><img src="http://img.youtube.com/vi/CXHOkw4Gp0U/hqdefault.jpg"></div>
+                        <div class="games"><img src="http://img.youtube.com/vi/fbqUtT3uOjU/hqdefault.jpg"></div>
+                        <div class="games"><img src="http://img.youtube.com/vi/xDsPj42mpjI/hqdefault.jpg"></div>
+                    </div>
+                    <p>My job as a Software Developer at HEERO Sports was diverse and multifaceted, involving a range of tasks from game development to API creation, mobile app work, and Dashboard. <a href="https://shop.airis.fit/pages/airis-software-packages"><i class="fa-solid fa-arrow-up-right-from-square"></i> Airis Software Package</a></p>
+                    <ul>
+                        <li>Updated and stabilized 110 games, ensuring a stable version across the board (using Unity).</li>
+                        <li>Developed APIs for the AIRIS platform and the in-progress dashboard (with C#).</li>
+                        <li>Worked on the development of a mobile app for AIRIS using Flutter.</li>
+                        <li>Utilized HTML, CSS, PHP, and JavaScript for front-end and back-end development in our Dashboard project.</li>
+                    </ul>
+                </div>
+                <br>
+                <div class="work-inner-container">
+                    <h3>Mindflower AB</h3>
+                    <div class="content-container">
+                        <img src="https://scontent.fbma3-1.fna.fbcdn.net/v/t39.30808-6/277747353_362425905895166_8269183396532669992_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=VIn7jCvCRbcQ7kNvgFcNgHo&_nc_zt=23&_nc_ht=scontent.fbma3-1.fna&_nc_gid=A5OYSlj6ytlgLjTPIge68AJ&oh=00_AYBvOwvXhe3TydWD0sdb5k2QnYI7OcE-rYUQMgUqEvu0CQ&oe=67312212">                        <p>At Mindflower, my main focus was on the development of <strong>Prindit</strong>, a platform designed to enhance employee engagement and happiness by collecting responses to various questions. Through Prindit, companies can gain insights into improving their workplace environment. I primarily worked on developing features within Prindit's dashboard, but I also had the opportunity to create customer cases, which can be viewed <a href="https://www.prindit.com/se/customerCases" target="_blank">here</a>. Additionally, I developed a Flutter app to improve the user experience for our customers. <a href="https://play.google.com/store/apps/details?id=com.mindflower.prindit" target="_blank">app store</a></p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <br>
-        <div class="work-inner-container">
-            <h3>HEERO Sports GmbH</h3>
-            <div style="display: flex; width: 100%; justify-content: space-evenly; overflow-x: scroll;">
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/KfLkL0hu7Vo/hqdefault.jpg">
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/FXrJG8lCl08/hqdefault.jpg">
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/1aqCUCayuPA/hqdefault.jpg">
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/iFCoz9ri6YY/hqdefault.jpg">
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/CXHOkw4Gp0U/hqdefault.jpg">
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/fbqUtT3uOjU/hqdefault.jpg">
-                </div>
-                <div class="games">
-                    <img src="http://img.youtube.com/vi/xDsPj42mpjI/hqdefault.jpg"> 
-                </div>
-            </div>
-            <p> 
-                My job as a Software Developer at HEERO Sports was diverse and multifaceted, <br>
-                involving a range of tasks from game development to API creation, mobile app work and Dashboard. Here's a list of tasks. <br>
-                <a href="https://shop.airis.fit/pages/airis-software-packages"><i class="fa-solid fa-arrow-up-right-from-square"></i> Airis Software Package</a>
-            </p>
-            <ul style="margin: 0;padding: 0;">
-                <p>- Updated and stabilized 110 games, ensuring a stable version across the board (using Unity).</p>
-                <p>- Developed APIs for the AIRIS platform and the in-progress dashboard (with C#).</p>
-                <p>- Worked on the development of a mobile app for AIRIS using Flutter.</p>
-                <p>- Utilized HTML, CSS, PHP and JavaScript for front-end and back-end development in our Dashboard project .</p>
-            </ul>
-        </div>
-
-        <br>
-        <div class="work-inner-container">
-            <h3>Mindflower AB</h3>
-            <div  class="content-container">
-                <img src="https://scontent.fbma3-1.fna.fbcdn.net/v/t39.30808-6/277747353_362425905895166_8269183396532669992_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=VIn7jCvCRbcQ7kNvgFcNgHo&_nc_zt=23&_nc_ht=scontent.fbma3-1.fna&_nc_gid=A5OYSlj6ytlgLjTPIge68AJ&oh=00_AYBvOwvXhe3TydWD0sdb5k2QnYI7OcE-rYUQMgUqEvu0CQ&oe=67312212">
-                <p>
-                    At Mindflower, my main focus was on the development of <strong>Prindit</strong>, 
-                    a platform designed to enhance employee engagement and happiness by collecting responses to various questions. 
-                    Through <strong>Prindit</strong>, companies can gain insights into improving their workplace environment. 
-                    I primarily worked on developing features within <strong>Prindit's</strong> dashboard, 
-                    but I also had the opportunity to create customer cases, which can be viewed 
-                    <a href="https://www.prindit.com/se/customerCases" target="_blank">here</a>.
-                    <br>Additionally, I developed a Flutter app to improve the user experience for our customers. <a href="https://play.google.com/store/apps/details?id=com.mindflower.prindit" target="_blank">app store</a></p>
-                </p>
-        </div>
     </body>    
 </html>
+<script>
+    function ChangePage(sectionId, button) {
+        const section = document.querySelector(`.${sectionId}`);
+        const offset = 50;
+        const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
+    }
+    let positions = [];
+    document.addEventListener('DOMContentLoaded', () => {
+        positions = Array.from(document.querySelectorAll('.work-inner-container')).map(section => section.getBoundingClientRect().top + window.scrollY);
+    });
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('#navbar ul li').forEach(x => x.classList.remove("active"));
+        const index = positions.findIndex(x => x > window.scrollY);
+        if (index >= 0) document.querySelectorAll('#navbar ul li')[index].classList.add("active");
+    });
+</script>
