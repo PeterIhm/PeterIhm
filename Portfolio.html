@@ -89,7 +89,8 @@
                 <div class="work-inner-container">
                     <h3>Mindflower AB</h3>
                     <div class="content-container">
-                        <img src="https://scontent.fbma3-1.fna.fbcdn.net/v/t39.30808-6/277747353_362425905895166_8269183396532669992_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=VIn7jCvCRbcQ7kNvgFcNgHo&_nc_zt=23&_nc_ht=scontent.fbma3-1.fna&_nc_gid=A5OYSlj6ytlgLjTPIge68AJ&oh=00_AYBvOwvXhe3TydWD0sdb5k2QnYI7OcE-rYUQMgUqEvu0CQ&oe=67312212">                        <p>At Mindflower, my main focus was on the development of <strong>Prindit</strong>, a platform designed to enhance employee engagement and happiness by collecting responses to various questions. Through Prindit, companies can gain insights into improving their workplace environment. I primarily worked on developing features within Prindit's dashboard, but I also had the opportunity to create customer cases, which can be viewed <a href="https://www.prindit.com/se/customerCases" target="_blank">here</a>. Additionally, I developed a Flutter app to improve the user experience for our customers. <a href="https://play.google.com/store/apps/details?id=com.mindflower.prindit" target="_blank">app store</a></p>
+                        <img src="https://thehub-io.imgix.net/files/s3/20220310214309-dbad92c3636086c5a38d6b9c7ed4daca.jpg?w=1600&h=900" style="max-width: 600px;">
+                        <p>At Mindflower, my main focus was on the development of <strong>Prindit</strong>, a platform designed to enhance employee engagement and happiness by collecting responses to various questions. Through Prindit, companies can gain insights into improving their workplace environment. I primarily worked on developing features within Prindit's dashboard, but I also had the opportunity to create customer cases, which can be viewed <a href="https://www.prindit.com/se/customerCases" target="_blank">here</a>. Additionally, I developed a Flutter app to improve the user experience for our customers. <a href="https://play.google.com/store/apps/details?id=com.mindflower.prindit" target="_blank">app store</a></p>
                     </div>
                 </div>
             </div>
@@ -106,9 +107,11 @@
     document.addEventListener('DOMContentLoaded', () => {
         positions = Array.from(document.querySelectorAll('.work-inner-container')).map(section => section.getBoundingClientRect().top + window.scrollY);
     });
+    
     window.addEventListener('scroll', () => {
         document.querySelectorAll('#navbar ul li').forEach(x => x.classList.remove("active"));
         const index = positions.findIndex(x => x > window.scrollY);
-        if (index >= 0) document.querySelectorAll('#navbar ul li')[index].classList.add("active");
+        if (index >= 0 && document.querySelectorAll('#navbar ul li')[index] != null) 
+        document.querySelectorAll('#navbar ul li')[index].classList.add("active");
     });
 </script>
