@@ -1,0 +1,15 @@
+img { width: 200px; height: fit-content; margin-top: 1.5em;}
+.projects { display: flex; gap:1em; margin-bottom: 1em; }
+.container-seperator { width: 100%; float: right; }
+.games { width: 100%; margin: auto; }
+.games h3 a { font-weight: 100; }
+.games a, a, a i { color: var(--span-color); background-color: transparent; padding: 0; }
+.games a:hover { color: var(--span-color); background-color: transparent; padding: 0; cursor: pointer; }
+.content-container { display: flex; width: 100%; gap: 1em; justify-content: space-evenly; height: fit-content; }
+.work-inner-container span, .work-inner-container-skills span { font-size: 18px; color: var(--span-color); background-color: transparent; padding: 0em; border-radius: 0px; }
+@media only screen and (max-width: 1000px) {
+    .container-seperator{ width: 75%; }
+    .content-container { display: block; width: 100%; gap: 1em; height: fit-content; }
+    .games { width: 100%; }
+    .games img { width: 100%; height: auto; }
+}

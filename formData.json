@@ -1,0 +1,65 @@
+[
+    {
+      "id": "agentgonefishing",
+      "img": "http://img.youtube.com/vi/c63m4rJJsKE/hqdefault.jpg",
+      "name": "Agent Gone Fishing",
+      "description": "A game project created by a group of friends, where I contributed by designing models. This game was developed alongside other projects using <span>Unity</span>.",
+      "link": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+      "extraLink": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+      "extraLinkText": " "
+    },
+    {
+        "id": "abielasjourney",
+        "img": "http://img.youtube.com/vi/d7HEFKSRuX8/hqdefault.jpg",
+        "name": "Abielas Journey",
+        "description": "Abiela's Journey is inspired by the game Journey, offering an emotional adventure through vast desert landscapes. It focuses on exploration, puzzle-solving, and connecting with other players in a shared, immersive world built with <span>Unity</span>.",
+        "link": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLink": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLinkText": " "
+    },
+    {
+        "id": "medievalarcher",
+        "img": "http://img.youtube.com/vi/xB9J2xMFPIo/hqdefault.jpg",
+        "name": "Medieval Archer",
+        "description": "Medieval Archer is a wave shooter game set in a medieval world, built with the <span>Unity</span> engine. Developed in 2018, it immerses players in defending against waves of enemies with archery skills.",
+        "link": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLink": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLinkText": " "
+    },
+    {
+        "id": "volvocars",
+        "img": "https://mobilelinks.se/wp-content/uploads/2018/10/41118215_2324251397592185_8943205517635878912_o-1024x768.jpg",
+        "name": "Volvo Cars",
+        "description": "During my internship at Volvo, I worked on developing a virtual reality experience for the Volvo 360C, an autonomous vehicle concept. The project involved using a fully equipped VR rig with headsets to simulate the experience of riding in the 360C, focusing on how passengers would feel in a self-driving car environment. Our goal was to make the experience as realistic as possible, capturing the sense of movement and comfort that the 360C aims to provide, while also exploring user interactions within an autonomous ride. Built using <span>Unity</span>.",
+        "link": "portfoliostuff/volvo360c.pdf",
+        "extraLink": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLinkText": " "
+    },
+    {
+        "id": "instantsystems",
+        "img": "https://www.nmi.com/wp-content/uploads/2021/11/IS-1.webp",
+        "name": "Instant Systems AB",
+        "description":"Worked on developing self-service machines, collaborating closely with a graphic designer to improve UI for <span>RAZOR</span>. Focused on enhancing the frontend of the machines to make them more user-friendly and efficient.",
+        "link": "https://www.instantsystems.se/",
+        "extraLink": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLinkText": " "
+    },
+    {
+        "id": "heerosports",
+        "img": "http://img.youtube.com/vi/KfLkL0hu7Vo/hqdefault.jpg",
+        "name": "HEERO Sports GmbH",
+        "description":"My job as a Software Developer at HEERO Sports was diverse and multifaceted, involving a range of tasks from game development to <span>API</span creation, mobile app work, and Dashboard. <br> - Updated and stabilized 110 games, ensuring a stable version across the board using <span>Unity</span>.<br> - Developed <span>APIs</span> for the AIRIS platform and the in-progress dashboard using <span>C#</span>.<br> - Worked on the development of a mobile app for AIRIS using <span>Flutter</span>.<br> - Designed and implemented the database structure, including <span>ERD</span>, and created the necessary <span>API</span> endpoints for the platform.<br> - Utilized <span>HTML</span>, <span>CSS</span>, <span>PHP</span>, and <span>JavaScript</span> for front-end and back-end development in our Dashboard project.",
+        "link": "https://shop.airis.fit/",
+        "extraLink": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLinkText": " "
+    },
+    {
+        "id": "mindflower",
+        "img": "https://thehub-io.imgix.net/files/s3/20220310214309-dbad92c3636086c5a38d6b9c7ed4daca.jpg?w=1600&h=900",
+        "name": "Mindflower AB",
+        "description":"At Mindflower, my main focus was on the development of <strong>Prindit</strong>, a platform designed to enhance employee engagement and happiness by collecting responses to various questions. Through Prindit, companies can gain insights into improving their workplace environment. I primarily worked on developing features within Prindit's dashboard, but I also had the opportunity to create customer cases. Additionally, I developed a Flutter app to improve the user experience for our customers using <span>Flutter</span>.",
+        "link": "https://shop.airis.fit/",
+        "extraLink": "https://yrgo-game-creator.itch.io/agent-gone-fishing",
+        "extraLinkText": " "
+    }
+]
