@@ -44,7 +44,7 @@
 body{
     background-color: var(--background-color);
     font-family: 'Open Sans', sans-serif;
-    
+
 }
 
 .main-container{
@@ -159,6 +159,17 @@ body{
 
 .content-container {
     height: 100%;
+    overflow: hidden;
+    animation: fadeOut 2s forwards; /* 2 seconds duration */
+}
+
+@keyframes fadeOut {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
 }
 
 .content-container h2{
