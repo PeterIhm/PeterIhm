@@ -54,6 +54,15 @@
         "extraLinkText": " "
     },
     {
+        "id": "corporefranchise",
+        "img": "corpore.png",
+        "name": "Corpore-franchise.de",
+        "description":"During my time at HEERO SPORTS, I created a webpage for Corpore Franchise using WordPress. I developed custom scripts to enhance functionality, ensuring a smooth user experience. The webpage was built with <span>HTML</span>, <span>CSS</span>, and <span>JavaScript</span>.",
+        "link": "https://corpore-franchise.de/",
+        "extraLink": "https://corpore-franchise.de/",
+        "extraLinkText": " "
+    },
+    {
         "id": "mindflower",
         "img": "https://thehub-io.imgix.net/files/s3/20220310214309-dbad92c3636086c5a38d6b9c7ed4daca.jpg?w=1600&h=900",
         "name": "Mindflower AB",
