@@ -2,12 +2,20 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="styleport.css">
+        <link rel="stylesheet" href="styleThemeToggle.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap">
         <script src="portfolioscript.js"></script>
     </head>
     <body>
+        <div id="themechanger">
+            <label class="switch">
+                <input id="themecheck" type="checkbox" onclick="toggleTheme(this)" >
+                <span class="slider"></span>
+              </label>
+              <h3>Dark Theme</h3>
+        </div>
         <div class="sideinfo">
             <div id="page-info">
                 <div class="inner-page">

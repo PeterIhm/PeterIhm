@@ -30,3 +30,54 @@ window.addEventListener('scroll', () => {
 
     document.querySelectorAll('#navbar ul li')[positions.findIndex(x => x > window.scrollY)].classList.add("active")
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    initializeTheme();
+});
+
+function initializeTheme() {
+    const themeCheck = document.getElementById("themecheck");
+    const isDarkTheme = getCookie("darktheme") != null ? getCookie("darktheme") === "true" : null;
+
+
+    console.log(isDarkTheme)
+    if (isDarkTheme) {
+        document.body.classList.add("dark-theme");
+        themeCheck.checked = true; 
+    } 
+    else {
+        document.body.classList.remove("dark-theme");
+        themeCheck.checked = false;
+    }
+
+    if(isDarkTheme == null){
+        setCookie("darktheme", "true", 30);
+    }
+}
+
+function toggleTheme(button) {
+    if (button.checked) {
+        document.body.classList.add("dark-theme");
+        setCookie("darktheme", "true", 30);
+    } else {
+        document.body.classList.remove("dark-theme");
+        setCookie("darktheme", "false", 30);
+    }
+}
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+        cookie = cookie.trim();
+        if (cookie.startsWith(`${name}=`)) {
+            return cookie.substring(name.length + 1);
+        }
+    }
+    return null;
+}

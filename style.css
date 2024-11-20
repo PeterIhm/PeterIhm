@@ -1,4 +1,16 @@
 :root {
+    --background-color: #eeedf3;
+    --backgroundtwo-color: #ffff;
+    --backgroundtwo-color-hover: #fafafa;
+    --headerone-color: #1f1f1f;
+    --headertwo-color: #333333;
+    --span-color: #0078d7;
+    --span-background-color: #0078d72b;
+    --span-background-color-hover: #0078d750;
+    --text-color: #333333;
+}
+
+.dark-theme {
     --background-color: rgb(10, 27, 47);
     --backgroundtwo-color-hover: rgb(16, 37, 61);
     --backgroundtwo-color: rgb(12, 31, 53);
@@ -32,6 +44,7 @@
 body{
     background-color: var(--background-color);
     font-family: 'Open Sans', sans-serif;
+    
 }
 
 .main-container{
@@ -157,6 +170,7 @@ body{
     background-color: var(--backgroundtwo-color);
     padding: 1em 2em;
     border-radius: 5px;
+    box-shadow: 1px 4px 4px 1px #0000000f;
 }
 
 .work-inner-container h3, .work-inner-container-skills h3{
