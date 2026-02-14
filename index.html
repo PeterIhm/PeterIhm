@@ -503,37 +503,97 @@ Compatible with most modern browsers`
                 }
 
                 showHelp() {
+                    // Type the ASCII art border first
                     this.addOutput(`<div class="output">
-                        <div class="ascii-art">
     ╔═══════════════════════════════════════════════════════════════════════════╗
     ║                           AVAILABLE COMMANDS                              ║
     ╚═══════════════════════════════════════════════════════════════════════════╝
-                        </div>
-                        <p><span class="green">Navigation:</span></p>
-                        <p>  ls          - List directory contents</p>
-                        <p>  ls -la      - List with detailed information</p>
-                        <p>  cd [dir]    - Change directory</p>
-                        <p>  cd ..       - Go back one directory</p>
-                        <p>  cd /        - Go to root directory</p>
-                        <p>  pwd         - Show current directory path</p>
-                        <br>
-                        <p><span class="blue">File Operations:</span></p>
-                        <p>  cat [file]  - Display file contents</p>
-                        <p>  view [file] - Alternative to cat</p>
-                        <br>
-                        <p><span class="yellow">System:</span></p>
-                        <p>  whoami      - Display user information</p>
-                        <p>  clear       - Clear terminal screen</p>
-                        <p>  history     - Show command history</p>
-                        <p>  help        - Show this help message</p>
-                        <br>
-                        <p><span class="purple">Special:</span></p>
-                        <p>  ./skills.sh - Run skills assessment</p>
-                        <p>  voice on/off - Enable/disable electronic voice reader</p>
-                        <p>  voice test   - Test voice functionality</p>
-                        <p>  voice read   - Read current display content</p>
-                        <p>  exit        - Exit terminal</p>
                     </div>`);
+                    
+                    // Then type each section with delays
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output"><span class="green">Navigation:</span></div>`);
+                    }, 500);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  ls          - List directory contents</div>`);
+                    }, 800);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  ls -la      - List with detailed information</div>`);
+                    }, 1100);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  cd [dir]    - Change directory</div>`);
+                    }, 1400);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  cd ..       - Go back one directory</div>`);
+                    }, 1700);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  cd /        - Go to root directory</div>`);
+                    }, 2000);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  pwd         - Show current directory path</div>`);
+                    }, 2300);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output"><span class="blue">File Operations:</span></div>`);
+                    }, 2800);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  cat [file]  - Display file contents</div>`);
+                    }, 3100);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  view [file] - Alternative to cat</div>`);
+                    }, 3400);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output"><span class="yellow">System:</span></div>`);
+                    }, 3900);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  whoami      - Display user information</div>`);
+                    }, 4200);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  clear       - Clear terminal screen</div>`);
+                    }, 4500);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  history     - Show command history</div>`);
+                    }, 4800);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  help        - Show this help message</div>`);
+                    }, 5100);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output"><span class="purple">Special:</span></div>`);
+                    }, 5600);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  ./skills.sh - Run skills assessment</div>`);
+                    }, 5900);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  voice on/off - Enable/disable electronic voice reader</div>`);
+                    }, 6200);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  voice test   - Test voice functionality</div>`);
+                    }, 6500);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  voice read   - Read current display content</div>`);
+                    }, 6800);
+                    
+                    setTimeout(() => {
+                        this.addOutput(`<div class="output">  exit        - Exit terminal</div>`);
+                    }, 7100);
                 }
 
                 listDirectory(args) {
@@ -1137,5 +1197,20 @@ Compatible with most modern browsers`;
                 }, 500);
             });
         </script>
+        
+        <!-- Bottom Right Logo -->
+        <div class="bottom-logo">
+            <pre class="logo-ascii">
+╭────────────────╮
+│  ██████╗ ██╗   │
+│  ██╔══██╗██║   │
+│  ██████╔╝██║   │
+│  ██╔═══╝ ██║   │
+│  ██║     ██║   │
+│  ╚═╝     ╚═╝   │
+╰────────────────╯
+            </pre>
+            <div class="logo-text">peter ihm portfolio</div>
+        </div>
     </body>
 </html>
