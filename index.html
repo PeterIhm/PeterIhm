@@ -2,56 +2,1140 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Peter Ihm - Web Developer</title>
+        <title>Peter Ihm - Interactive Terminal</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="styleThemeToggle.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <header>
-            <nav>
-                <span class="logo">Peter Ihm</span>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="cv.html">Experience</a></li>
-                    <li><a href="#" class="contact-btn" onclick="alert('Contact me at: peter.ihm98@gmail.com')">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section class="hero">
-                <h1>Hello, I’m <br><span class="highlight">A Developer</span></h1>
-                <p>I am a developer with a passion for creating interactive and user-friendly solutions.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn outline" onclick="alert('Contact me at: peter.ihm98@gmail.com')">Contact Me</a>
-                </div>
-            </section>
-            <section class="about">
-                <h2>About Me</h2>
-                <p>
-                    Hi there, I'm Peter Ihm, a passionate developer from Strömsfors, Sweden. I enjoy building interactive, user-friendly solutions and love exploring new technologies. Whether it's web, mobile, or plugin development, I'm always eager to take on new challenges and create meaningful digital experiences.
-                </p>
-            </section>
-            <section class="work">
-                <h2>My Work</h2>
-                <div class="work-grid">
-                    <div class="work-card">
-                        <h3>Obsidian Plugin</h3>
-                        <p>Plugin to sync Kanban with others, with the use of a js server</p>
-                        <a href="https://github.com/PeterIhm/ObisidianPlugin" class="btn outline" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <div class="terminal-body" id="terminal">
+                <div class="boot-message">
+                    <div class="ascii-art">
+    ╔═══════════════════════════════════════════════════════════════════════════╗
+    ║                     PETER IHM PORTFOLIO SYSTEM v2.6                      ║
+    ║                        Welcome to Interactive Mode                       ║
+    ╚═══════════════════════════════════════════════════════════════════════════╝
                     </div>
+                    <p>System initialized successfully.</p>
+                    <p>Type <span class="green">'help'</span> for available commands.</p>
+                    <br>
                 </div>
-                <br>
-                <div class="work-grid">
-                    <div class="work-card">
-                        <h3>Electron js</h3>
-                        <p>Sample project using Electron.js for building cross-platform desktop applications.</p>
-                        <a href="https://github.com/PeterIhm/electron-template-desktop-app" class="btn outline" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                    </div>
+                
+                <div class="input-line">
+                    <span class="prompt" id="current-prompt">></span>
+                    <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false">
                 </div>
-            </section>
-        </main>
+        <script>
+            // Terminal System
+            class Terminal {
+                constructor() {
+                    this.currentDirectory = '/home/peter';
+                    this.commandHistory = [];
+                    this.historyIndex = -1;
+                    this.fileSystem = this.initFileSystem();
+                    this.voiceEnabled = false;
+                    this.speechSynth = window.speechSynthesis;
+                    this.selectedVoice = null; // User's chosen voice
+                    this.voiceSettings = {
+                        rate: .8,
+                        pitch: 0.01,
+                        volume: 0.2
+                    };
+                    
+                    // Initialize audio system for terminal sounds
+                    this.audioContext = null;
+                    this.soundEnabled = true;
+                    this.backgroundAudio = null;
+                    this.beep1Audio = null;
+                    this.beep2Audio = null;
+                    this.initAudio();
+                    this.init();
+                }
+
+                initFileSystem() {
+                    return {
+                        '/': {
+                            type: 'directory',
+                            contents: {
+                                'home': {
+                                    type: 'directory',
+                                    contents: {
+                                        'peter': {
+                                            type: 'directory',
+                                            contents: {
+                                                'about.txt': {
+                                                    type: 'file',
+                                                    content: `╔══════════════════════════════════════════════════════════════╗
+║                        ABOUT.TXT                        ║
+╚══════════════════════════════════════════════════════════════╝
+
+Hi there, I'm Peter Ihm, a passionate developer from Strömsfors, Sweden.
+I enjoy building interactive, user-friendly solutions and love exploring
+new technologies. Whether it's web, mobile, or plugin development, I'm
+always eager to take on new challenges and create meaningful digital
+experiences.
+
+Location: Strömsfors, Sweden
+Status: Currently employed
+Passion: Creating innovative solutions`
+                                                },
+                                                'contact.txt': {
+                                                    type: 'file',
+                                                    content: `╔══════════════════════════════════════════════════════════════╗
+║                      CONTACT.TXT                            ║
+╚══════════════════════════════════════════════════════════════╝
+
+Email: peter.ihm98@gmail.com
+GitHub: github.com/PeterIhm
+Location: Strömsfors, Sweden
+Status: Available for new opportunities
+LinkedIn: Connect with me for collaboration!`
+                                                },
+                                                'skills.sh': {
+                                                    type: 'executable',
+                                                    content: `#!/bin/bash
+echo "Loading skills assessment..."
+echo "═══════════════════════════════════════"
+echo "C#/Unity:    ████████████████████ 98%"
+echo "JavaScript:  ████████████████▓▓▓ 85%"
+echo "Python:      ████████████████▓▓▓▓ 80%"
+echo "Flutter:     ███████████████▓▓▓▓▓ 75%"
+echo "Ruby:        ██████████████▓▓▓▓▓▓ 70%"
+echo "Java:        █████████████▓▓▓▓▓▓▓ 65%"
+echo "PHP:         ████████████▓▓▓▓▓▓▓▓ 60%"
+echo ""
+echo "[COMPLETED] Skills assessment finished."`
+                                                },
+                                                'experience.txt': {
+                                                    type: 'file',
+                                                    content: `╔══════════════════════════════════════════════════════════════╗
+║                    WORK EXPERIENCE                          ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2025-NOW] Effektiv AB — Software Developer
+  └─ Employed at IETV AB, Gällstad - Cloud & Web Development
+
+[2023-2024] Mindflower AB, Västerås — Software Developer  
+  └─ Unity3D, C#, Flutter, Dart, Ruby on Rails, Python
+
+[2022-2023] HEERO SPORTS GmbH, Lippstadt — Software Developer
+  └─ Unity3D, C#, Java (Android), Flutter, Dart, HTML, CSS, PHP
+
+[2021-2022] Instant Systems AB, Borås — Software Developer
+  └─ C# Razor, Visual Basic
+
+EDUCATION:
+[2019-2021] Yrgo Yrkeshögskola, Gothenburg — Java Ent. Developer
+[2017-2019] Yrgo Yrkeshögskola, Gothenburg — Game Programmer
+[2014-2017] LBS Ljud och BildSkola, Borås — Game Programmer`
+                                                },
+                                                'projects': {
+                                                    type: 'directory',
+                                                    contents: {
+                                                        'obsidian-plugin.md': {
+                                                            type: 'file',
+                                                            content: `# Obsidian Kanban Sync Plugin
+
+**Description:** Plugin to sync Kanban boards with others using a JS server
+
+**Technologies:** JavaScript, Node.js, Obsidian API
+**Status:** Active Development
+**Repository:** https://github.com/PeterIhm/ObisidianPlugin
+
+## Features:
+- Real-time collaboration
+- Cross-platform synchronization
+- Secure data handling`
+                                                        },
+                                                        'electron-app.md': {
+                                                            type: 'file',
+                                                            content: `# Electron Desktop Application
+
+**Description:** Cross-platform desktop application template
+
+**Technologies:** Electron.js, JavaScript, HTML, CSS
+**Status:** Completed Template
+**Repository:** https://github.com/PeterIhm/electron-template-desktop-app
+
+## Features:
+- Cross-platform compatibility
+- Modern UI framework
+- Easy deployment`
+                                                        }
+                                                    }
+                                                },
+                                                'README.md': {
+                                                    type: 'file',
+                                                    content: `# Peter Ihm's Portfolio Terminal
+
+Welcome to my interactive portfolio terminal!
+
+## Available Commands:
+- ls          : List directory contents
+- ls -la      : List with details
+- cd <dir>    : Change directory
+- cd ..       : Go back one directory
+- cd /        : Go to root directory
+- pwd         : Show current directory
+- cat <file>  : View file contents
+- view <file> : Alternative to cat
+- whoami      : Display user information
+- help        : Show available commands
+- clear       : Clear terminal screen
+- history     : Show command history
+- ./skills.sh : Run skills assessment
+
+## Quick Start:
+Try: ls, cd projects, cat about.txt
+
+Enjoy exploring!`
+                                                },
+                                                'settings.cfg': {
+                                                    type: 'file',
+                                                    content: `╔══════════════════════════════════════════════════════════════╗
+║                      TERMINAL SETTINGS                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+Voice Reader: [DISABLED]
+Voice Rate: 1.2x
+Voice Pitch: 0.8
+Voice Volume: 70%
+
+Commands:
+- voice on      : Enable electronic voice reader
+- voice off     : Disable voice reader
+- voice test    : Test current voice settings
+- voice list    : Show available voices  
+- voice choose  : Select specific voice
+
+Note: Voice uses browser's speech synthesis API
+Compatible with most modern browsers`
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    };
+                }
+
+                // Initialize audio context for terminal sounds
+                initAudio() {
+                    try {
+                        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        this.loadSoundEffects();
+                    } catch (e) {
+                        console.log('Audio not supported');
+                        this.soundEnabled = false;
+                    }
+                }
+
+                // Load custom sound effects
+                loadSoundEffects() {
+                    if (!this.soundEnabled) return;
+                    
+                    // Load background noise
+                    this.backgroundAudio = new Audio('background_noise.wav'); // or .mp3
+                    this.backgroundAudio.loop = true;
+                    this.backgroundAudio.volume = 0.3; // Adjust volume as needed
+                    this.backgroundAudio.onerror = () => {
+                        console.log('Background noise file not found - using synthesized noise');
+                        this.backgroundAudio = null;
+                        this.initializeBackgroundNoise();
+                    };
+                    
+                    // Load beep sounds
+                    this.beep1Audio = new Audio('beep1.wav'); // or .mp3
+                    this.beep2Audio = new Audio('beep3.wav'); // or .mp3
+                    this.beep1Audio.volume = 0.2;
+                    this.beep2Audio.volume = 0.2;
+                    
+                    this.beep1Audio.onerror = () => {
+                        console.log('Beep1 file not found');
+                        this.beep1Audio = null;
+                    };
+                    
+                    this.beep2Audio.onerror = () => {
+                        console.log('Beep2 file not found - using synthesized sound');
+                        this.beep2Audio = null;
+                        this.useSynthesizedSound = true;
+                    };
+                    
+                    // Start background noise
+                    this.startBackgroundAudio();
+                }
+
+                // Create synthesized background noise
+                initializeBackgroundNoise() {
+                    if (!this.audioContext) return;
+                    
+                    // Create a buffer for white noise
+                    const bufferSize = this.audioContext.sampleRate * 2; // 2 second buffer
+                    const noiseBuffer = this.audioContext.createBuffer(1, bufferSize, this.audioContext.sampleRate);
+                    const output = noiseBuffer.getChannelData(0);
+                    
+                    // Generate white noise
+                    for (let i = 0; i < bufferSize; i++) {
+                        output[i] = (Math.random() * 2 - 1) * 0.1; // Low volume white noise
+                    }
+                    
+                    // Create noise source
+                    this.noiseSource = this.audioContext.createBufferSource();
+                    this.noiseSource.buffer = noiseBuffer;
+                    this.noiseSource.loop = true;
+                    
+                    // Add filtering for retro computer sound
+                    this.noiseFilter = this.audioContext.createBiquadFilter();
+                    this.noiseFilter.type = 'lowpass';
+                    this.noiseFilter.frequency.setValueAtTime(800, this.audioContext.currentTime);
+                    
+                    // Volume control
+                    this.noiseGain = this.audioContext.createGain();
+                    this.noiseGain.gain.setValueAtTime(0.05, this.audioContext.currentTime);
+                    
+                    // Connect the chain
+                    this.noiseSource.connect(this.noiseFilter);
+                    this.noiseFilter.connect(this.noiseGain);
+                    this.noiseGain.connect(this.audioContext.destination);
+                }
+
+                // Start background noise loop
+                startBackgroundAudio() {
+                    if (this.backgroundAudio) {
+                        // Handle browser autoplay policy for audio file
+                        const playPromise = this.backgroundAudio.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                // Auto-play was prevented, will play on first user interaction
+                                document.addEventListener('click', () => {
+                                    if (this.backgroundAudio) {
+                                        this.backgroundAudio.play().catch(() => {});
+                                    }
+                                }, { once: true });
+                            });
+                        }
+                    } else if (this.noiseSource && this.audioContext) {
+                        // Use synthesized noise as fallback
+                        try {
+                            this.noiseSource.start();
+                            console.log('Background noise started (synthesized)');
+                        } catch (error) {
+                            // Auto-play was prevented, will start on first user interaction
+                            document.addEventListener('click', () => {
+                                if (this.noiseSource && this.audioContext.state === 'suspended') {
+                                    this.audioContext.resume().then(() => {
+                                        try {
+                                            // Create new noise source after user interaction
+                                            this.initializeBackgroundNoise();
+                                            this.noiseSource.start();
+                                        } catch (e) {
+                                            console.log('Background noise already playing');
+                                        }
+                                    });
+                                }
+                            }, { once: true });
+                        }
+                    }
+                }
+
+                // Play individual character sound
+                playCharacterSound() {
+                    if (!this.soundEnabled) return;
+                    
+                    if (this.beep2Audio) {
+                        // Use actual audio file
+                        this.beep2Audio.currentTime = 0;
+                        this.beep2Audio.play().catch(() => {});
+                    } else if (this.audioContext && this.useSynthesizedSound) {
+                        // Use quick synthesized beep
+                        this.createQuickBeep();
+                    }
+                }
+                
+                // Create quick synthesized beep for single character
+                createQuickBeep() {
+                    if (!this.audioContext) return;
+                    
+                    if (this.audioContext.state === 'suspended') {
+                        this.audioContext.resume();
+                    }
+                    
+                    const oscillator = this.audioContext.createOscillator();
+                    const gainNode = this.audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(this.audioContext.destination);
+                    
+                    // Create a short vintage terminal beep
+                    oscillator.frequency.setValueAtTime(150 + Math.random() * 50, this.audioContext.currentTime);
+                    oscillator.type = 'square';
+                    gainNode.gain.setValueAtTime(0.03, this.audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + 0.03);
+                    
+                    oscillator.start();
+                    oscillator.stop(this.audioContext.currentTime + 0.03);
+                }
+
+                init() {
+                    this.input = document.getElementById('terminal-input');
+                    this.terminal = document.getElementById('terminal');
+                    
+                    this.input.addEventListener('keydown', (e) => this.handleKeyDown(e));
+                    this.input.addEventListener('input', (e) => {
+                        // Play beep sound for any input change (including spaces and backspace)
+                        if (e.data !== null || e.inputType === 'deleteContentBackward' || e.inputType === 'deleteContentForward') {
+                            this.playCharacterSound();
+                        }
+                    });
+                    this.input.focus();
+                    
+                    // Keep focus on input
+                    document.addEventListener('click', () => {
+                        setTimeout(() => this.input.focus(), 10);
+                    });
+                }
+
+                handleKeyDown(e) {
+                    switch(e.key) {
+                        case 'Enter':
+                            e.preventDefault();
+                            this.processCommand();
+                            break;
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            this.navigateHistory(-1);
+                            break;
+                        case 'ArrowDown':
+                            e.preventDefault();
+                            this.navigateHistory(1);
+                            break;
+                        case 'Tab':
+                            e.preventDefault();
+                            this.autoComplete();
+                            break;
+                    }
+                }
+
+                processCommand() {
+                    const command = this.input.value.trim();
+                    if (!command) return;
+
+                    this.commandHistory.push(command);
+                    this.historyIndex = this.commandHistory.length;
+
+                    // Display the command instantly (no typewriter for user input)
+                    this.addOutput(`<div class="input-line-static">
+                        <span class="prompt">${this.getPrompt()}</span>
+                        <span class="command">${command}</span>
+                    </div>`, false);
+
+                    // Execute command with typewriter effect
+                    this.executeCommand(command);
+
+                    // Clear input and create new input line
+                    this.input.value = '';
+                    this.scrollToBottom();
+                }
+
+                executeCommand(command) {
+                    const parts = command.split(' ');
+                    const cmd = parts[0].toLowerCase();
+                    const args = parts.slice(1);
+
+                    switch(cmd) {
+                        case 'help':
+                            this.showHelp();
+                            break;
+                        case 'ls':
+                            this.listDirectory(args);
+                            break;
+                        case 'cd':
+                            this.changeDirectory(args[0] || '/home/peter');
+                            break;
+                        case 'pwd':
+                            this.showCurrentDirectory();
+                            break;
+                        case 'cat':
+                        case 'view':
+                            this.viewFile(args[0]);
+                            break;
+                        case 'whoami':
+                            this.whoami();
+                            break;
+                        case 'clear':
+                            this.clearTerminal();
+                            break;
+                        case 'history':
+                            this.showHistory();
+                            break;
+                        case './skills.sh':
+                            this.runSkills();
+                            break;
+                        case 'voice':
+                            if (args[0] === 'on') {
+                                this.enableVoice();
+                            } else if (args[0] === 'off') {
+                                this.disableVoice();
+                            } else if (args[0] === 'test') {
+                                this.testVoice();
+                            } else if (args[0] === 'read') {
+                                this.readCurrentDisplay();
+                            } else if (args[0] === 'list') {
+                                this.listVoices();
+                            } else if (args[0] === 'choose') {
+                                this.chooseVoice(args.slice(1).join(' '));
+                            } else {
+                                this.addOutput('<div class="output red">Usage: voice [on|off|test|read|list|choose <voice_name>]</div>');
+                            }
+                            break;
+                        case 'exit':
+                        case 'quit':
+                            this.addOutput('<div class="output">Thanks for visiting! Refresh to restart the terminal.</div>');
+                            break;
+                        default:
+                            if (command.startsWith('./')) {
+                                this.runExecutable(command.substring(2));
+                            } else {
+                                this.addOutput(`<div class="output red">Command not found: ${cmd}. Type 'help' for available commands.</div>`);
+                            }
+                    }
+                }
+
+                showHelp() {
+                    this.addOutput(`<div class="output">
+                        <div class="ascii-art">
+    ╔═══════════════════════════════════════════════════════════════════════════╗
+    ║                           AVAILABLE COMMANDS                              ║
+    ╚═══════════════════════════════════════════════════════════════════════════╝
+                        </div>
+                        <p><span class="green">Navigation:</span></p>
+                        <p>  ls          - List directory contents</p>
+                        <p>  ls -la      - List with detailed information</p>
+                        <p>  cd [dir]    - Change directory</p>
+                        <p>  cd ..       - Go back one directory</p>
+                        <p>  cd /        - Go to root directory</p>
+                        <p>  pwd         - Show current directory path</p>
+                        <br>
+                        <p><span class="blue">File Operations:</span></p>
+                        <p>  cat [file]  - Display file contents</p>
+                        <p>  view [file] - Alternative to cat</p>
+                        <br>
+                        <p><span class="yellow">System:</span></p>
+                        <p>  whoami      - Display user information</p>
+                        <p>  clear       - Clear terminal screen</p>
+                        <p>  history     - Show command history</p>
+                        <p>  help        - Show this help message</p>
+                        <br>
+                        <p><span class="purple">Special:</span></p>
+                        <p>  ./skills.sh - Run skills assessment</p>
+                        <p>  voice on/off - Enable/disable electronic voice reader</p>
+                        <p>  voice test   - Test voice functionality</p>
+                        <p>  voice read   - Read current display content</p>
+                        <p>  exit        - Exit terminal</p>
+                    </div>`);
+                }
+
+                listDirectory(args) {
+                    const detailed = args.includes('-la') || args.includes('-l');
+                    const currentDir = this.getCurrentDirectory();
+                    
+                    if (!currentDir || currentDir.type !== 'directory') {
+                        this.addOutput('<div class="output red">Error: Not a directory</div>');
+                        return;
+                    }
+
+                    let output = '<div class="output"><div class="file-listing">';
+                    
+                    for (const [name, item] of Object.entries(currentDir.contents)) {
+                        const isDir = item.type === 'directory';
+                        const isExec = item.type === 'executable';
+                        const date = 'Feb 14 10:30';
+                        const permissions = isDir ? 'drwxr-xr-x' : (isExec ? '-rwxr-xr-x' : '-rw-r--r--');
+                        
+                        if (detailed) {
+                            output += `<div class="file-item">
+                                ${permissions}   1 peter  staff    ${Math.floor(Math.random() * 999) + 100} 
+                                <span class="date">${date}</span> 
+                                <span class="${isDir ? 'file-link' : isExec ? 'executable' : ''}">${name}${isDir ? '/' : ''}</span>
+                            </div>`;
+                        } else {
+                            output += `<span class="${isDir ? 'blue' : isExec ? 'green' : 'white'}">${name}${isDir ? '/' : ''}  </span>`;
+                        }
+                    }
+                    
+                    output += '</div></div>';
+                    this.addOutput(output);
+                }
+
+                changeDirectory(path) {
+                    if (!path) {
+                        this.currentDirectory = '/home/peter';
+                        this.updatePrompt();
+                        return;
+                    }
+
+                    let newPath;
+                    if (path === '..') {
+                        const pathParts = this.currentDirectory.split('/').filter(p => p);
+                        pathParts.pop();
+                        newPath = '/' + pathParts.join('/');
+                        if (newPath === '/') newPath = '/';
+                    } else if (path.startsWith('/')) {
+                        newPath = path;
+                    } else {
+                        newPath = this.currentDirectory === '/' ? `/${path}` : `${this.currentDirectory}/${path}`;
+                    }
+
+                    const targetDir = this.getDirectoryAtPath(newPath);
+                    if (targetDir && targetDir.type === 'directory') {
+                        this.currentDirectory = newPath;
+                        this.updatePrompt();
+                    } else {
+                        this.addOutput(`<div class="output red">cd: ${path}: No such directory</div>`);
+                    }
+                }
+
+                viewFile(filename) {
+                    if (!filename) {
+                        this.addOutput('<div class="output red">Usage: cat [filename]</div>');
+                        return;
+                    }
+
+                    const currentDir = this.getCurrentDirectory();
+                    if (!currentDir || currentDir.type !== 'directory') {
+                        this.addOutput('<div class="output red">Error: Current location is not a directory</div>');
+                        return;
+                    }
+
+                    const file = currentDir.contents[filename];
+                    if (!file) {
+                        this.addOutput(`<div class="output red">cat: ${filename}: No such file</div>`);
+                        return;
+                    }
+
+                    if (file.type === 'directory') {
+                        this.addOutput(`<div class="output red">cat: ${filename}: Is a directory</div>`);
+                        return;
+                    }
+
+                    this.addOutput(`<div class="output"><pre>${file.content}</pre></div>`);
+                    
+                    // Read the file content immediately if voice is enabled
+                    if (this.voiceEnabled) {
+                        setTimeout(() => {
+                            this.speak(file.content);
+                        }, 500); // Small delay to let text appear first
+                    }
+                }
+
+                runSkills() {
+                    this.addOutput(`<div class="output">
+                        <p>Loading skills assessment...</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <p><span class="green">C#/Unity:</span> ████████████████████ 98%</p>
+                        <p><span class="blue">JavaScript:</span> ████████████████▓▓▓ 85%</p>
+                        <p><span class="yellow">Python:</span> ████████████████▓▓▓▓ 80%</p>
+                        <p><span class="purple">Flutter:</span> ███████████████▓▓▓▓▓ 75%</p>
+                        <p><span class="cyan">Ruby:</span> ██████████████▓▓▓▓▓▓ 70%</p>
+                        <p><span class="white">[COMPLETED]</span> Skills assessment finished.</p>
+                    </div>`);
+                }
+
+                whoami() {
+                    this.addOutput(`<div class="output">
+                        <p><span class="green">User:</span> Peter Ihm</p>
+                        <p><span class="blue">Role:</span> Full Stack Developer</p>
+                        <p><span class="yellow">Location:</span> Strömsfors, Sweden</p>
+                        <p><span class="purple">Status:</span> Currently employed</p>
+                    </div>`);
+                }
+
+                showCurrentDirectory() {
+                    this.addOutput(`<div class="output">${this.currentDirectory}</div>`);
+                }
+
+                enableVoice() {
+                    if ('speechSynthesis' in window) {
+                        this.voiceEnabled = true;
+                        this.updateSettingsFile();
+                        this.addOutput('<div class="output green">Electronic voice reader: [ENABLED]</div>');
+                        
+                        // Ensure voices are loaded before speaking
+                        const voices = this.speechSynth.getVoices();
+                        if (voices.length === 0) {
+                            this.speechSynth.addEventListener('voiceschanged', () => {
+                                this.speak('Voice reader activated');
+                            }, { once: true });
+                        } else {
+                            this.speak('Voice reader activated');
+                        }
+                    } else {
+                        this.addOutput('<div class="output red">Error: Speech synthesis not supported in this browser</div>');
+                    }
+                }
+
+                disableVoice() {
+                    this.voiceEnabled = false;
+                    this.speechSynth.cancel(); // Stop any current speech
+                    this.updateSettingsFile();
+                    this.addOutput('<div class="output yellow">Electronic voice reader: [DISABLED]</div>');
+                }
+
+                testVoice() {
+                    if ('speechSynthesis' in window) {
+                        // Ensure voices are loaded
+                        const voices = this.speechSynth.getVoices();
+                        if (voices.length === 0) {
+                            // Wait for voices to load
+                            this.speechSynth.addEventListener('voiceschanged', () => {
+                                this.speak('Voice test successful. Electronic reader is functioning normally.');
+                            }, { once: true });
+                            this.addOutput('<div class="output blue">Loading voices... Voice test will run when ready.</div>');
+                        } else {
+                            this.speak('Voice test successful. Electronic reader is functioning normally.');
+                            this.addOutput('<div class="output blue">Voice test initiated - check audio output</div>');
+                        }
+                    } else {
+                        this.addOutput('<div class="output red">Error: Speech synthesis not supported</div>');
+                    }
+                }
+
+                speak(text) {
+                    if (!this.voiceEnabled || !('speechSynthesis' in window)) return;
+                    
+                    // Cancel any ongoing speech
+                    this.speechSynth.cancel();
+                    
+                    // Clean text for speech (remove special characters and formatting)
+                    const cleanText = text
+                        .replace(/[╔╚╗╝═║]/g, '') // Remove box drawing characters
+                        .replace(/█+/g, 'progress bar') // Replace progress bars
+                        .replace(/▓+/g, '') // Remove progress bar fill
+                        .replace(/\s+/g, ' ') // Normalize whitespace
+                        .trim();
+                    
+                    if (cleanText.length === 0) return;
+                    
+                    // Add small delay to ensure speech synthesis is ready
+                    setTimeout(() => {
+                        const utterance = new SpeechSynthesisUtterance(cleanText);
+                        utterance.rate = this.voiceSettings.rate;
+                        utterance.pitch = this.voiceSettings.pitch;
+                        utterance.volume = this.voiceSettings.volume;
+                        
+                        // Use selected voice or find default Apple-style voice
+                        const voices = this.speechSynth.getVoices();
+                        let voiceToUse = null;
+                        
+                        if (this.selectedVoice) {
+                            voiceToUse = voices.find(voice => voice.name === this.selectedVoice);
+                        }
+                        
+                        if (!voiceToUse) {
+                            // Try male voices first
+                            voiceToUse = voices.find(voice => 
+                                voice.name.toLowerCase().includes('alex') ||
+                                voice.name.toLowerCase().includes('daniel') ||
+                                voice.name.toLowerCase().includes('david') ||
+                                voice.name.toLowerCase().includes('tom') ||
+                                voice.name.toLowerCase().includes('mark') ||
+                                voice.name.toLowerCase().includes('male')
+                            );
+                            
+                            // If no male voices, try Google voices with preference for male US English
+                            if (!voiceToUse) {
+                                voiceToUse = voices.find(voice => 
+                                    voice.name.toLowerCase().includes('google') &&
+                                    voice.name.toLowerCase().includes('us') &&
+                                    voice.name.toLowerCase().includes('english') &&
+                                    voice.name.toLowerCase().includes('male')
+                                ) || voices.find(voice => 
+                                    voice.name.toLowerCase().includes('google') &&
+                                    voice.name.toLowerCase().includes('uk') &&
+                                    voice.name.toLowerCase().includes('male')
+                                ) || voices.find(voice => 
+                                    voice.name.toLowerCase().includes('google') &&
+                                    voice.name.toLowerCase().includes('us') &&
+                                    voice.name.toLowerCase().includes('english')
+                                ) || voices.find(voice => 
+                                    voice.name.toLowerCase().includes('google') &&
+                                    voice.name.toLowerCase().includes('english')
+                                );
+                            }
+                            
+                            // Final fallback to any English voice
+                            if (!voiceToUse) {
+                                voiceToUse = voices.find(voice => 
+                                    voice.lang.startsWith('en') && voice.localService
+                                ) || voices.find(voice => voice.lang.startsWith('en'));
+                            }
+                        }
+                        
+                        if (voiceToUse) {
+                            utterance.voice = voiceToUse;
+                        }
+                        
+                        this.speechSynth.speak(utterance);
+                    }, 100); // 100ms delay
+                }
+
+                readCurrentDisplay() {
+                    if (!this.voiceEnabled) {
+                        this.addOutput('<div class="output yellow">Voice reader is disabled. Use "voice on" to enable.</div>');
+                        return;
+                    }
+                    
+                    // Get all visible text content from the terminal
+                    const terminalContent = this.terminal.innerText;
+                    const lines = terminalContent.split('\n');
+                    
+                    // Filter out empty lines and prompts, get last meaningful content
+                    const meaningfulLines = lines
+                        .filter(line => line.trim() && !line.includes('>'))
+                        .slice(-10); // Get last 10 meaningful lines
+                    
+                    if (meaningfulLines.length === 0) {
+                        this.addOutput('<div class="output yellow">No content to read on current display.</div>');
+                        this.speak('No content available to read');
+                        return;
+                    }
+                    
+                    const contentToRead = meaningfulLines.join('. ');
+                    this.addOutput('<div class="output blue">Reading current display content...</div>');
+                    this.speak(contentToRead);
+                }
+
+                listVoices() {
+                    const voices = this.speechSynth.getVoices();
+                    const englishVoices = voices.filter(voice => voice.lang.startsWith('en'));
+                    
+                    let output = '<div class="output">Available voices:</div>';
+                    output += '<div class="output">';
+                    
+                    englishVoices.forEach((voice, index) => {
+                        const isSelected = this.selectedVoice === voice.name;
+                        const marker = isSelected ? '●' : '○';
+                        const quality = voice.localService ? '[Local]' : '[Network]';
+                        output += `<p><span class="${isSelected ? 'green' : 'gray'}">${marker}</span> ${voice.name} ${quality}</p>`;
+                    });
+                    
+                    output += '</div>';
+                    output += '<div class="output yellow">Use: voice choose "Voice Name" to select</div>';
+                    this.addOutput(output);
+                }
+
+                chooseVoice(voiceName) {
+                    if (!voiceName) {
+                        this.addOutput('<div class="output red">Please specify a voice name. Use "voice list" to see available voices.</div>');
+                        return;
+                    }
+                    
+                    const voices = this.speechSynth.getVoices();
+                    const selectedVoice = voices.find(voice => 
+                        voice.name.toLowerCase().includes(voiceName.toLowerCase()) ||
+                        voice.name === voiceName
+                    );
+                    
+                    if (selectedVoice) {
+                        this.selectedVoice = selectedVoice.name;
+                        this.updateSettingsFile();
+                        this.addOutput(`<div class="output green">Voice selected: ${selectedVoice.name}</div>`);
+                        
+                        if (this.voiceEnabled) {
+                            this.speak(`Voice changed to ${selectedVoice.name}`);
+                        }
+                    } else {
+                        this.addOutput(`<div class="output red">Voice "${voiceName}" not found. Use "voice list" to see available voices.</div>`);
+                    }
+                }
+
+                updateSettingsFile() {
+                    const settingsFile = this.getDirectoryAtPath('/home/peter').contents['settings.cfg'];
+                    if (settingsFile) {
+                        settingsFile.content = `╔══════════════════════════════════════════════════════════════╗
+║                      TERMINAL SETTINGS                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+Voice Reader: [${this.voiceEnabled ? 'ENABLED' : 'DISABLED'}]
+Selected Voice: ${this.selectedVoice || 'Default (Auto)'}
+Voice Rate: ${this.voiceSettings.rate}x
+Voice Pitch: ${this.voiceSettings.pitch}
+Voice Volume: ${Math.round(this.voiceSettings.volume * 100)}%
+
+Commands:
+- voice on      : Enable electronic voice reader
+- voice off     : Disable voice reader
+- voice test    : Test current voice settings
+- voice read    : Read current display content
+- voice list    : Show available voices
+- voice choose  : Select specific voice
+
+Note: Voice uses browser's speech synthesis API
+Compatible with most modern browsers`;
+                    }
+                }
+
+                showHistory() {
+                    let output = '<div class="output">';
+                    this.commandHistory.forEach((cmd, index) => {
+                        output += `<p><span class="gray">${(index + 1).toString().padStart(3, ' ')}</span>  ${cmd}</p>`;
+                    });
+                    output += '</div>';
+                    this.addOutput(output);
+                }
+
+                clearTerminal() {
+                    const bootMessage = document.querySelector('.boot-message').cloneNode(true);
+                    const inputLine = document.querySelector('.input-line');
+                    
+                    // Clear everything except input line
+                    const children = Array.from(this.terminal.children);
+                    children.forEach(child => {
+                        if (!child.classList.contains('input-line')) {
+                            child.remove();
+                        }
+                    });
+                    
+                    // Re-add boot message
+                    this.terminal.insertBefore(bootMessage, inputLine);
+                    this.input.focus();
+                    this.terminal.scrollTop = 0;
+                }
+
+                // Helper methods
+                getCurrentDirectory() {
+                    return this.getDirectoryAtPath(this.currentDirectory);
+                }
+
+                getDirectoryAtPath(path) {
+                    const parts = path.split('/').filter(p => p);
+                    let current = this.fileSystem['/'];
+                    
+                    for (const part of parts) {
+                        if (current.contents && current.contents[part]) {
+                            current = current.contents[part];
+                        } else {
+                            return null;
+                        }
+                    }
+                    
+                    return current;
+                }
+
+                getPrompt() {
+                    const shortPath = this.currentDirectory === '/home/peter' ? '~' : 
+                                     this.currentDirectory.replace('/home/peter', '~');
+                    return `>:${shortPath}$`;
+                }
+
+                updatePrompt() {
+                    document.getElementById('current-prompt').textContent = this.getPrompt();
+                }
+
+                addOutput(html, useTypewriter = true) {
+                    const inputLine = document.querySelector('.input-line');
+                    
+                    if (useTypewriter) {
+                        this.typewriterOutput(html, inputLine);
+                    } else {
+                        // Instant output for certain commands
+                        const newElement = document.createElement('div');
+                        newElement.innerHTML = html;
+                        newElement.firstElementChild?.classList.add('slide-up');
+                        inputLine.insertAdjacentHTML('beforebegin', html);
+                        this.smoothScrollToBottom();
+                    }
+                }
+
+                async typewriterOutput(html, inputLine) {
+                    // Create a temporary element to parse the HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+                    
+                    // Process each element in the HTML
+                    for (const element of tempDiv.children) {
+                        await this.typewriterElement(element, inputLine);
+                    }
+                    
+                    this.smoothScrollToBottom();
+                }
+
+                async typewriterElement(element, inputLine) {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = element.className;
+                    
+                    // Add the wrapper to DOM first
+                    inputLine.insertAdjacentElement('beforebegin', wrapper);
+                    
+                    // Type the content character by character
+                    await this.typeText(element, wrapper);
+                }
+
+                async typeText(sourceElement, targetElement) {
+                    const text = sourceElement.textContent || sourceElement.innerText;
+                    const htmlContent = sourceElement.innerHTML;
+                    
+                    // Handle different content types
+                    if (htmlContent.includes('<div') || htmlContent.includes('<p') || htmlContent.includes('<span')) {
+                        // Complex HTML - type by processing child elements
+                        targetElement.innerHTML = sourceElement.innerHTML;
+                        const childElements = targetElement.querySelectorAll('*');
+                        for (let i = 0; i < childElements.length; i++) {
+                            const child = childElements[i];
+                            const childText = child.textContent;
+                            child.textContent = '';
+                            // Only play sound for the first child element to avoid overlaps
+                            await this.typeStringIntoElement(childText, child, i === 0);
+                        }
+                    } else {
+                        // Simple text content
+                        await this.typeStringIntoElement(text, targetElement, true);
+                    }
+                }
+
+                // Generate random noise characters for Alien-style effect
+                generateNoiseChar() {
+                    const noiseChars = '█▓▒░│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌■□▪▫◘◙◦☼♠♣♥♦♪♫☺☻♂♀';
+                    const alphaNum = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+                    const allChars = noiseChars + alphaNum;
+                    return allChars[Math.floor(Math.random() * allChars.length)];
+                }
+
+                async typeStringIntoElement(text, element, playSound = true) {
+                    element.classList.add('machine-processing');
+                    
+                    for (let i = 0; i <= text.length; i++) {
+                        const currentChar = text[i - 1];
+                        const shouldGlitch = Math.random() < 0.01; // 30% chance of noise per character
+                        
+                        // Add Alien-style noise effect
+                        if (shouldGlitch && i > 0 && currentChar && currentChar !== ' ') {
+                            // Show 2-4 random noise characters before the real character
+                            const noiseCount = Math.floor(Math.random() * 3) + 2;
+                            
+                            for (let n = 0; n < noiseCount; n++) {
+                                const noiseChar = this.generateNoiseChar();
+                                const partialText = text.substring(0, i - 1) + noiseChar;
+                                element.textContent = partialText;
+                                element.classList.add('glitch-noise');
+                                
+                                // Play sound for glitch character (only if sound enabled)
+                                if (playSound) {
+                                    this.playCharacterSound();
+                                }
+                                
+                                // Very short delay for noise
+                                await new Promise(resolve => setTimeout(resolve, 15 + Math.random() * 25));
+                            }
+                            
+                            // Remove glitch class before showing real character
+                            element.classList.remove('glitch-noise');
+                        }
+                        
+                        // Show the real character
+                        element.textContent = text.substring(0, i);
+                        
+                        // Play sound for real character (only if no glitch occurred and sound enabled)
+                        if (playSound && i > 0 && currentChar && currentChar.trim() && !shouldGlitch) {
+                            this.playCharacterSound();
+                        }
+                        
+                        // Variable delay for authentic 8-bit machine feel
+                        let delay;
+                        if (Math.random() < 0.3) {
+                            delay =  15; // Occasional longer pauses for corruption effect
+                        } else {
+                            delay =  60; // 8-23ms per character
+                        }
+                        
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        
+                        // Slight scroll adjustment during typing
+                        if (i % 8 === 0) {
+                            this.smoothScrollToBottom();
+                        }
+                    }
+                    
+                    element.classList.remove('machine-processing');
+                    
+                    // Pause between elements for machine-like processing
+                    await new Promise(resolve => setTimeout(resolve, 150 + Math.random() * 100));
+                }
+
+                smoothScrollToBottom() {
+                    // Smooth scroll to show the latest output
+                    setTimeout(() => {
+                        this.terminal.scrollTo({
+                            top: this.terminal.scrollHeight,
+                            behavior: 'smooth'
+                        });
+                    }, 50);
+                }
+
+                scrollToBottom() {
+                    this.smoothScrollToBottom();
+                }
+
+                navigateHistory(direction) {
+                    if (this.commandHistory.length === 0) return;
+                    
+                    this.historyIndex = Math.max(-1, Math.min(this.commandHistory.length - 1, this.historyIndex + direction));
+                    
+                    if (this.historyIndex >= 0) {
+                        this.input.value = this.commandHistory[this.historyIndex];
+                    } else {
+                        this.input.value = '';
+                    }
+                }
+
+                autoComplete() {
+                    const currentInput = this.input.value;
+                    const parts = currentInput.split(' ');
+                    const lastPart = parts[parts.length - 1];
+                    
+                    const currentDir = this.getCurrentDirectory();
+                    if (!currentDir || currentDir.type !== 'directory') return;
+                    
+                    const matches = Object.keys(currentDir.contents).filter(name => 
+                        name.startsWith(lastPart)
+                    );
+                    
+                    if (matches.length === 1) {
+                        parts[parts.length - 1] = matches[0];
+                        this.input.value = parts.join(' ');
+                    } else if (matches.length > 1) {
+                        this.addOutput(`<div class="output">${matches.join('  ')}</div>`, false);
+                        this.addOutput(`<div class="input-line-static">
+                            <span class="prompt">${this.getPrompt()}</span>
+                            <span class="command">${currentInput}</span>
+                        </div>`, false);
+                    }
+                }
+            }
+
+            // Initialize terminal when page loads
+            window.addEventListener('load', async () => {
+                const terminal = new Terminal();
+                
+                // Add 8-bit startup delay
+                setTimeout(() => {
+                    const bootElements = document.querySelectorAll('.boot-message p, .boot-message .ascii-art');
+                    bootElements.forEach((element, index) => {
+                        element.style.opacity = '0';
+                        setTimeout(async () => {
+                            element.style.opacity = '1';
+                            if (element.textContent && element.textContent.trim()) {
+                                const originalText = element.textContent;
+                                element.textContent = '';
+                                await terminal.typeStringIntoElement(originalText, element, true);
+                            }
+                        }, index * 200);
+                    });
+                }, 500);
+            });
+        </script>
     </body>
 </html>
