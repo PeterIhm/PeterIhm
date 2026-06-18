@@ -80,26 +80,38 @@
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
 <a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:16px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
 <!-- Top Navigation Bar -->
-<header class="bg-background/95 backdrop-blur-md w-full top-0 sticky z-50 border-b border-primary/20">
-<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
-<div class="flex items-center gap-4">
-<img alt="Borås KIF Logo" class="h-14 w-14 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
-<a class="font-headline-md text-headline-md font-bold tracking-tight text-on-background uppercase hidden sm:block" href="code.html">BORÅS KIF</a>
+<header class="w-full top-0 sticky z-50 bg-background border-b border-primary/30">
+<nav class="flex justify-between items-center h-20 px-4 md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Borås KIF Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-background uppercase">BORÅS <span class="text-primary">KIF</span></div>
 </div>
-<nav class="hidden lg:flex gap-10 items-center h-full">
+<div class="hidden md:flex gap-8 items-center">
 <a class="font-label-bold text-label-bold uppercase text-primary border-b-2 border-primary pb-1" href="code.html">HEM</a>
 <a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../aktivitetskalender_bor_s_kif_desktop/code.html">SPELSCHEMA</a>
 <a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../a_lag_bor_s_kif_desktop/code.html">A-LAG</a>
 <a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../juniorlag_bor_s_kif_desktop/code.html">UNGDOM</a>
 <a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="#">NYHETER</a>
-</nav>
+</div>
 <div class="flex items-center gap-4">
-<button class="bg-primary text-on-primary font-label-bold text-label-bold uppercase px-6 py-3 transition-all hover:brightness-110 active:scale-95">
-                MEDLEM
-            </button>
+<button class="hidden md:block bg-primary text-on-primary font-label-bold text-label-bold uppercase px-6 py-2 tracking-wider hover:brightness-110 transition-all active:scale-95">MEMBER LOGIN</button>
+<button class="md:hidden p-2 active:scale-95 transition-transform" onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</button>
 </div>
-</div>
+</nav>
 </header>
+<aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300" id="mobile-drawer">
+<div class="bg-black/70 absolute inset-0" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
+<div class="h-full w-72 bg-background border-r border-primary/20 flex flex-col gap-1 py-8 relative z-[61]">
+<div class="px-6 mb-8"><span class="font-label-bold text-label-bold uppercase text-primary tracking-widest text-sm">BORÅS KIF</span></div>
+<a class="flex items-center gap-4 px-6 py-4 text-primary border-l-2 border-primary bg-white/5 font-label-bold text-label-bold uppercase tracking-widest text-sm" href="code.html">HEM</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-background/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../aktivitetskalender_bor_s_kif_desktop/code.html">SPELSCHEMA</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-background/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../a_lag_bor_s_kif_desktop/code.html">A-LAG</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-background/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../juniorlag_bor_s_kif_desktop/code.html">UNGDOM</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-background/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="#">NYHETER</a>
+</div>
+</aside>
 <main>
 <!-- Hero Section -->
 <section class="relative w-full h-[800px] overflow-hidden flex items-center">

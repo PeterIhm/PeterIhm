@@ -80,34 +80,41 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden">
 <a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:16px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
 <!-- TopNavBar -->
-<header class="w-full top-0 sticky bg-background border-b border-outline-variant z-50">
-<div class="flex justify-between items-center h-20 px-margin-desktop max-w-7xl mx-auto">
-<div class="flex items-center gap-4">
-<div class="w-14 h-14 flex items-center justify-center overflow-hidden">
-<img alt="Borås KIF Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
+<header class="w-full top-0 sticky z-50 bg-background border-b border-primary/30">
+<nav class="flex justify-between items-center h-20 px-4 md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Borås KIF Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-background uppercase">BORÅS <span class="text-primary">KIF</span></div>
 </div>
-<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-background">BORÅS KIF</span>
-</div>
-<nav class="hidden md:flex items-center gap-10">
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="../a_lag_bor_s_kif_desktop/code.html">A-TEAM</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../a_lag_bor_s_kif_desktop/code.html">A-TEAM</a>
 <a class="font-label-bold text-label-bold uppercase text-primary border-b-2 border-primary pb-1" href="code.html">JUNIOR TEAMS</a>
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="#">NEWS</a>
-</nav>
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="#">NEWS</a>
+</div>
 <div class="flex items-center gap-4">
-<button class="hidden lg:flex items-center justify-center bg-primary text-on-primary px-8 py-3 font-label-bold text-label-bold uppercase tracking-widest active:scale-95 duration-150">
-                MEMBER LOGIN
-            </button>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<button class="hidden md:block bg-primary text-on-primary font-label-bold text-label-bold uppercase px-6 py-2 tracking-wider hover:brightness-110 transition-all active:scale-95">MEMBER LOGIN</button>
+<button class="md:hidden p-2 active:scale-95 transition-transform" onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
 </button>
 </div>
-</div>
+</nav>
 </header>
+<aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300" id="mobile-drawer">
+<div class="bg-black/70 absolute inset-0" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
+<div class="h-full w-72 bg-background border-r border-primary/20 flex flex-col gap-1 py-8 relative z-[61]">
+<div class="px-6 mb-8"><span class="font-label-bold text-label-bold uppercase text-primary tracking-widest text-sm">BORÅS KIF</span></div>
+<a class="flex items-center gap-4 px-6 py-4 text-secondary hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
+<a class="flex items-center gap-4 px-6 py-4 text-secondary hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
+<a class="flex items-center gap-4 px-6 py-4 text-secondary hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../a_lag_bor_s_kif_desktop/code.html">A-TEAM</a>
+<a class="flex items-center gap-4 px-6 py-4 text-primary border-l-2 border-primary bg-white/5 font-label-bold text-label-bold uppercase tracking-widest text-sm" href="code.html">JUNIOR TEAMS</a>
+<a class="flex items-center gap-4 px-6 py-4 text-secondary hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="#">NEWS</a>
+</div>
+</aside>
 <main>
 <!-- Hero Section -->
 <section class="relative h-[600px] flex items-center overflow-hidden bg-surface-container-lowest">
@@ -115,7 +122,7 @@
 <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZsba5Eo7b3US2mTW0LhpuA6v0w-8kv4sfth1AMn7E_QnjcNChQcdcUn1QRdI2GcEr7jb7VbkpW80IsWQyE6LvFT2rKETWb9mtLB9x_oQOnE5rLt1t3ZiISbhUxHugpCRCd7W-IAX4AZ9wij23oSd8QaIl0bgmJ-uarj2qE7vwp2G_ZanquPRCn4bGbrqdwSe9XIRsmzpDe9xm9W9-51DI1EpoGuQGlBMsQZvqQQFSXunx9a1UHuO56tGeBDMbX5wh2kdTfjdCbA')"></div>
 </div>
 <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
-<div class="relative z-10 max-w-7xl mx-auto px-margin-desktop w-full">
+<div class="relative z-10 max-w-7xl mx-auto px-4 md:px-margin-desktop w-full">
 <div class="max-w-2xl">
 <span class="inline-block border-l-4 border-primary pl-4 py-1 font-label-bold text-label-bold uppercase mb-6 text-primary tracking-widest">FRAMTIDENS STJÄRNOR</span>
 <h1 class="font-display-lg text-display-lg text-on-background uppercase mb-6 leading-none">VÅRA <span class="text-primary">JUNIORLAG</span></h1>
@@ -128,7 +135,7 @@
 </div>
 </section>
 <!-- Squad Grid -->
-<section class="py-section-gap px-margin-desktop max-w-7xl mx-auto">
+<section class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
 <div>
 <h2 class="font-headline-lg text-headline-lg uppercase text-on-background">VÅRA <span class="text-primary">TRUPPER</span></h2>
@@ -206,7 +213,7 @@
 </section>
 <!-- Activities Gallery -->
 <section class="bg-surface-container-lowest py-section-gap border-y border-outline-variant">
-<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
 <div class="mb-16 text-center">
 <h2 class="font-headline-lg text-headline-lg uppercase text-on-background tracking-tighter">LIVET I <span class="text-primary">KLUBBEN</span></h2>
 <div class="w-16 h-1 bg-primary mx-auto mt-4"></div>
@@ -232,7 +239,7 @@
 </div>
 </section>
 <!-- Registration & Contact -->
-<section class="py-section-gap px-margin-desktop max-w-7xl mx-auto">
+<section class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
 <!-- Registration Form -->
 <div class="bg-surface p-12 border border-primary relative">
@@ -298,7 +305,7 @@
 </main>
 <!-- Footer -->
 <footer class="w-full py-20 bg-surface-container-lowest border-t border-outline-variant">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-16 px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 px-4 md:px-margin-desktop max-w-7xl mx-auto">
 <div class="space-y-8">
 <div class="flex items-center gap-4">
 <img alt="Borås KIF Logo" class="w-12 h-12 grayscale brightness-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>

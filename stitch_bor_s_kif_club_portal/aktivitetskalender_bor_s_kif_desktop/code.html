@@ -83,6 +83,9 @@
             min-height: 140px;
             transition: background-color 0.2s ease;
         }
+        @media (max-width: 767px) {
+            .calendar-grid { display: none; }
+        }
         .day-cell:hover {
             background-color: #222222;
         }
@@ -101,34 +104,42 @@
         }
     </style>
 </head>
-<body class="font-body-md text-on-surface bg-background">
+<body class="font-body-md text-on-surface bg-background overflow-x-hidden">
 <a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:16px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
 <!-- TopNavBar -->
-<header class="w-full top-0 sticky bg-black border-b border-primary/30 sticky-header">
-<div class="flex justify-between items-center h-24 px-margin-desktop max-w-7xl mx-auto">
-<div class="flex items-center gap-6">
-<div class="w-16 h-16 flex items-center justify-center">
-<img alt="BORÅS KIF Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
+<header class="w-full top-0 sticky z-50 bg-background border-b border-primary/30 sticky-header">
+<nav class="flex justify-between items-center h-20 px-4 md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Borås KIF Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-on-background uppercase">BORÅS <span class="text-primary">KIF</span></div>
 </div>
-<div class="flex flex-col">
-<span class="font-headline-md text-2xl font-bold tracking-tighter text-white uppercase leading-none">BORÅS KIF</span>
-<span class="text-[10px] tracking-[0.3em] text-primary font-bold uppercase mt-1">Athletic Prestige</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
+<a class="font-label-bold text-label-bold uppercase text-primary border-b-2 border-primary pb-1" href="code.html">CALENDAR</a>
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../a_lag_bor_s_kif_desktop/code.html">A-TEAM</a>
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
+<a class="font-label-bold text-label-bold uppercase text-on-background/70 hover:text-primary transition-colors" href="#">NEWS</a>
 </div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary text-on-primary font-label-bold text-label-bold uppercase px-6 py-2 tracking-wider hover:brightness-110 transition-all active:scale-95">MEMBER LOGIN</button>
+<button class="md:hidden p-2 active:scale-95 transition-transform" onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</button>
 </div>
-<nav class="hidden md:flex items-center gap-10">
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
-<a class="font-label-bold text-label-bold uppercase text-primary relative after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-primary" href="code.html">CALENDAR</a>
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="../a_lag_bor_s_kif_desktop/code.html">A-TEAM</a>
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
-<a class="font-label-bold text-label-bold uppercase text-secondary hover:text-primary transition-colors" href="#">NEWS</a>
 </nav>
-<div class="flex items-center gap-8">
-<button class="material-symbols-outlined text-secondary hover:text-primary transition-colors">search</button>
-<button class="border border-primary text-primary hover:bg-primary hover:text-on-primary font-label-bold text-label-bold uppercase px-8 py-4 transition-all duration-300">MEMBER LOGIN</button>
-</div>
-</div>
 </header>
-<main class="max-w-7xl mx-auto px-margin-desktop py-20">
+<aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300" id="mobile-drawer">
+<div class="bg-black/70 absolute inset-0" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
+<div class="h-full w-72 bg-background border-r border-primary/20 flex flex-col gap-1 py-8 relative z-[61]">
+<div class="px-6 mb-8"><span class="font-label-bold text-label-bold uppercase text-primary tracking-widest text-sm">BORÅS KIF</span></div>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
+<a class="flex items-center gap-4 px-6 py-4 text-primary border-l-2 border-primary bg-white/5 font-label-bold text-label-bold uppercase tracking-widest text-sm" href="code.html">CALENDAR</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../a_lag_bor_s_kif_desktop/code.html">A-TEAM</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface/60 hover:text-primary hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="#">NEWS</a>
+</div>
+</aside>
+<main class="max-w-7xl mx-auto px-4 md:px-margin-desktop py-20">
 <!-- Header & Filters Section -->
 <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
 <div class="max-w-3xl">
@@ -156,7 +167,75 @@
 <button class="px-6 py-3 bg-transparent text-white border border-white/10 hover:border-primary text-[12px] font-bold uppercase tracking-widest transition-all">F11/12</button>
 <button class="px-6 py-3 bg-transparent text-white border border-white/10 hover:border-primary text-[12px] font-bold uppercase tracking-widest transition-all">Klubbmöten</button>
 </div>
-<!-- Calendar Container -->
+<!-- Mobile Event List (visible below md) -->
+<div class="md:hidden mb-10 border border-white/5 bg-surface-container-low divide-y divide-white/5">
+<div class="px-4 py-3 bg-surface-container-lowest">
+<span class="font-label-bold text-[10px] uppercase tracking-[0.2em] text-primary">NOVEMBER 2024</span>
+</div>
+<div class="p-4 flex items-start gap-4">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">1</span><span class="block text-[10px] text-on-surface-variant uppercase">FRE</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-primary text-black inline-block">18:00 TRÄNING - A-LAG</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 bg-surface-container">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">2</span><span class="block text-[10px] text-on-surface-variant uppercase">LÖR</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-white text-black inline-block">14:00 MATCH - P09 VS IFK</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 bg-surface-container">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">3</span><span class="block text-[10px] text-on-surface-variant uppercase">SÖN</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar border border-primary text-primary inline-block">10:00 KLUBBFIKA</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">4</span><span class="block text-[10px] text-on-surface-variant uppercase">MÅN</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-primary text-black inline-block">17:30 TRÄNING - F11</div>
+<div class="event-bar bg-primary text-black inline-block">19:00 TRÄNING - A-LAG</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-primary">6</span><span class="block text-[10px] text-on-surface-variant uppercase">ONS</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-white text-black inline-block">18:30 STYRELSEMÖTE</div>
+<div class="event-bar bg-primary text-black inline-block">19:30 TRÄNING - P09</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">8</span><span class="block text-[10px] text-on-surface-variant uppercase">FRE</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-primary text-black inline-block">18:00 TRÄNING - A-LAG</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 bg-surface-container">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">9</span><span class="block text-[10px] text-on-surface-variant uppercase">LÖR</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-white text-black inline-block">15:00 MATCH - A-LAG</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">13</span><span class="block text-[10px] text-on-surface-variant uppercase">ONS</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-primary text-black inline-block">19:00 TRÄNING - P09</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">14</span><span class="block text-[10px] text-on-surface-variant uppercase">TOR</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-white text-black inline-block">18:00 SPONSOR-TRÄFF</div>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 bg-surface-container">
+<div class="w-10 shrink-0 text-center"><span class="block font-bold text-lg text-on-surface">16</span><span class="block text-[10px] text-on-surface-variant uppercase">LÖR</span></div>
+<div class="flex-1 space-y-2">
+<div class="event-bar bg-white text-black inline-block">13:00 MATCH - U19</div>
+</div>
+</div>
+</div>
+<!-- Calendar Container (desktop only) -->
 <div class="bg-surface-container-low border border-white/5 relative shadow-2xl">
 <!-- Decorative corner accent -->
 <div class="absolute -top-[1px] -right-[1px] w-12 h-12 border-t-2 border-r-2 border-primary"></div>
@@ -337,7 +416,7 @@
 </main>
 <!-- Footer -->
 <footer class="w-full py-24 bg-black border-t border-white/10 mt-section-gap">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-4 md:px-margin-desktop max-w-7xl mx-auto">
 <div class="md:col-span-5">
 <div class="flex items-center gap-4 mb-8">
 <img alt="Logo" class="w-12 h-12 grayscale brightness-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
@@ -366,7 +445,7 @@
 </div>
 </div>
 </div>
-<div class="max-w-7xl mx-auto px-margin-desktop mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="max-w-7xl mx-auto px-4 md:px-margin-desktop mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
 <p class="font-label-bold text-[10px] tracking-widest text-on-surface-variant opacity-40 uppercase">© 2024 BORÅS KIF. ATHLETIC PRESTIGE EDITION.</p>
 <div class="flex gap-8">
 <a class="text-[10px] font-bold text-on-surface-variant hover:text-white uppercase tracking-widest" href="#">Privacy</a>

@@ -127,7 +127,7 @@
 <a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:16px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
 <!-- TopNavBar -->
 <header class="w-full top-0 sticky z-50 bg-brand-black border-b border-brand-gold/30">
-<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-7xl mx-auto">
+<nav class="flex justify-between items-center h-20 px-4 md:px-margin-desktop max-w-7xl mx-auto">
 <div class="flex items-center gap-3">
 <img alt="Borås KIF Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
 <div class="font-headline-md text-headline-md font-bold tracking-tight text-white uppercase">
@@ -142,12 +142,24 @@
 <a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors" href="#">NEWS</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="bg-brand-gold text-brand-black font-label-bold px-6 py-2 uppercase tracking-wider hover:bg-white transition-all active:scale-95 duration-150 gold-button-hover">
-                MEMBER LOGIN
-            </button>
+<button class="hidden md:block bg-brand-gold text-brand-black font-label-bold px-6 py-2 uppercase tracking-wider hover:bg-white transition-all active:scale-95 duration-150 gold-button-hover">MEMBER LOGIN</button>
+<button class="md:hidden p-2 active:scale-95 transition-transform" onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')">
+<span class="material-symbols-outlined text-brand-gold text-3xl">menu</span>
+</button>
 </div>
 </nav>
 </header>
+<aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300" id="mobile-drawer">
+<div class="bg-black/70 absolute inset-0" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
+<div class="h-full w-72 bg-brand-black border-r border-brand-gold/20 flex flex-col gap-1 py-8 relative z-[61]">
+<div class="px-6 mb-8"><span class="font-label-bold text-label-bold uppercase text-brand-gold tracking-widest text-sm">BORÅS KIF</span></div>
+<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
+<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
+<a class="flex items-center gap-4 px-6 py-4 text-brand-gold border-l-2 border-brand-gold bg-white/5 font-label-bold text-label-bold uppercase tracking-widest text-sm" href="code.html">A-TEAM</a>
+<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
+<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="#">NEWS</a>
+</div>
+</aside>
 <main>
 <!-- Hero Section -->
 <section class="relative w-full h-[80vh] flex items-end overflow-hidden">
@@ -156,7 +168,7 @@
 </div>
 <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-transparent"></div>
 </div>
-<div class="relative z-10 px-margin-desktop max-w-7xl mx-auto w-full pb-24">
+<div class="relative z-10 px-4 md:px-margin-desktop max-w-7xl mx-auto w-full pb-24">
 <div class="inline-flex items-center gap-2 text-brand-gold font-label-bold uppercase tracking-[0.3em] mb-4">
 <span class="w-8 h-[1px] bg-brand-gold"></span>
                 DIVISJON 2 MELLERSTA GÖTALAND
@@ -171,7 +183,7 @@
 </div>
 </section>
 <!-- Stats & Matches -->
-<section class="py-section-gap px-margin-desktop max-w-7xl mx-auto">
+<section class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 <!-- Recent Results -->
 <div class="lg:col-span-4 flex flex-col gap-8">
@@ -279,7 +291,7 @@
 </section>
 <!-- Player Roster -->
 <section class="py-section-gap bg-[#F5F3F3]">
-<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
 <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-6">
 <div>
 <h2 class="font-display-lg text-[64px] uppercase leading-none mb-6 tracking-tighter">TRUPPEN</h2>
@@ -340,7 +352,7 @@
 </div>
 </section>
 <!-- Staff & Recruitment -->
-<section class="py-section-gap px-margin-desktop max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<section class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 <div>
 <h2 class="font-headline-lg text-headline-md uppercase tracking-widest text-brand-black mb-12">LEDARSTABEN</h2>
 <div class="space-y-0">
@@ -379,7 +391,7 @@
 </main>
 <!-- Footer -->
 <footer class="w-full pt-24 pb-12 bg-brand-black text-white border-t border-brand-gold/20">
-<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
 <div class="md:col-span-2 flex flex-col gap-8">
 <div class="flex items-center gap-4">

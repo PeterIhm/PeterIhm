@@ -121,10 +121,10 @@
 <header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant">
 <div class="flex justify-between items-center h-16 px-gutter max-w-7xl mx-auto">
 <div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-primary p-2 active:scale-95 transition-transform" data-icon="menu">menu</button>
+<button class="p-2 active:scale-95 transition-transform" onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')"><span class="material-symbols-outlined text-primary">menu</span></button>
 <h1 class="font-display-lg text-headline-md font-bold text-primary tracking-tighter">BORÅS KIF</h1>
 </div>
-<nav class="hidden md:flex items-center gap-md h-full">
+<nav class="hidden">
 <a class="text-on-surface-variant font-bold hover:text-primary transition-colors duration-200 h-full flex items-center px-2" href="#">Start</a>
 <a class="text-primary border-b-4 border-primary font-bold h-full flex items-center px-2" href="#">Kalender</a>
 <a class="text-on-surface-variant font-bold hover:text-primary transition-colors duration-200 h-full flex items-center px-2" href="#">A-lag</a>
@@ -136,6 +136,30 @@
 </div>
 </div>
 </header>
+<!-- Navigation Drawer (Mobile) -->
+<aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300" id="mobile-drawer">
+<div class="bg-black/50 absolute inset-0" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
+<div class="h-full w-80 bg-surface shadow-xl flex flex-col gap-2 py-12 relative z-[61]">
+<div class="px-6 mb-6">
+<span class="font-display-lg text-xl font-bold text-primary">BORÅS KIF</span>
+</div>
+<a class="text-on-surface hover:bg-surface-container-high mx-2 flex items-center gap-6 px-6 py-3 transition-all rounded" href="../hem_bor_s_kif/code.html">
+<span class="material-symbols-outlined">home</span> Start
+</a>
+<a class="bg-secondary-container text-on-secondary-container font-bold rounded-full mx-2 flex items-center gap-6 px-6 py-3" href="code.html">
+<span class="material-symbols-outlined">calendar_month</span> Kalender
+</a>
+<a class="text-on-surface hover:bg-surface-container-high mx-2 flex items-center gap-6 px-6 py-3 transition-all rounded" href="../a_lag_bor_s_kif/code.html">
+<span class="material-symbols-outlined">sports_soccer</span> A-lag
+</a>
+<a class="text-on-surface hover:bg-surface-container-high mx-2 flex items-center gap-6 px-6 py-3 transition-all rounded" href="#">
+<span class="material-symbols-outlined">groups</span> Juniorlag
+</a>
+<a class="text-on-surface hover:bg-surface-container-high mx-2 flex items-center gap-6 px-6 py-3 transition-all rounded" href="#">
+<span class="material-symbols-outlined">handshake</span> Sponsorer
+</a>
+</div>
+</aside>
 <main class="pt-32 pb-xl px-gutter max-w-7xl mx-auto min-h-screen">
 <!-- Page Header & Filters -->
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
