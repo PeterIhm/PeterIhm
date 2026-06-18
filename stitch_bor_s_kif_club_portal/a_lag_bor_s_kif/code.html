@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Borås KIF - A-lag</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#5f5e5e",
+                        "background": "#fbf9f8",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#fbf9f8",
+                        "on-tertiary-container": "#838484",
+                        "secondary-fixed": "#ffdea1",
+                        "outline": "#747878",
+                        "secondary": "#7a5900",
+                        "surface-container-low": "#f5f3f3",
+                        "primary-container": "#1c1b1b",
+                        "inverse-surface": "#303031",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c9c6c5",
+                        "surface-container": "#efeded",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1c1c",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-container": "#858383",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#261900",
+                        "surface-variant": "#e4e2e2",
+                        "primary": "#000000",
+                        "secondary-fixed-dim": "#f6be3c",
+                        "on-surface": "#1b1c1c",
+                        "surface": "#fbf9f8",
+                        "on-secondary-container": "#725300",
+                        "error": "#ba1a1a",
+                        "tertiary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-high": "#e9e8e7",
+                        "tertiary-container": "#1a1c1c",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "secondary-container": "#ffc645",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#444748",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dbdad9",
+                        "outline-variant": "#c4c7c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "margin": "32px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Archivo Narrow"],
+                        "label-lg": ["Archivo Narrow"],
+                        "display-lg": ["Archivo Narrow"],
+                        "headline-md": ["Archivo Narrow"],
+                        "headline-lg-mobile": ["Archivo Narrow"],
+                        "body-lg": ["Archivo Narrow"],
+                        "headline-lg": ["Archivo Narrow"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .athlete-card-hover {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .athlete-card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            -webkit-text-fill-color: transparent;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary selection:text-on-secondary">
+<a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:80px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center h-16 px-gutter max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary active:scale-95 transition-transform" data-icon="menu"></button>
+<span class="font-display-lg text-headline-md font-bold text-primary tracking-tighter uppercase">BORÅS KIF</span>
+</div>
+<nav class="hidden md:flex gap-lg">
+<a class="text-on-surface-variant font-bold text-sm uppercase hover:text-secondary transition-colors duration-200" href="#">Start</a>
+<a class="text-on-surface-variant font-bold text-sm uppercase hover:text-secondary transition-colors duration-200" href="#">Kalender</a>
+<a class="text-primary border-b-2 border-primary font-bold text-sm uppercase" href="#">A-lag</a>
+<a class="text-on-surface-variant font-bold text-sm uppercase hover:text-secondary transition-colors duration-200" href="#">Juniorlag</a>
+<a class="text-on-surface-variant font-bold text-sm uppercase hover:text-secondary transition-colors duration-200" href="#">Sponsorer</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary active:scale-95 transition-transform" data-icon="account_circle"></button>
+</div>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[530px] md:h-[663px] overflow-hidden flex items-end bg-primary">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="A cinematic, wide-angle shot of a professional football team in red and white kits posing on a lush green pitch under dramatic stadium floodlights at dusk. The atmosphere is heroic and focused, with a misty evening air creating a soft glow around the players. The color palette is dominated by deep reds and crisp whites against the dark navy sky and vibrant grass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFCGY7xlhX3q3hRI1UNuhskDEBesh8t5QCy8FYpKQTf0lH1FhwyRhLRRYm-GNdjhpsrNoM7c0Smdhjt_BlKSLarEAzwQU6uXTTz-UjbRs7hFbxhAzBRzBQEN7KVrVY4OrKFe0oKyhU4YuhHWrhJcHIH3pbqGrHz5zb1yc5UOtOwJrZUjYJXbd1Nv8tvsmia4RHlz87_aUXIhEV7vAR1JBEp4DBqlHp0sAwOYEpDAjU5MD5FPY2AEXPmbsYBatMFFMsTJ58IMI_fA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-gutter max-w-7xl mx-auto w-full pb-xl">
+<h1 class="font-display-lg text-7xl md:text-8xl text-white mb-xs tracking-tighter uppercase italic">A-LAGET</h1>
+<div class="flex items-center gap-md">
+<span class="bg-secondary text-on-secondary px-md py-xs font-label-lg uppercase tracking-widest">DIVISION 4 MELLERSTA</span>
+<span class="text-white/80 font-label-lg border-l border-white/30 pl-md uppercase tracking-widest">SÄSONG 2024</span>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 p-gutter hidden lg:block opacity-10">
+<span class="font-display-lg text-[180px] text-white font-bold tracking-tighter select-none uppercase italic">PRESTIGE</span>
+</div>
+</section>
+<!-- Stats Overview & Next Match -->
+<section class="px-gutter max-w-7xl mx-auto -mt-16 relative z-20">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-0 shadow-2xl overflow-hidden rounded-lg">
+<!-- Next Match Card -->
+<div class="lg:col-span-2 bg-white p-lg flex flex-col md:flex-row items-center justify-between gap-lg border-r border-outline-variant/30">
+<div class="flex flex-col text-center md:text-left">
+<span class="font-label-lg text-secondary mb-xs uppercase tracking-widest">NÄSTA MATCH</span>
+<span class="font-headline-lg text-headline-lg text-primary uppercase">Borås KIF vs Lidköping IF</span>
+<div class="flex items-center justify-center md:justify-start gap-md text-on-surface-variant mt-sm">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month"></span>
+<span class="font-body-md">Lördag 15 Juni, 16:00</span>
+<span class="mx-xs opacity-30">|</span>
+<span class="material-symbols-outlined text-sm" data-icon="location_on"></span>
+<span class="font-body-md">Borås Arena</span>
+</div>
+</div>
+<div class="flex items-center gap-lg py-md px-lg bg-surface-container-lowest rounded-full border border-outline-variant/20">
+<img class="w-12 h-12 object-contain" data-alt="A stylized minimalist football club crest for Boras KIF featuring a bold red shield and white geometric patterns, presented with professional sports branding clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFRyxrh6lMBmOTDFw-oP5REDUYdOHXtCQ5b4qKfb1ZiM73RobzkDxM6hmGfc-jXEV-bqsek3FaA5ZO6JOPQDIGLMiU61IZCuvqcgvf3_NXbuPl_gc1uUov0X39CLTcdpujYl6y78qHBY5vKv-5aKi7w8-xzpMOQgL1jmcVplHxi5AF84CLv_ZSdwlCwFWek1PCPvi8_iYLHFoFe_EfvpFplBDqXZBb7UCayRP0UKudcQ55nYZOvkT5T5qkDhea1uf2jK5b9qulaw"/>
+<div class="font-display-lg text-headline-md text-outline-variant italic">VS</div>
+<img class="w-12 h-12 object-contain" data-alt="A minimalist professional football club logo for Lidkoping IF with navy blue and yellow corporate identity colors on a white circular background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeaBF_Xk5-7Fkrok7kwEpcBnd49J2ve992pVw3CSUQDcX7Bo-rwwc7ECM-ivz_ua3hpQlRlwLc_Jnk5CC3c14d4CqvNdsf1IZJ3W0In5dEMYsTbjEbcWoDO6zjDRRjuLy13gTGfaPT4I4G2DHSVzsKaW2x0TA8tJixe6jyPZ_-gM57LrHaaWc4nckPm9V1GT07V3G3LJEiXQ_KYmmRmggi6G6_bTlgjD6rZxoNSRS_JnCXHqPzRvzJ6k_YPjvJ9FAVPXatqf9Zxw"/>
+</div>
+<button class="bg-primary text-white px-xl py-md font-label-lg uppercase tracking-widest hover:bg-secondary hover:text-on-secondary transition-all active:scale-95">BILJETTER</button>
+</div>
+<!-- Quick Stats -->
+<div class="bg-primary text-white p-lg flex flex-col justify-between border-l border-white/10">
+<span class="font-label-lg text-secondary uppercase tracking-widest">Tabellposition</span>
+<div class="flex items-baseline gap-md">
+<span class="font-display-lg text-8xl leading-none italic">2</span>
+<span class="font-headline-md text-white/50">/ 12</span>
+</div>
+<div class="mt-lg border-t border-white/10 pt-md flex justify-between items-center">
+<div>
+<span class="block text-xs font-label-lg text-secondary tracking-widest uppercase">FORM</span>
+<div class="flex gap-xs mt-xs">
+<span class="w-6 h-6 border border-white/20 rounded-full flex items-center justify-center text-[10px] font-bold bg-green-600">V</span>
+<span class="w-6 h-6 border border-white/20 rounded-full flex items-center justify-center text-[10px] font-bold bg-green-600">V</span>
+<span class="w-6 h-6 border border-white/20 rounded-full flex items-center justify-center text-[10px] font-bold bg-secondary text-on-secondary">O</span>
+<span class="w-6 h-6 border border-white/20 rounded-full flex items-center justify-center text-[10px] font-bold bg-green-600">V</span>
+<span class="w-6 h-6 border border-white/20 rounded-full flex items-center justify-center text-[10px] font-bold bg-red-600">F</span>
+</div>
+</div>
+<a class="font-label-lg text-white hover:text-secondary transition-colors flex items-center gap-xs uppercase tracking-widest" href="#">SE TABELL <span class="material-symbols-outlined text-sm" data-icon="arrow_forward"></span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Player Roster (Spelartrupp) -->
+<section class="py-xl px-gutter max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg border-b border-outline-variant pb-md">
+<div>
+<span class="font-label-lg text-secondary block mb-xs uppercase tracking-widest">EXKLUSIV TRUPP</span>
+<h2 class="font-display-lg text-5xl text-primary uppercase italic">SPELARTRUPP 2024</h2>
+</div>
+<div class="flex flex-wrap gap-xs mt-md md:mt-0">
+<button class="px-md py-sm bg-primary text-white font-label-lg uppercase tracking-widest">ALLA</button>
+<button class="px-md py-sm text-on-surface-variant font-label-lg hover:text-primary transition-colors uppercase tracking-widest">MÅLVAKTER</button>
+<button class="px-md py-sm text-on-surface-variant font-label-lg hover:text-primary transition-colors uppercase tracking-widest">FÖRSVAR</button>
+<button class="px-md py-sm text-on-surface-variant font-label-lg hover:text-primary transition-colors uppercase tracking-widest">MITTFÄLT</button>
+<button class="px-md py-sm text-on-surface-variant font-label-lg hover:text-primary transition-colors uppercase tracking-widest">ANFALL</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter">
+<!-- Player Card 1 -->
+<div class="group athlete-card-hover bg-primary relative overflow-hidden h-[450px] border border-outline-variant">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional studio portrait of a confident male football player with short dark hair, wearing a red and white Boras KIF jersey. He is looking directly at the camera with a determined expression against a clean grey background with soft cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsxo3oTooQ6IgnMtcPbShI__eApo_C3FDNPxiu0YmPq7dElEcm-F6njJ8MMBXMGi9oSl3B5nOvS9nrwYTMRhPwgfzY0U79qtaJNDS56sOaZRWpenKLVy8EdKI9BUNREesj6ZrIGWrzy_UirYnp00hd9r7H55fT9RuyegKBwvNq0V0gb8_kXxvqdbdF0JIidkeVrRuM8FPQvULQ1OZg5b86oQ41nwXMF50S6eZN7gKFtLqpoFbZ3yrHFZTM-kaQTPxWk7NyHPSCZQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md">
+<span class="font-display-lg text-6xl text-white/10 italic absolute bottom-4 right-4 group-hover:text-secondary/20 transition-colors">01</span>
+<span class="font-label-lg text-secondary block uppercase tracking-widest text-xs">MÅLVAKT</span>
+<h3 class="font-headline-md text-white uppercase italic">ERIK ANDERSSON</h3>
+</div>
+</div>
+<!-- Player Card 2 -->
+<div class="group athlete-card-hover bg-primary relative overflow-hidden h-[450px] border border-outline-variant">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional studio portrait of a young male football player in an athletic pose, wearing a red Boras KIF kit. High contrast lighting accentuates his facial features and athletic build, set against a dark textured studio wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsfwmfrOeNuq_5eWc7O5y08OgcvIevRzYvaPfzpm63tyrguBdfFLNhbmE7U7eUaOCJKzxj3CK_vzFxYjpE2qYVgGx5zmTzzHrtHzBz_yPxqRkEASbx31Gf309eg4HlGN8OVw_IJDX9Ua5mAwEJkbCMINKpMuiKTLGz1vOrRvmM9NNI5sfHNkNnBEKxIGg0Er0PfymkiediLXvxbgEZgWAJU2XG93zT-TsPmzv6yT4W5BsiJaho2QBwccgaHgRmyB_RkylpPhEJhQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md">
+<span class="font-display-lg text-6xl text-white/10 italic absolute bottom-4 right-4 group-hover:text-secondary/20 transition-colors">04</span>
+<span class="font-label-lg text-secondary block uppercase tracking-widest text-xs">FÖRSVAR</span>
+<h3 class="font-headline-md text-white uppercase italic">MARCUS BERG</h3>
+</div>
+</div>
+<!-- Player Card 3 -->
+<div class="group athlete-card-hover bg-primary relative overflow-hidden h-[450px] border border-outline-variant">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A portrait of a male professional athlete with blonde hair, wearing a football jersey. The lighting is bright and modern, creating a professional sports photography look with crisp details and vibrant reds of the kit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI3iu_oTzsrlINEvJc7dDezl-AYZFJHxMWMv0MxcQMUgnAIVBHTMmQTT6yK4_mlVC91X2jnYB5b9MrylmVPWFpK0-Ba8IEYocHv2h3YX1RSO24qD-maMMldbxBu76qKQm_FlzMsfTurV96POeAhPttuPvjx6oX9KWzmCMrjKDN-lry_sY5hUig3jYZNSwBpy2j4oRqIJpdNTS-AKay-6ldiOE2E2pfnTB_pc7pNh0KBVGJ4IrFiPbm48FbjPiTjmYfArKwF6hf0A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md">
+<span class="font-display-lg text-6xl text-white/10 italic absolute bottom-4 right-4 group-hover:text-secondary/20 transition-colors">10</span>
+<span class="font-label-lg text-secondary block uppercase tracking-widest text-xs">MITTFÄLT</span>
+<h3 class="font-headline-md text-white uppercase italic">SIMON NILSSON</h3>
+</div>
+</div>
+<!-- Player Card 4 -->
+<div class="group athlete-card-hover bg-primary relative overflow-hidden h-[450px] border border-outline-variant">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Studio photography of a smiling male football player in red sports apparel, looking relaxed yet focused. The background is a clean white studio with professional key lighting and soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ8lGR0MHEnYu-uJho8L53zN3MDTtN5gNSLZoTYHOX04OBpGZCLgqXtI8I0S1qBH4OiWHpcWIMGLYXH7qTfBzpjrbXxA_oXZv7ZobkGlh9arUWCwX5xJ2rBNJsGPHJpqEuJNxeQKbPWKrkiiL_lHz04N2-vNon1esqkdPhhBkb7HwC9cQeHgP9hV1O3rJVReFgrfiKdYDbusvc_NBs8lmf5pPYQheVR4AXqkrJZdd71A91Yt2re0WqJiUqUT3I3E4m_xiqzkGTFQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-md">
+<span class="font-display-lg text-6xl text-white/10 italic absolute bottom-4 right-4 group-hover:text-secondary/20 transition-colors">09</span>
+<span class="font-label-lg text-secondary block uppercase tracking-widest text-xs">ANFALL</span>
+<h3 class="font-headline-md text-white uppercase italic">OSCAR EKSTRÖM</h3>
+</div>
+</div>
+</div>
+<div class="mt-lg flex justify-center">
+<button class="px-xl py-md border-2 border-primary text-primary font-label-lg uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all active:scale-95 italic">VISA HELA TRUPPEN</button>
+</div>
+</section>
+<!-- League Table & Matches Section -->
+<section class="bg-surface-container-low py-xl">
+<div class="px-gutter max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<!-- League Table -->
+<div class="flex flex-col">
+<h2 class="font-display-lg text-4xl text-primary mb-lg uppercase italic tracking-tighter">DIV 4 - LIGATABELL</h2>
+<div class="bg-white shadow-xl border border-outline-variant overflow-hidden rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-white">
+<th class="px-md py-md font-label-lg text-xs uppercase tracking-widest">#</th>
+<th class="px-md py-md font-label-lg text-xs uppercase tracking-widest">LAG</th>
+<th class="px-md py-md font-label-lg text-xs uppercase tracking-widest text-center">S</th>
+<th class="px-md py-md font-label-lg text-xs uppercase tracking-widest text-center">+/-</th>
+<th class="px-md py-md font-label-lg text-xs uppercase tracking-widest text-center">P</th>
+</tr>
+</thead>
+<tbody class="font-body-md">
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="px-md py-md font-bold">1</td>
+<td class="px-md py-md uppercase font-medium">Falköpings FK</td>
+<td class="px-md py-md text-center opacity-70">12</td>
+<td class="px-md py-md text-center text-green-600 font-bold">+18</td>
+<td class="px-md py-md text-center font-bold">29</td>
+</tr>
+<tr class="bg-secondary/10 border-l-4 border-l-secondary border-b border-outline-variant/30">
+<td class="px-md py-md font-bold text-primary italic">2</td>
+<td class="px-md py-md font-bold text-primary uppercase italic">Borås KIF</td>
+<td class="px-md py-md text-center font-bold">12</td>
+<td class="px-md py-md text-center text-green-600 font-bold">+14</td>
+<td class="px-md py-md text-center font-bold text-primary">26</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="px-md py-md font-bold">3</td>
+<td class="px-md py-md uppercase font-medium">Lidköping IF</td>
+<td class="px-md py-md text-center opacity-70">12</td>
+<td class="px-md py-md text-center text-green-600 font-bold">+8</td>
+<td class="px-md py-md text-center font-bold">24</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="px-md py-md font-bold">4</td>
+<td class="px-md py-md uppercase font-medium">Mariestads BK</td>
+<td class="px-md py-md text-center opacity-70">12</td>
+<td class="px-md py-md text-center text-green-600 font-bold">+5</td>
+<td class="px-md py-md text-center font-bold">21</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container transition-colors">
+<td class="px-md py-md font-bold">5</td>
+<td class="px-md py-md uppercase font-medium">Skövde AIK U</td>
+<td class="px-md py-md text-center opacity-70">12</td>
+<td class="px-md py-md text-center text-red-600 font-bold">-2</td>
+<td class="px-md py-md text-center font-bold">18</td>
+</tr>
+</tbody>
+</table>
+<div class="p-md text-center bg-surface-container-lowest">
+<a class="text-primary font-label-lg text-xs uppercase tracking-[0.2em] hover:text-secondary transition-colors" href="#">Se fullständig tabell</a>
+</div>
+</div>
+</div>
+<!-- Upcoming Matches -->
+<div class="flex flex-col">
+<h2 class="font-display-lg text-4xl text-primary mb-lg uppercase italic tracking-tighter">KOMMANDE MATCHER</h2>
+<div class="space-y-gutter">
+<!-- Match Card 1 -->
+<div class="bg-white p-lg border border-outline-variant flex items-center justify-between group cursor-pointer hover:border-secondary hover:shadow-lg transition-all rounded-lg">
+<div class="flex flex-col border-l-4 border-l-secondary pl-md">
+<span class="font-label-lg text-xs text-on-surface-variant uppercase tracking-widest">HEMMA | 15 JUN</span>
+<span class="font-display-lg text-2xl text-primary mt-xs uppercase italic">Lidköping IF</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="text-right hidden md:block">
+<span class="block font-label-lg text-primary">16:00</span>
+<span class="block text-xs text-on-surface-variant uppercase">Borås Arena</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right"></span>
+</div>
+</div>
+</div>
+<!-- Match Card 2 -->
+<div class="bg-white p-lg border border-outline-variant flex items-center justify-between group cursor-pointer hover:border-secondary hover:shadow-lg transition-all rounded-lg">
+<div class="flex flex-col border-l-4 border-l-primary pl-md">
+<span class="font-label-lg text-xs text-on-surface-variant uppercase tracking-widest">BORTA | 22 JUN</span>
+<span class="font-display-lg text-2xl text-primary mt-xs uppercase italic">Mariestads BK</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="text-right hidden md:block">
+<span class="block font-label-lg text-primary">14:00</span>
+<span class="block text-xs text-on-surface-variant uppercase">Lekevi IP</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right"></span>
+</div>
+</div>
+</div>
+<!-- Match Card 3 -->
+<div class="bg-white p-lg border border-outline-variant flex items-center justify-between group cursor-pointer hover:border-secondary hover:shadow-lg transition-all rounded-lg">
+<div class="flex flex-col border-l-4 border-l-secondary pl-md">
+<span class="font-label-lg text-xs text-on-surface-variant uppercase tracking-widest">HEMMA | 29 JUN</span>
+<span class="font-display-lg text-2xl text-primary mt-xs uppercase italic">Skövde AIK U</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="text-right hidden md:block">
+<span class="block font-label-lg text-primary">16:00</span>
+<span class="block text-xs text-on-surface-variant uppercase">Borås Arena</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partner Banner -->
+<section class="py-xl bg-white">
+<div class="px-gutter max-w-7xl mx-auto text-center mb-lg">
+<span class="font-label-lg text-secondary uppercase tracking-[0.3em] font-bold">HUVUDPARTNERS</span>
+<div class="h-px w-24 bg-secondary/30 mx-auto mt-sm"></div>
+</div>
+<div class="px-gutter max-w-7xl mx-auto flex flex-wrap justify-center gap-xl items-center">
+<img class="h-10 md:h-12 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500" data-alt="A monochrome minimalist corporate logo for a construction company, professional and architectural style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcB1cnooTv6uD0mOf11Mk1lL77oafNaJoqlYZAhx_R0gu9hEOU334wyvVH10MgrxIACpR8hXRw7PnqQzrOvw7o1tAwUluCKbGbc2NYqEgY5xdrfGqfOK3xSO9vmPHErQhnfJipdGRjleszhMTpN_Q8IhVHmf4EcI5ct1NqLz4nYAGAs4hz42Gshrb2ZptZw8BFxJpLWigXO4YOnxSpaImFuO6w2iS_ZFzcr8icadHsqTy5e21Qq0P4221--IwKi5N33m_QGrQqcA"/>
+<img class="h-10 md:h-12 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500" data-alt="A minimalist logo for a local bank, clean lines and professional financial branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNEoi4FVmWDgkiQdpySBMWnAKKH3Xs-NQt0Kets4r-o9AAxAyu9sRSlgZxAtVzWElp_pi3Lp8QVe31A5lzKte42Rh3xbdvMlwonZ6h-8-7_VaLvhw0zoiVE_oYl9BabcXv8rVT9rAJy9bDFzsD3vykgA6CqExOO_aixRLmcUzK0ftnVJ5_JJrjD0tFtN1OgjohrPkXjqWnEUVb-Duh5COTqqnVu6rViK1xU_wmWqBi_bNnwfeX_6VdX_FSzHIZSte81dJz51wmGQ"/>
+<img class="h-10 md:h-12 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500" data-alt="A clean modern automotive brand logo, sleek and high-end automotive design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDCOrLXQr7QjV3uZHsT-wPpYyXmALGtW4W5Eo0Q7m2gjvNNlX20zEBbZU335hUC1Nkn1R36ONSd5p9IAwwyw_ymRgao9UvBIxWCYslFhpAPh32Gy0ybXn8sWf4yBFts-oSU1yvt85KqJoNUwP1J8m_d_gbQuR4MLoPADPDtBNKxEA2PbzVlgcJ_gEzse1jTiZ3Dt-sOO6MHgeQdt0enHZGA3NXOPHj_1j45KxT16j2k7eyRSuRarfwP0IwXSvCFyORYLaK0yyD9w"/>
+<img class="h-10 md:h-12 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500" data-alt="A professional sports equipment brand logo, athletic and dynamic visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM05Me_4N9V9MhPMA-2p1_FqZKlzIkgMx8R--dnEx8gvqiUgblbXY0kOhH5OVmnyOQXLdgA08wCXZVHBz1XZOGcOJU-CW5-ynkq1VTd0d4pEn_BlsmTtZEwY7QRv784QwzaV8Oy27xZrvqK8kXJf-SQYQZ0zx6yH21l1bVePZAubiqI7TTYIgenaXm6JfwFqlQXb7s9h04mtXGWr5-S8-xcT5R9zrtBpshCBTDRsO5dhl5RO41ytGwcgl_OzJHPnj6EJdRP9wRLA"/>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white border-t border-white/5 w-full pt-xl pb-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg px-gutter max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<span class="font-display-lg text-headline-md font-bold text-secondary tracking-tighter block mb-md uppercase italic">BORÅS KIF</span>
+<p class="font-body-md text-white/60">En del av Borås idrottshistoria sedan 1924. Vi bygger framtidens fotbollsspelare genom passion och gemenskap i en miljö av prestige.</p>
+</div>
+<div>
+<h4 class="font-label-lg mb-md uppercase tracking-widest text-secondary">Snabblänkar</h4>
+<ul class="space-y-sm">
+<li><a class="text-white/60 hover:text-white transition-all underline-offset-4" href="#">Contact</a></li>
+<li><a class="text-white/60 hover:text-white transition-all underline-offset-4" href="#">Privacy Policy</a></li>
+<li><a class="text-white/60 hover:text-white transition-all underline-offset-4" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-lg mb-md uppercase tracking-widest text-secondary">Sociala Medier</h4>
+<div class="flex gap-md">
+<button class="material-symbols-outlined text-white/60 hover:text-white transition-colors" data-icon="facebook"></button>
+<button class="material-symbols-outlined text-white/60 hover:text-white transition-colors" data-icon="photo_camera"></button>
+<button class="material-symbols-outlined text-white/60 hover:text-white transition-colors" data-icon="video_library"></button>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg mb-md uppercase tracking-widest text-secondary">Kontakt</h4>
+<p class="text-white/60 font-body-md italic">
+                    Borås Arena<br/>
+                    Postbox 1234<br/>
+                    501 13 Borås
+                </p>
+</div>
+</div>
+<div class="px-gutter max-w-7xl mx-auto mt-xl pt-md border-t border-white/10 text-center">
+<p class="text-white/40 text-xs uppercase tracking-widest">© 2024 Borås KIF. ALL RIGHTS RESERVED. PRESTIGE BRANDING.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for player cards
+        document.querySelectorAll('.athlete-card-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.1) rotate(1deg)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    </script>
+</body></html>

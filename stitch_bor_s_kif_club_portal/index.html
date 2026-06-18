@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
+<title>Borås KIF — Club Portal Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+    :root{
+        --gold:#d4af37;
+        --bg:#0d0d0d;
+        --surface:#161616;
+        --surface-2:#1f1f1f;
+        --line:rgba(212,175,55,.25);
+        --text:#fbf9f8;
+        --muted:rgba(251,249,248,.55);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+        background:var(--bg);
+        color:var(--text);
+        font-family:"Inter",system-ui,sans-serif;
+        line-height:1.6;
+        -webkit-font-smoothing:antialiased;
+        overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+    .upper{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase}
+    .label{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.18em;font-weight:700;font-size:12px;color:var(--gold)}
+
+    /* Top bar */
+    .topbar{display:flex;justify-content:space-between;align-items:center;height:72px;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;background:rgba(13,13,13,.92);backdrop-filter:blur(8px);z-index:50}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{height:42px;width:42px;object-fit:contain}
+    .brand .name{font-family:"Archivo Narrow",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:20px}
+    .brand .name b{color:var(--gold)}
+    .back{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:700;color:var(--muted);border:1px solid rgba(255,255,255,.12);padding:9px 16px;transition:.2s}
+    .back:hover{color:var(--gold);border-color:var(--gold)}
+
+    /* Hero */
+    .hero{padding:80px 0 56px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero .badge{display:inline-block;border:1px solid var(--line);color:var(--gold);padding:6px 14px;margin-bottom:28px}
+    .hero h1{font-family:"Archivo Narrow",sans-serif;font-weight:700;text-transform:uppercase;line-height:1.02;font-size:clamp(40px,7vw,76px);letter-spacing:-.01em;border-left:4px solid var(--gold);padding-left:24px}
+    .hero h1 span{color:var(--gold)}
+    .hero p{max-width:640px;color:var(--muted);font-size:17px;margin:24px 0 0 28px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:16px;margin:40px 0 0 28px}
+    .btn{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-weight:700;font-size:14px;padding:16px 32px;transition:.2s;cursor:pointer;display:inline-block}
+    .btn-primary{background:var(--gold);color:#0d0d0d}
+    .btn-primary:hover{filter:brightness(1.1)}
+    .btn-ghost{border:1px solid rgba(255,255,255,.25);color:var(--text)}
+    .btn-ghost:hover{background:var(--text);color:var(--bg)}
+
+    /* Sections */
+    section.block{padding:64px 0}
+    .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+    .sec-head h2{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;font-size:30px;border-left:4px solid var(--gold);padding-left:16px}
+    .sec-head .hint{color:var(--muted);font-size:13px}
+
+    /* Cards grid */
+    .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+    .grid.mobile{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+    .card{background:var(--surface);border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;transition:.25s;position:relative}
+    .card:hover{border-color:var(--gold);transform:translateY(-4px)}
+    .shot{position:relative;overflow:hidden;background:#000;border-bottom:1px solid rgba(255,255,255,.07)}
+    .shot.desk{aspect-ratio:16/10}
+    .shot.tall{aspect-ratio:9/14}
+    .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.85;transition:.5s}
+    .card:hover .shot img{opacity:1;transform:scale(1.03)}
+    .tag{position:absolute;top:0;left:0;background:var(--gold);color:#0d0d0d;font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:700;padding:5px 12px}
+    .meta{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .meta h3{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;font-size:18px;line-height:1.2}
+    .meta .sub{color:var(--muted);font-size:12px;margin-top:2px}
+    .open{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:11px;font-weight:700;color:var(--gold);white-space:nowrap}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:48px 0;color:var(--muted);font-size:12px;text-align:center;letter-spacing:.15em;text-transform:uppercase;font-family:"Archivo Narrow",sans-serif}
+    footer .note{max-width:620px;margin:0 auto 18px;line-height:1.7;letter-spacing:normal;text-transform:none;font-family:"Inter",sans-serif}
+</style>
+</head>
+<body>
+<div class="topbar wrap" style="max-width:none">
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%;padding:0 24px">
+        <div class="brand">
+            <img alt="Borås KIF logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
+            <span class="name">BORÅS <b>KIF</b></span>
+        </div>
+        <a class="back" href="../index.html">← Peter Ihm portfolio</a>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="wrap">
+        <span class="badge label">Concept Demo · UI Prototype</span>
+        <h1>BORÅS KIF<br/><span>CLUB PORTAL</span></h1>
+        <p>A multi-page website concept for a fictional football club — public site, activity calendar and an admin console. Designed in Google&nbsp;Stitch and wired together into a clickable prototype. Click into any screen below, or jump straight into the live site.</p>
+        <div class="cta-row">
+            <a class="btn btn-primary" href="hem_bor_s_kif_desktop/code.html">Enter the live site →</a>
+            <a class="btn btn-ghost" href="admin_dashboard_bor_s_kif/code.html">View admin console</a>
+        </div>
+    </div>
+</header>
+
+<main class="wrap">
+    <!-- Desktop site -->
+    <section class="block">
+        <div class="sec-head">
+            <h2>The website</h2>
+            <span class="hint">Desktop pages — the navigation links between these are live, click around.</span>
+        </div>
+        <div class="grid">
+            <a class="card" href="hem_bor_s_kif_desktop/code.html">
+                <div class="shot desk"><span class="tag">Home</span><img alt="Home page" src="hem_bor_s_kif_desktop/screen.png"/></div>
+                <div class="meta"><div><h3>Hem · Home</h3><div class="sub">Hero, latest news, results & partners</div></div><span class="open">Open →</span></div>
+            </a>
+            <a class="card" href="aktivitetskalender_bor_s_kif_desktop/code.html">
+                <div class="shot desk"><span class="tag">Calendar</span><img alt="Activity calendar page" src="aktivitetskalender_bor_s_kif_desktop/screen.png"/></div>
+                <div class="meta"><div><h3>Aktivitetskalender</h3><div class="sub">Fixtures & club activity schedule</div></div><span class="open">Open →</span></div>
+            </a>
+            <a class="card" href="a_lag_bor_s_kif_desktop/code.html">
+                <div class="shot desk"><span class="tag">A-Team</span><img alt="A-team page" src="a_lag_bor_s_kif_desktop/screen.png"/></div>
+                <div class="meta"><div><h3>A-laget · A-Team</h3><div class="sub">Senior squad & player profiles</div></div><span class="open">Open →</span></div>
+            </a>
+            <a class="card" href="juniorlag_bor_s_kif_desktop/code.html">
+                <div class="shot desk"><span class="tag">Youth</span><img alt="Junior teams page" src="juniorlag_bor_s_kif_desktop/screen.png"/></div>
+                <div class="meta"><div><h3>Juniorlag · Youth</h3><div class="sub">Junior teams & talent development</div></div><span class="open">Open →</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Admin -->
+    <section class="block" style="border-top:1px solid rgba(255,255,255,.06)">
+        <div class="sec-head">
+            <h2>Admin console</h2>
+            <span class="hint">The internal dashboard club staff would use.</span>
+        </div>
+        <div class="grid">
+            <a class="card" href="admin_dashboard_bor_s_kif/code.html">
+                <div class="shot desk"><span class="tag">Admin</span><img alt="Admin dashboard" src="admin_dashboard_bor_s_kif/screen.png"/></div>
+                <div class="meta"><div><h3>KIF Admin Dashboard</h3><div class="sub">Manage news, calendar & club settings</div></div><span class="open">Open →</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Mobile -->
+    <section class="block" style="border-top:1px solid rgba(255,255,255,.06)">
+        <div class="sec-head">
+            <h2>Mobile screens</h2>
+            <span class="hint">The same portal designed for phones.</span>
+        </div>
+        <div class="grid mobile">
+            <a class="card" href="hem_bor_s_kif/code.html">
+                <div class="shot tall"><span class="tag">Mobile</span><img alt="Mobile home" src="hem_bor_s_kif/screen.png"/></div>
+                <div class="meta"><div><h3>Hem</h3><div class="sub">Home</div></div><span class="open">Open →</span></div>
+            </a>
+            <a class="card" href="a_lag_bor_s_kif/code.html">
+                <div class="shot tall"><span class="tag">Mobile</span><img alt="Mobile A-team" src="a_lag_bor_s_kif/screen.png"/></div>
+                <div class="meta"><div><h3>A-laget</h3><div class="sub">A-Team</div></div><span class="open">Open →</span></div>
+            </a>
+            <a class="card" href="kalender_bor_s_kif/code.html">
+                <div class="shot tall"><span class="tag">Mobile</span><img alt="Mobile calendar" src="kalender_bor_s_kif/screen.png"/></div>
+                <div class="meta"><div><h3>Kalender</h3><div class="sub">Calendar</div></div><span class="open">Open →</span></div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p class="note">This is a design demonstration — a fictional club portal generated with Google Stitch and assembled into a navigable prototype. Not affiliated with any real club. The desktop pages link to each other; use the “← Demo overview” button on any page to return here.</p>
+    © 2024 Borås KIF — Concept Demo
+</footer>
+</body>
+</html>

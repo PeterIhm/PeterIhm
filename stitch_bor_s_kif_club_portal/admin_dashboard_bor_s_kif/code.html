@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KIF ADMIN | Borås KIF Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#5f5e5e",
+                        "background": "#fbf9f8",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#fbf9f8",
+                        "on-tertiary-container": "#838484",
+                        "secondary-fixed": "#ffdea1",
+                        "outline": "#747878",
+                        "secondary": "#7a5900",
+                        "surface-container-low": "#f5f3f3",
+                        "primary-container": "#1c1b1b",
+                        "inverse-surface": "#303031",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#c9c6c5",
+                        "surface-container": "#efeded",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1c1c",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-container": "#858383",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#261900",
+                        "surface-variant": "#e4e2e2",
+                        "primary": "#000000",
+                        "secondary-fixed-dim": "#f6be3c",
+                        "on-surface": "#1b1c1c",
+                        "surface": "#fbf9f8",
+                        "on-secondary-container": "#725300",
+                        "error": "#ba1a1a",
+                        "tertiary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-high": "#e9e8e7",
+                        "tertiary-container": "#1a1c1c",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "secondary-container": "#ffc645",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#444748",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dbdad9",
+                        "outline-variant": "#c4c7c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "margin": "32px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Archivo Narrow"],
+                        "headline-md": ["Archivo Narrow"],
+                        "body-md": ["Archivo Narrow"],
+                        "headline-lg-mobile": ["Archivo Narrow"],
+                        "label-lg": ["Archivo Narrow"],
+                        "display-lg": ["Archivo Narrow"],
+                        "body-lg": ["Archivo Narrow"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Archivo Narrow', sans-serif; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #efeded; }
+        ::-webkit-scrollbar-thumb { background: #000000; }
+
+        .data-card {
+            border-left: 4px solid #7a5900;
+            transition: all 0.2s ease;
+        }
+        .data-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:80px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex fixed left-0 top-0 bottom-0 z-40 flex flex-col h-full w-72 bg-surface-container-highest border-r-2 border-primary dark:border-outline-variant">
+<div class="p-6 flex flex-col gap-2">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-12 h-12 flex items-center justify-center">
+<img alt="Borås KIF Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQKz3PYtRRWpchAZU0SLLJf4P1uU9WNhCig6TJmnrD3KvQk9jdSKoA-k5yP_NCWgfKQDDpvbkFvs5J7KT2bAdXqvcY5EB4NeXr7302oyrSlsVeXUepCaP2M9acLzoIpgAEMeI-yeWU9LDQ34Kde753U7T7fxuvpSGU3bLNNEeHV5Uzn4vUy8Bbs8LYYF_sxTQ_-QrJD-XpE-am8JZmcG27z_v2XpLT471IYNWNTMt6y-RyVztyuPv5kbdccQtv59XSjr-ogrwB5Q"/>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary uppercase leading-none">Borås KIF</h2>
+<p class="text-xs font-bold uppercase tracking-widest text-secondary">Admin Console</p>
+</div>
+</div>
+<div class="mb-8 p-4 bg-surface-container flex items-center gap-3 border border-outline-variant">
+<img class="w-10 h-10 rounded-full object-cover border-2 border-secondary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuz5hvK2MafT3nUqa2zvffJJVH_DR_D6wEL7NLYwGm3en1mSlFMmQdCzgoIT8g03k-c3zQiv0TQIb5dDRxVF_6L6OgcQ1XyTms3Uyp2OQTC8-5kxmb0FBgqh1rqAsddpRMgqkzvPTn_FZC1bkFLo7RLCotH6-RBOn4hdVomFKsow2PbuKp4TcwzoX5Urn80FpYhiXJanLAPDwr07vWYuIJEVr8qlAK9QG1luHzWHBoz8v_CIkYOmsR37TYSwv2iFAT_Inam86qNQ"/>
+<div>
+<p class="font-label-lg text-label-lg uppercase text-on-surface">Borås KIF Admin</p>
+<p class="text-[10px] uppercase text-secondary">System Controller</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-4 px-4 py-3 bg-primary text-on-primary font-bold transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="newspaper">newspaper</span>
+<span class="font-label-lg text-label-lg uppercase">News Manager</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-lg text-label-lg uppercase">Calendar</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg uppercase">Club Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-outline-variant">
+<button class="w-full flex items-center justify-center gap-2 py-2 border-2 border-primary font-label-lg text-label-lg uppercase hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-72 min-h-screen pb-20 md:pb-12">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky flex justify-between items-center px-4 h-16 z-50 bg-surface border-b-2 border-primary">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer md:hidden" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight uppercase">KIF ADMIN</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">search</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<div class="w-8 h-8 bg-surface-container-high rounded-full overflow-hidden border border-secondary">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUzA-5QfQiqSNnE2ilpS1ftu4WvOUkrC8e84PbNgRTrPfYge-ZasVesAF1lKDp8842jXhiLK4buiqeJon3nkawg2UR41wDzWEpr0cYNGscW_xk3MzvRIst7zXb3UpZlKQ3V-nPrRatYL9lINj8m2iVdpfFAPllIzSYMz0YDsDGZTLkG7nV0Y63p0idV8dSEdkbe4i7WMnTt0yHz8-KKnp9ZPJJGPiX5lUQD_PjA1Emv35Zca2gfqNCSVzTjWK2zUXGsGEw2vWm2Q"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="p-4 md:p-8 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<div class="mb-10">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase text-on-surface">Club Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-2">Welcome back, Admin. Here is the latest status of Borås KIF's active departments, events, and community updates.</p>
+</div>
+<!-- Quick Actions Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<button class="group flex items-center justify-between p-6 bg-primary text-on-primary transition-all active:scale-95">
+<div class="text-left">
+<p class="font-label-lg text-label-lg uppercase opacity-80 mb-1">Content Creation</p>
+<h3 class="font-headline-md text-headline-md uppercase">Publish News</h3>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-1 transition-transform" data-icon="add_circle">add_circle</span>
+</button>
+<button class="group flex items-center justify-between p-6 bg-secondary text-on-secondary transition-all active:scale-95">
+<div class="text-left">
+<p class="font-label-lg text-label-lg uppercase opacity-80 mb-1">Match Management</p>
+<h3 class="font-headline-md text-headline-md uppercase">Schedule Event</h3>
+</div>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-1 transition-transform" data-icon="calendar_add_on">calendar_add_on</span>
+</button>
+<button class="group flex items-center justify-between p-6 bg-surface-container-highest border-2 border-primary text-on-surface transition-all active:scale-95">
+<div class="text-left">
+<p class="font-label-lg text-label-lg uppercase text-secondary mb-1">Administrative</p>
+<h3 class="font-headline-md text-headline-md uppercase text-primary">Add Member</h3>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary group-hover:translate-x-1 transition-transform" data-icon="person_add">person_add</span>
+</button>
+</div>
+<!-- Main Stats & Activity Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Recent Activity Feed (Column 1-8) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="flex items-center justify-between border-b-4 border-primary pb-2">
+<h3 class="font-headline-md text-headline-md uppercase">Recent Activity</h3>
+<a class="font-label-lg text-label-lg text-secondary hover:underline uppercase" href="#">View All</a>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Activity Item 1 -->
+<div class="data-card bg-surface p-5 flex items-start gap-4 shadow-sm border border-outline-variant">
+<div class="p-2 bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="stadium">stadium</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-label-lg text-label-lg uppercase">U19 Match Result Posted</h4>
+<span class="text-xs text-secondary font-bold uppercase">2h ago</span>
+</div>
+<p class="text-body-md text-on-surface-variant mt-1">Borås KIF vs. Norrby IF (3-1). Highlight reel uploaded to News Manager.</p>
+<div class="mt-3 flex gap-2">
+<span class="px-2 py-1 bg-primary text-on-primary text-[10px] font-bold uppercase">Youth League</span>
+<span class="px-2 py-1 bg-primary text-on-primary text-[10px] font-bold uppercase">Football</span>
+</div>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="data-card bg-surface p-5 flex items-start gap-4 shadow-sm border border-outline-variant">
+<div class="p-2 bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-label-lg text-label-lg uppercase">New Coach Registered</h4>
+<span class="text-xs text-secondary font-bold uppercase">5h ago</span>
+</div>
+<p class="text-body-md text-on-surface-variant mt-1">Erik Svensson has been added as Lead Coach for P2012 Team.</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="data-card bg-surface p-5 flex items-start gap-4 shadow-sm border border-outline-variant">
+<div class="p-2 bg-error-container text-on-error-container">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-label-lg text-label-lg uppercase text-error">Membership Payment Overdue</h4>
+<span class="text-xs text-secondary font-bold uppercase">1d ago</span>
+</div>
+<p class="text-body-md text-on-surface-variant mt-1">14 members from the Seniors squad have outstanding spring fees.</p>
+<button class="mt-2 text-secondary font-bold uppercase text-xs hover:underline">Send Reminders</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Club Status Sidebar (Column 9-12) -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<!-- Membership Status Card -->
+<div class="bg-surface-container-low p-6 border-2 border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-6 border-b border-outline-variant pb-2">Club Status</h3>
+<div class="flex flex-col gap-6">
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-lg text-label-lg uppercase text-on-surface-variant">Total Members</span>
+<span class="font-headline-md text-headline-md text-secondary">1,248</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high">
+<div class="h-full bg-secondary" style="width: 85%;"></div>
+</div>
+<p class="text-[10px] uppercase font-bold text-secondary mt-1">85% active this season</p>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-lg text-label-lg uppercase text-on-surface-variant">Active Teams</span>
+<span class="font-headline-md text-headline-md text-primary">24</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high">
+<div class="h-full bg-primary" style="width: 100%;"></div>
+</div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant mt-1">All squads registered</p>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<h4 class="font-label-lg text-label-lg uppercase mb-4">Department Load</h4>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant">Football</span>
+<span class="font-bold">712</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant">Handball</span>
+<span class="font-bold">345</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant">Athletics</span>
+<span class="font-bold">191</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming Events Card -->
+<div class="bg-primary text-on-primary p-6">
+<h3 class="font-headline-md text-headline-md uppercase mb-6 border-b border-secondary pb-2">Next 48 Hours</h3>
+<div class="flex flex-col gap-4">
+<div class="border-l-2 border-secondary pl-4">
+<p class="text-[10px] uppercase text-secondary font-bold">Tomorrow 18:30</p>
+<p class="font-label-lg text-label-lg uppercase leading-tight">Board Meeting - Q2 Financials</p>
+</div>
+<div class="border-l-2 border-secondary pl-4">
+<p class="text-[10px] uppercase text-secondary font-bold">Sat 09:00</p>
+<p class="font-label-lg text-label-lg uppercase leading-tight">Youth Tournament Kick-off</p>
+</div>
+<div class="border-l-2 border-secondary pl-4 opacity-50">
+<p class="text-[10px] uppercase text-secondary font-bold">Sat 15:00</p>
+<p class="font-label-lg text-label-lg uppercase leading-tight">A-Team Match Day</p>
+</div>
+</div>
+<button class="w-full mt-6 py-2 border border-secondary font-label-lg text-label-lg uppercase hover:bg-secondary hover:text-on-secondary transition-colors">
+                            Full Calendar
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-16 flex justify-around items-center bg-surface border-t-2 border-primary px-4 z-50">
+<a class="flex flex-col items-center justify-center text-primary border-t-4 border-primary pt-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-[10px] uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant pt-2 transition-all hover:text-primary active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-label-lg text-[10px] uppercase">Posts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant pt-2 transition-all hover:text-primary active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-label-lg text-[10px] uppercase">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant pt-2 transition-all hover:text-primary active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+<span class="font-label-lg text-[10px] uppercase">Settings</span>
+</a>
+</nav>
+<script>
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('click', (e) => {
+                if(el.getAttribute('href') === '#') e.preventDefault();
+            });
+        });
+    </script>
+</body></html>

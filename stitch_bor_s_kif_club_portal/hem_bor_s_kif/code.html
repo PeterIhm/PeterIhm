@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="sv"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#5f5e5e",
+                    "background": "#fbf9f8",
+                    "on-primary-fixed-variant": "#474646",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-bright": "#fbf9f8",
+                    "on-tertiary-container": "#838484",
+                    "secondary-fixed": "#ffdea1",
+                    "outline": "#747878",
+                    "secondary": "#7a5900",
+                    "surface-container-low": "#f5f3f3",
+                    "primary-container": "#1c1b1b",
+                    "inverse-surface": "#303031",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c9c6c5",
+                    "surface-container": "#efeded",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1b1c1c",
+                    "primary-fixed": "#e5e2e1",
+                    "on-primary-container": "#858383",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#261900",
+                    "surface-variant": "#e4e2e2",
+                    "primary": "#000000",
+                    "secondary-fixed-dim": "#f6be3c",
+                    "on-surface": "#1b1c1c",
+                    "surface": "#fbf9f8",
+                    "on-secondary-container": "#725300",
+                    "error": "#ba1a1a",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f0f0",
+                    "surface-container-high": "#e9e8e7",
+                    "tertiary-container": "#1a1c1c",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "secondary-container": "#ffc645",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#444748",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#dbdad9",
+                    "outline-variant": "#c4c7c7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "margin": "32px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Archivo Narrow"],
+                    "label-lg": ["Archivo Narrow"],
+                    "display-lg": ["Archivo Narrow"],
+                    "headline-md": ["Archivo Narrow"],
+                    "headline-lg-mobile": ["Archivo Narrow"],
+                    "body-lg": ["Archivo Narrow"],
+                    "headline-lg": ["Archivo Narrow"],
+                    "stat-value": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "stat-value": ["24px", {"lineHeight": "1", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .match-card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .sponsor-logo {
+            filter: grayscale(100%) opacity(0.6);
+            transition: all 0.3s ease;
+        }
+        .sponsor-logo:hover {
+            filter: grayscale(0%) opacity(1);
+        }
+        .active-border {
+            position: relative;
+        }
+        .active-border::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:80px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-sm border-b border-outline-variant dark:border-on-surface-variant">
+<div class="flex justify-between items-center h-16 px-gutter max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<button class="md:hidden active:scale-95 transition-transform" onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">BORÅS KIF</span>
+</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-primary border-b-2 border-primary font-bold hover:text-secondary transition-colors duration-200" href="#">Start</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Kalender</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">A-lag</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Juniorlag</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-200" href="#">Sponsorer</a>
+</nav>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Navigation Drawer (Mobile) -->
+<aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300 md:hidden" id="mobile-drawer">
+<div class="bg-black/50 absolute inset-0" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
+<div class="h-full w-80 bg-surface dark:bg-on-surface shadow-xl flex flex-col gap-2 py-lg relative z-[61]">
+<div class="px-gutter mb-lg">
+<span class="font-headline-md text-headline-md font-bold text-primary">BORÅS KIF</span>
+</div>
+<a class="bg-secondary-container text-on-secondary-container font-bold rounded-full mx-2 flex items-center gap-md px-md py-sm" href="#">
+<span class="material-symbols-outlined">home</span> Start
+        </a>
+<a class="text-on-surface dark:text-on-surface-variant hover:bg-surface-container-high mx-2 flex items-center gap-md px-md py-sm transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span> Kalender
+        </a>
+<a class="text-on-surface dark:text-on-surface-variant hover:bg-surface-container-high mx-2 flex items-center gap-md px-md py-sm transition-all" href="#">
+<span class="material-symbols-outlined">sports_soccer</span> A-lag
+        </a>
+<a class="text-on-surface dark:text-on-surface-variant hover:bg-surface-container-high mx-2 flex items-center gap-md px-md py-sm transition-all" href="#">
+<span class="material-symbols-outlined">groups</span> Juniorlag
+        </a>
+<a class="text-on-surface dark:text-on-surface-variant hover:bg-surface-container-high mx-2 flex items-center gap-md px-md py-sm transition-all" href="#">
+<span class="material-symbols-outlined">handshake</span> Sponsorer
+        </a>
+</div>
+</aside>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative bg-surface-container overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full bg-[radial-gradient(#7a5900_1px,transparent_1px)] [background-size:20px_20px]"></div>
+</div>
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-lg relative z-10 py-xl">
+<div class="md:col-span-7 flex flex-col justify-center space-y-md">
+<img alt="Borås KIF Logo" class="w-32 h-32 md:w-48 md:h-48 object-contain mb-md animate-fade-in" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQKz3PYtRRWpchAZU0SLLJf4P1uU9WNhCig6TJmnrD3KvQk9jdSKoA-k5yP_NCWgfKQDDpvbkFvs5J7KT2bAdXqvcY5EB4NeXr7302oyrSlsVeXUepCaP2M9acLzoIpgAEMeI-yeWU9LDQ34Kde753U7T7fxuvpSGU3bLNNEeHV5Uzn4vUy8Bbs8LYYF_sxTQ_-QrJD-XpE-am8JZmcG27z_v2XpLT471IYNWNTMt6y-RyVztyuPv5kbdccQtv59XSjr-ogrwB5Q"/>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase tracking-tight">Välkommen till <span class="text-secondary">Borås KIF</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Hjärtat av fotbollen i Borås. Vi bygger gemenskap genom sportslig excellens och passion för spelet.</p>
+<div class="flex flex-wrap gap-md mt-lg">
+<button class="bg-primary text-on-primary px-lg py-sm font-label-lg uppercase tracking-wider rounded-sm active:scale-95 transition-all">Senaste Nytt</button>
+<button class="border-2 border-secondary text-secondary px-lg py-sm font-label-lg uppercase tracking-wider rounded-sm hover:bg-secondary hover:text-white active:scale-95 transition-all">Bli Medlem</button>
+</div>
+</div>
+<div class="md:col-span-5">
+<!-- Featured Match Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg shadow-sm relative">
+<div class="absolute top-0 left-0 h-full w-2 bg-secondary"></div>
+<div class="flex justify-between items-center mb-md">
+<span class="bg-secondary/10 text-secondary px-sm py-unit font-label-lg text-xs uppercase">Senaste Match</span>
+<span class="text-on-surface-variant font-label-lg text-xs">Sön 14 Maj</span>
+</div>
+<div class="flex justify-between items-center py-md border-y border-outline-variant/30">
+<div class="flex flex-col items-center gap-xs flex-1">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center p-2">
+<img alt="BKIF" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQKz3PYtRRWpchAZU0SLLJf4P1uU9WNhCig6TJmnrD3KvQk9jdSKoA-k5yP_NCWgfKQDDpvbkFvs5J7KT2bAdXqvcY5EB4NeXr7302oyrSlsVeXUepCaP2M9acLzoIpgAEMeI-yeWU9LDQ34Kde753U7T7fxuvpSGU3bLNNEeHV5Uzn4vUy8Bbs8LYYF_sxTQ_-QrJD-XpE-am8JZmcG27z_v2XpLT471IYNWNTMt6y-RyVztyuPv5kbdccQtv59XSjr-ogrwB5Q"/>
+</div>
+<span class="font-label-lg text-sm text-center">Borås KIF</span>
+</div>
+<div class="flex flex-col items-center gap-xs flex-none px-md">
+<span class="font-stat-value text-display-lg text-primary leading-none">3 - 1</span>
+<span class="font-label-lg text-xs text-on-surface-variant uppercase tracking-widest">Slutresultat</span>
+</div>
+<div class="flex flex-col items-center gap-xs flex-1">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center p-2">
+<div class="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">sports_soccer</span>
+</div>
+</div>
+<span class="font-label-lg text-sm text-center">Gästande Lag</span>
+</div>
+</div>
+<div class="mt-md flex justify-center">
+<a class="text-secondary font-label-lg text-sm uppercase flex items-center gap-xs hover:gap-md transition-all" href="#">Matchreferat <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Matchreferat Section -->
+<section class="py-xl bg-white">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase text-on-surface">Matchreferat</h2>
+<div class="h-1 w-24 bg-secondary mt-xs"></div>
+</div>
+<a class="text-on-surface-variant font-label-lg uppercase text-sm flex items-center gap-xs hover:text-secondary transition-colors" href="#">Visa alla nyheter <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- News Card 1 -->
+<article class="group bg-surface-container-lowest border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="aspect-video overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwpvPZR_3fss8MtDL3zXkt-_G7IqlSuvArNSbeEELWg3pmIFBq7zZwhPZAHSYLGVoR8nH45eNPNV9lCtjkeFxxxyDEEDiFeLS8LOFnQqco_YhyRuYN0CpfKYhHcd0Y3PueFu2EcihaQE98cvKYIC5tiL_J1Gd5QGELrDOK3vJKg7w6LJMzGso9gMQhowmzoaUT7dFFPCgwrWAPK6a5GX8b4F8rnyLjQztr77mPcE8Dig1UjI1xxgwbIvNNkQ4vsxhwMISg4V4FeA')"></div>
+<span class="absolute top-md left-md bg-primary text-white px-md py-unit font-label-lg text-xs uppercase z-20">A-Lag</span>
+</div>
+<div class="p-lg">
+<span class="text-on-surface-variant font-body-md text-sm mb-xs block">15 Maj 2024</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md group-hover:text-secondary transition-colors">Stark vändning i hemmapremiären mot rivalerna</h3>
+<p class="text-on-surface-variant font-body-md mb-lg line-clamp-3">Trots ett tidigt underläge lyckades Borås KIF vända matchen och säkra tre viktiga poäng inför en entusiastisk hemmapublik på Borås Arena.</p>
+<a class="text-secondary font-label-lg uppercase text-sm inline-flex items-center gap-xs" href="#">Läs mer <span class="material-symbols-outlined text-sm">trending_flat</span></a>
+</div>
+</article>
+<!-- News Card 2 -->
+<article class="group bg-surface-container-lowest border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="aspect-video overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAg0SHaHZ2O17s8YIHXYOb252Co5sPprDLSDflhuam1jlJETOInQhVbwd5CJBMci0G_QKnJ89cHFe1wVnWAYPwIK-aMSF5jAZ7LqOQU9wefmM97iwmgE7GQ808Elq0b7JI85FmMfUJ4aBa8SLIPJlcL-Mi7zwXBz3MS-Z6hDg1MsSKykNV7za0wWgmPArqVZPNhKxWS5cNF0P1cRZ7Br6_CyisVs-Rj80DQB2uf0lQaZp5WEWIv4BLJLyGTqnxF_sQCHocsPxZL-A')"></div>
+<span class="absolute top-md left-md bg-secondary text-white px-md py-unit font-label-lg text-xs uppercase z-20">Junior</span>
+</div>
+<div class="p-lg">
+<span class="text-on-surface-variant font-body-md text-sm mb-xs block">12 Maj 2024</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md group-hover:text-secondary transition-colors">Juniorlaget imponerar i cupen - avancemang klart</h3>
+<p class="text-on-surface-variant font-body-md mb-lg line-clamp-3">Efter en serie imponerande prestationer har vårt juniorlag säkrat en plats i semifinalen av distriktsmästerskapen efter gårdagens seger.</p>
+<a class="text-secondary font-label-lg uppercase text-sm inline-flex items-center gap-xs" href="#">Läs mer <span class="material-symbols-outlined text-sm">trending_flat</span></a>
+</div>
+</article>
+<!-- News Card 3 -->
+<article class="group bg-surface-container-lowest border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="aspect-video overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcwjsgyzAPh8E2WRudE6z4hvQPRw009eXGeD3XxBmLtN7dvjc0WuE8grLBe4ov5rogMAsSMepnaZSzJmjkbopuaV2nGWQjmFwtNccZ8spJyIcAyujOCySAnJCVQcoI5A_6-LNd9TLD3U3G5NP-wAzqLuXBTfquFzlbeXYsx31pmbundAVjMSTkfKgx1HKFTqXOXPEHDzKZ55z5uXYLV_JAO20HRmIvS0Sb3oRRifoSKGdwP6O4dnAv9qoEgU7Pj8MyX3xVeJPoqQ')"></div>
+<span class="absolute top-md left-md bg-surface-tint text-white px-md py-unit font-label-lg text-xs uppercase z-20">Klubbnytt</span>
+</div>
+<div class="p-lg">
+<span class="text-on-surface-variant font-body-md text-sm mb-xs block">10 Maj 2024</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md group-hover:text-secondary transition-colors">Intervju: Tränarens tankar inför sommarsäsongen</h3>
+<p class="text-on-surface-variant font-body-md mb-lg line-clamp-3">Vi satte oss ner med huvudtränaren för att diskutera truppens form, nya strategier och målsättningen för den kommande intensiva matchperioden.</p>
+<a class="text-secondary font-label-lg uppercase text-sm inline-flex items-center gap-xs" href="#">Läs mer <span class="material-symbols-outlined text-sm">trending_flat</span></a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Bento Grid Stats/CTA -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md md:grid-rows-2 h-auto md:h-[400px]">
+<div class="md:col-span-2 md:row-span-2 bg-primary p-xl flex flex-col justify-between text-white relative overflow-hidden group">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary/20 rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+<div class="z-10">
+<span class="font-label-lg uppercase tracking-widest text-secondary text-sm">Gör skillnad</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mt-md leading-tight">STÖTTA BORÅS KIF – BLI PARTNER IDAG</h2>
+</div>
+<p class="text-lg opacity-90 max-w-md z-10">Som partner blir ni en del av vår gemenskap och stöttar både vår elitverksamhet och vår breda ungdomsfotboll.</p>
+<button class="bg-secondary text-on-secondary px-xl py-md font-label-lg uppercase tracking-wider self-start rounded-sm hover:bg-secondary-fixed transition-colors active:scale-95 z-10">Kontakta Marknad</button>
+</div>
+<div class="md:col-span-1 bg-surface-container-highest p-lg flex flex-col justify-center border border-outline-variant">
+<span class="font-stat-value text-display-lg text-secondary">450+</span>
+<span class="font-label-lg uppercase text-xs text-on-surface-variant tracking-widest">Aktiva Medlemmar</span>
+</div>
+<div class="md:col-span-1 bg-white p-lg flex flex-col justify-center border border-outline-variant">
+<span class="font-stat-value text-display-lg text-secondary">15</span>
+<span class="font-label-lg uppercase text-xs text-on-surface-variant tracking-widest">Ungdomslag</span>
+</div>
+<div class="md:col-span-2 bg-secondary text-on-secondary p-lg flex flex-col justify-between border border-secondary shadow-lg relative overflow-hidden group">
+<div class="flex justify-between items-start z-10">
+<div>
+<h4 class="font-headline-md">Nästa Hemmamatch</h4>
+<p class="text-sm opacity-80">Borås Arena, 21 Maj - 19:00</p>
+</div>
+<span class="material-symbols-outlined text-4xl opacity-20 group-hover:rotate-12 transition-transform">confirmation_number</span>
+</div>
+<div class="mt-md z-10">
+<button class="border border-white/30 bg-white/10 px-md py-unit rounded-full font-label-lg text-xs uppercase hover:bg-white/20 transition-colors">Boka Biljetter</button>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent pointer-events-none"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sponsorer Section -->
+<section class="py-xl bg-white border-t border-outline-variant">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center mb-xl">
+<h2 class="font-label-lg uppercase tracking-[0.2em] text-on-surface-variant text-sm mb-md">Våra Huvudpartners</h2>
+<div class="h-px w-20 bg-outline-variant mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-xl items-center">
+<div class="flex justify-center sponsor-logo">
+<div class="w-32 h-12 bg-on-surface/5 rounded-sm flex items-center justify-center font-bold text-lg">LOGOTYP 1</div>
+</div>
+<div class="flex justify-center sponsor-logo">
+<div class="w-32 h-12 bg-on-surface/5 rounded-sm flex items-center justify-center font-bold text-lg">LOGOTYP 2</div>
+</div>
+<div class="flex justify-center sponsor-logo">
+<div class="w-32 h-12 bg-on-surface/5 rounded-sm flex items-center justify-center font-bold text-lg">LOGOTYP 3</div>
+</div>
+<div class="flex justify-center sponsor-logo">
+<div class="w-32 h-12 bg-on-surface/5 rounded-sm flex items-center justify-center font-bold text-lg">LOGOTYP 4</div>
+</div>
+<div class="flex justify-center sponsor-logo">
+<div class="w-32 h-12 bg-on-surface/5 rounded-sm flex items-center justify-center font-bold text-lg">LOGOTYP 5</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white w-full pt-xl pb-md border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg px-gutter max-w-7xl mx-auto">
+<div class="flex flex-col gap-md">
+<span class="font-headline-md text-headline-md font-bold text-white tracking-tighter">BORÅS KIF</span>
+<p class="font-body-md text-white/70">Vår vision är att vara en ledande idrottsförening som främjar glädje, hälsa och sportslig utveckling för alla åldrar.</p>
+<div class="flex gap-md mt-sm">
+<span class="material-symbols-outlined text-secondary hover:text-white cursor-pointer transition-colors">face_nod</span>
+<span class="material-symbols-outlined text-secondary hover:text-white cursor-pointer transition-colors">photo_camera</span>
+<span class="material-symbols-outlined text-secondary hover:text-white cursor-pointer transition-colors">video_library</span>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-lg uppercase text-xs text-secondary mb-sm">Genvägar</h4>
+<a class="text-white/70 hover:text-secondary transition-all duration-300" href="#">Medlemskap</a>
+<a class="text-white/70 hover:text-secondary transition-all duration-300" href="#">Matchbiljetter</a>
+<a class="text-white/70 hover:text-secondary transition-all duration-300" href="#">Klubbshopen</a>
+<a class="text-white/70 hover:text-secondary transition-all duration-300" href="#">Hitta till arenan</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-lg uppercase text-xs text-secondary mb-sm">Kontakt</h4>
+<p class="text-white/70">Borås Arena<br/>Fotbollsgatan 1<br/>501 00 Borås</p>
+<p class="text-white/70 mt-sm">info@boraskif.se<br/>033-123 45 67</p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-lg uppercase text-xs text-secondary mb-sm">Nyhetsbrev</h4>
+<p class="text-white/70 text-sm mb-md">Anmäl dig för senaste nytt direkt i mejlen.</p>
+<div class="flex gap-unit">
+<input class="bg-white/10 border border-white/20 px-md py-sm rounded-sm text-sm focus:outline-none focus:ring-1 focus:ring-secondary text-white w-full" placeholder="Din e-post" type="email"/>
+<button class="bg-secondary text-on-secondary px-md py-sm rounded-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-gutter mt-xl pt-lg border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="font-body-md text-white/50 text-xs">© 2024 Borås KIF. All rights reserved.</span>
+<div class="flex gap-lg">
+<a class="text-xs text-white/50 hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-white/50 hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('article, section h2, .sponsor-logo').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    });
+</script>
+</body></html>
