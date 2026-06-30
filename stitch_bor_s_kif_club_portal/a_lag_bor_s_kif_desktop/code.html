@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 
-<html class="light" lang="sv"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BORÅS KIF | A-LAGET</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="sv">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BORÅS KIF | A-LAGET</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -88,364 +94,534 @@
                         "headline-lg-mobile": ["Archivo Narrow"]
                     },
                     "fontSize": {
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-bold": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
                     }
                 },
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
             vertical-align: middle;
         }
+
         .text-stroke-gold {
             -webkit-text-stroke: 1px #C5A059;
             color: transparent;
         }
+
         .border-left-brand {
             border-left: 4px solid #C5A059;
         }
+
         .gold-gradient-text {
             background: linear-gradient(135deg, #C5A059 0%, #F1D18A 50%, #C5A059 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .gold-button-hover:hover {
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
         }
     </style>
 </head>
-<body class="bg-[#FBF9F8] text-brand-black font-body-md overflow-x-hidden">
-<a href="../index.html" aria-label="Back to demo overview" style="position:fixed;left:16px;bottom:16px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">← Demo overview</a>
-<!-- TopNavBar -->
-<header class="w-full top-0 sticky z-50 bg-brand-black border-b border-brand-gold/30">
-<nav class="flex justify-between items-center h-20 px-4 md:px-margin-desktop max-w-7xl mx-auto">
-<div class="flex items-center gap-3">
-<img alt="Borås KIF Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
-<div class="font-headline-md text-headline-md font-bold tracking-tight text-white uppercase">
-                BORÅS <span class="text-brand-gold">KIF</span>
-</div>
-</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
-<a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors" href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
-<a class="font-label-bold text-label-bold uppercase text-brand-gold border-b-2 border-brand-gold pb-1" href="code.html">A-TEAM</a>
-<a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors" href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
-<a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors" href="#">NEWS</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="hidden md:block bg-brand-gold text-brand-black font-label-bold px-6 py-2 uppercase tracking-wider hover:bg-white transition-all active:scale-95 duration-150 gold-button-hover">MEMBER LOGIN</button>
-<button class="md:hidden p-2 active:scale-95 transition-transform" onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')">
-<span class="material-symbols-outlined text-brand-gold text-3xl">menu</span>
-</button>
-</div>
-</nav>
-</header>
-<aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300" id="mobile-drawer">
-<div class="bg-black/70 absolute inset-0" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
-<div class="h-full w-72 bg-brand-black border-r border-brand-gold/20 flex flex-col gap-1 py-8 relative z-[61]">
-<div class="px-6 mb-8"><span class="font-label-bold text-label-bold uppercase text-brand-gold tracking-widest text-sm">BORÅS KIF</span></div>
-<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../hem_bor_s_kif_desktop/code.html">HOME</a>
-<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
-<a class="flex items-center gap-4 px-6 py-4 text-brand-gold border-l-2 border-brand-gold bg-white/5 font-label-bold text-label-bold uppercase tracking-widest text-sm" href="code.html">A-TEAM</a>
-<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
-<a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm" href="#">NEWS</a>
-</div>
-</aside>
-<main>
-<!-- Hero Section -->
-<section class="relative w-full h-[80vh] flex items-end overflow-hidden">
-<div class="absolute inset-0 z-0">
-<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtl_JZrbpaYVMDVP1ZzNztiDp26H3gtXOQzmrBWPMQVSO2GWcmdvvKxIcS7xBjhD5InUf3o0BvzTZg_7cISubZ-BCWRoIKVtp4wjsZG_5cao2FOd5fk63vfUI7Jiuz-2v8sDMQMVUtEUysE8dXZ2eoVcNBqZ3ylD9gzRfkvHSWFMZgo89YGNLElm8OZWdhgmU2TEneIymEGPSwv8Q4VqsbYg5yEeWvwGtV6Qa0f6ZfmSGQQPTsQg1fQFfrISR3sE4wg9K2yD_LgQ')">
-</div>
-<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-transparent"></div>
-</div>
-<div class="relative z-10 px-4 md:px-margin-desktop max-w-7xl mx-auto w-full pb-24">
-<div class="inline-flex items-center gap-2 text-brand-gold font-label-bold uppercase tracking-[0.3em] mb-4">
-<span class="w-8 h-[1px] bg-brand-gold"></span>
-                DIVISJON 2 MELLERSTA GÖTALAND
-            </div>
-<h1 class="font-display-lg text-[80px] md:text-[110px] text-white uppercase mb-4 leading-[0.85] tracking-tighter">
-                A-LAGET <br/>
-<span class="text-stroke-gold">BORÅS KIF</span>
-</h1>
-<p class="font-body-lg text-white/80 max-w-2xl border-l border-brand-gold pl-8 py-2">
-                Upplev spetsen av Borås fotboll. En trupp definierad av teknisk briljans, lokal stolthet och en obeveklig ambition att nå toppen.
-            </p>
-</div>
-</section>
-<!-- Stats & Matches -->
-<section class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-<!-- Recent Results -->
-<div class="lg:col-span-4 flex flex-col gap-8">
-<h2 class="font-headline-lg text-headline-md uppercase tracking-widest text-brand-black">SENASTE RESULTAT</h2>
-<div class="space-y-4">
-<div class="bg-white border border-black/5 p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-<div class="flex justify-between items-center text-[10px] tracking-[0.2em] font-label-bold text-brand-black/40 mb-6">
-<span>SERIEMATCH</span>
-<span>24 MAJ, 2024</span>
-</div>
-<div class="flex justify-between items-center mb-4">
-<span class="font-label-bold text-sm tracking-widest">BORÅS KIF</span>
-<div class="flex items-center gap-4">
-<span class="text-3xl font-display-lg text-brand-black">3</span>
-<span class="text-brand-gold">-</span>
-<span class="text-3xl font-display-lg text-brand-black/30">1</span>
-</div>
-<span class="font-label-bold text-sm tracking-widest text-brand-black/40">ALINGSÅS IF</span>
-</div>
-<div class="text-xs text-brand-gold font-label-bold tracking-widest uppercase">VINST (H)</div>
-</div>
-<div class="bg-white border border-black/5 p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
-<div class="flex justify-between items-center text-[10px] tracking-[0.2em] font-label-bold text-brand-black/40 mb-6">
-<span>SERIEMATCH</span>
-<span>18 MAJ, 2024</span>
-</div>
-<div class="flex justify-between items-center mb-4">
-<span class="font-label-bold text-sm tracking-widest text-brand-black/40">SKENE IF</span>
-<div class="flex items-center gap-4">
-<span class="text-3xl font-display-lg text-brand-black/30">0</span>
-<span class="text-brand-gold">-</span>
-<span class="text-3xl font-display-lg text-brand-black/30">0</span>
-</div>
-<span class="font-label-bold text-sm tracking-widest">BORÅS KIF</span>
-</div>
-<div class="text-xs text-brand-black/40 font-label-bold tracking-widest uppercase">OAVGJORT (B)</div>
-</div>
-</div>
-</div>
-<!-- Next Match -->
-<div class="lg:col-span-4 bg-brand-black p-10 flex flex-col items-center text-center relative">
-<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_#C5A059_0%,_transparent_70%)]"></div>
-<div class="relative z-10 w-full h-full flex flex-col">
-<span class="font-label-bold text-[10px] tracking-[0.4em] text-brand-gold uppercase mb-12">NÄSTA MATCH</span>
-<div class="flex flex-col gap-2 mb-12">
-<div class="font-headline-lg text-3xl text-white tracking-widest uppercase">BORÅS KIF</div>
-<div class="font-display-lg text-brand-gold text-2xl italic">VS</div>
-<div class="font-headline-lg text-3xl text-white tracking-widest uppercase">GÖTENE IF</div>
-</div>
-<div class="mb-12 border-t border-b border-white/10 py-6">
-<div class="font-headline-md text-xl text-white mb-2 uppercase tracking-widest">BODAVALLEN</div>
-<div class="font-body-md text-white/50 tracking-widest text-sm uppercase">SÖNDAG 2 JUNI | 16:00</div>
-</div>
-<button class="mt-auto w-full bg-brand-gold text-brand-black font-label-bold py-4 hover:bg-white transition-all uppercase tracking-[0.2em] text-xs gold-button-hover">
-                        KÖP BILJETTER
-                    </button>
-</div>
-</div>
-<!-- League Table -->
-<div class="lg:col-span-4 flex flex-col gap-8">
-<h2 class="font-headline-lg text-headline-md uppercase tracking-widest text-brand-black">TABELLTOPPEN</h2>
-<div class="bg-white border border-black/5 shadow-sm overflow-hidden">
-<table class="w-full text-[12px] font-label-bold tracking-widest">
-<thead>
-<tr class="bg-brand-black text-white/50 text-left border-b border-brand-gold/20">
-<th class="p-5 font-medium">POS</th>
-<th class="p-5 font-medium">KLUBB</th>
-<th class="p-5 font-medium text-center">M</th>
-<th class="p-5 font-medium text-right text-brand-gold">P</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-black/5">
-<tr>
-<td class="p-5 text-brand-black/40">01</td>
-<td class="p-5">TIDAHOLMS GIF</td>
-<td class="p-5 text-center">10</td>
-<td class="p-5 text-right font-bold text-brand-black">24</td>
-</tr>
-<tr class="bg-brand-gold/5 relative">
-<td class="p-5 text-brand-gold">02</td>
-<td class="p-5 font-bold">BORÅS KIF</td>
-<td class="p-5 text-center">10</td>
-<td class="p-5 text-right font-bold text-brand-gold">22</td>
-</tr>
-<tr>
-<td class="p-5 text-brand-black/40">03</td>
-<td class="p-5">GÖTENE IF</td>
-<td class="p-5 text-center">10</td>
-<td class="p-5 text-right font-bold text-brand-black">21</td>
-</tr>
-<tr>
-<td class="p-5 text-brand-black/40">04</td>
-<td class="p-5">ALINGSÅS IF</td>
-<td class="p-5 text-center">10</td>
-<td class="p-5 text-right font-bold text-brand-black">19</td>
-</tr>
-</tbody>
-</table>
-</div>
-<a class="text-brand-gold font-label-bold text-xs tracking-widest uppercase flex items-center gap-2 hover:text-brand-black transition-colors" href="#">
-                    VISA HELA TABELLEN <span class="material-symbols-outlined !text-sm">trending_flat</span>
-</a>
-</div>
-</div>
-</section>
-<!-- Player Roster -->
-<section class="py-section-gap bg-[#F5F3F3]">
-<div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
-<div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-6">
-<div>
-<h2 class="font-display-lg text-[64px] uppercase leading-none mb-6 tracking-tighter">TRUPPEN</h2>
-<div class="flex flex-wrap gap-2">
-<button class="bg-brand-black text-white px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest">ALLA</button>
-<button class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">MÅLVAKTER</button>
-<button class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">FÖRSVAR</button>
-<button class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">MITTFÄLT</button>
-<button class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">ANFALL</button>
-</div>
-</div>
-<div class="font-label-bold text-[10px] tracking-[0.4em] text-brand-black/30">SÄSONG 23/24</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Player Card -->
-<div class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-<div class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-<img alt="Andreas Nilsson" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZP9aLzzuUpSGaUEnmUXrleEqi62dVksqKWPnPdnTj8jZNNS30BQU8e98IVa3jiE_sImmlUi0Chv-ANseCJrgW1gUZj_w2NIt5N_QwO2nbPOVVpQ5gexhNNGVittsHuIisgF53GPWovyBkMPk2Y5SNX57Ep5Hf7Y1yCq9Q2_44c4U2F6g7C-GePLyb9lyq42Co4EHl75mKVBP91utuBP_rzZmlg9qOecd_rGeSrGIA9myszvQBc-QzjDybij8jISt36STkI5jYAg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<div class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">10</div>
-</div>
-<div class="p-6 bg-white relative z-10">
-<div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">MITTFÄLTARE (C)</div>
-<h3 class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">ANDREAS NILSSON</h3>
-</div>
-</div>
-<div class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-<div class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-<img alt="Erik Johansson" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBHSQUSPTVmMDOooTrQ5fh_raqfWfhiNP1oD0Jfo-_Z3-jTuI2llg0ul1UxGUZa85Be2SA-UhCMzxyAXgn46sPa3pBzG9IS1KbpP_wxb6mFPeIP1CPqqdtUaO9PYapKuGX-iUkXUW0hqtsMuE1ohcsSuxVufbviY9bylzKlJ_pui6YcwEMExhPN8mgDbizlJSBDJrLzBynkseGtZWjloek1S0jBFp7Qg78_xx6xdIMFG-rxovHxEWmHOYMOeoChy3n-BvCDDMQA"/>
-<div class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">09</div>
-</div>
-<div class="p-6 bg-white">
-<div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">ANFALLARE</div>
-<h3 class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">ERIK JOHANSSON</h3>
-</div>
-</div>
-<div class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-<div class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-<img alt="Marcus Berg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQxDcXGivyzsvKVeKX1dSNiI52-ELGemp8e-P0c1Qv6Fe-I_nhP5hJ7IT5vDXiOvuA5Df_xXH_YJrEObNKXhaqXL4LqpWb8XaFwq5TVXoAopZ6XPXE5nntF_JT8LzhBoSK__1Tg4AyRtSDmVBqNQkSJ-6BJR9fviZW8uZT3yk4WDV1zo1Y8XVDlZ02GT_epDAMhi9eHZVx9w5aFMLgNZwl_W6DLelW1scYLKE8WR_59VGS2YE85O0ZbdZxzvu_Pe0jeTXwqCKJuA"/>
-<div class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">04</div>
-</div>
-<div class="p-6 bg-white">
-<div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">FÖRSVARARE</div>
-<h3 class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">MARCUS BERG</h3>
-</div>
-</div>
-<div class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-<div class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-<img alt="Oskar Persson" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5s-0zgekQTxCEm98nKexpwhjWL0EYtvPhEyagKB68MslJGm3lXXSrpHuHubx11FIGBMsKuSQgrHqFmOE7D2BJiq3-X58fPkNDsNFqzNq2I7d_M-cRSKBq89-d1Gc6nwLB6P1BMVPzkL_M7VE0WzgSsr6m15-HUEzwLVvyNKdpV_-7VNr0t-tAVkxH7F0jSWGZJirRxPFFng1NlhiNcBd_EGO8tBAjpBemi7O4KIUG1X_2wwYHwcmN8X35IdKYEYc5Wu_8NmTjkg"/>
-<div class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">01</div>
-</div>
-<div class="p-6 bg-white">
-<div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">MÅLVAKT</div>
-<h3 class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">OSKAR PERSSON</h3>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Staff & Recruitment -->
-<section class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-<div>
-<h2 class="font-headline-lg text-headline-md uppercase tracking-widest text-brand-black mb-12">LEDARSTABEN</h2>
-<div class="space-y-0">
-<div class="flex justify-between items-center py-6 border-b border-black/5 hover:bg-brand-gold/5 px-4 transition-colors group">
-<span class="font-headline-md text-lg tracking-widest">JOHAN LINDGREN</span>
-<span class="font-label-bold text-[10px] text-brand-gold tracking-widest uppercase">HUVUDTRÄNARE</span>
-</div>
-<div class="flex justify-between items-center py-6 border-b border-black/5 hover:bg-brand-gold/5 px-4 transition-colors group">
-<span class="font-headline-md text-lg tracking-widest">SARA EKSTRÖM</span>
-<span class="font-label-bold text-[10px] text-brand-gold tracking-widest uppercase">ASSISTERANDE TRÄNARE</span>
-</div>
-<div class="flex justify-between items-center py-6 border-b border-black/5 hover:bg-brand-gold/5 px-4 transition-colors group">
-<span class="font-headline-md text-lg tracking-widest">PETER ANDERSSON</span>
-<span class="font-label-bold text-[10px] text-brand-gold tracking-widest uppercase">MÅLVAKTSTRÄNARE</span>
-</div>
-</div>
-<div class="mt-16 bg-brand-black p-10 relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-<div class="relative z-10">
-<h4 class="font-headline-md text-white text-xl uppercase tracking-widest mb-4 italic">REKRYTERING</h4>
-<p class="font-body-md text-white/60 mb-8 max-w-md">Är du en ambitiös talang redo för nästa steg? Vi letar ständigt efter spelare som delar vår vision om excellence.</p>
-<button class="bg-brand-gold text-brand-black font-label-bold px-10 py-3 uppercase text-xs tracking-[0.2em] hover:bg-white transition-all gold-button-hover">
-                        KONTAKTA OSS
-                    </button>
-</div>
-</div>
-</div>
-<div class="h-[600px] bg-brand-black relative group">
-<img alt="Coaching Strategy" class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCekj7-pLTFHURFyxG69qAgMUtxjRpakmoaj_QPT8sag1Avt-DQm_XUaRy9xf6irt8c3FvXlzhivTGBoRs6LZveeNs5S1DS4nUtSDTy33twwc944Me7i-yp67bOfG_fur4O_LfUJXcLKaooXon3MVI4LlQZWKyX_nTZQFOpEjoeaxKUV1TpXPznqxfLO36Fv5eGCLuOtamW-70V5G61MTlb87o74j1zXpkMr3usHBRpW_I5wexUnNj1dBpMQY5YD0geGnOL1Y0JpA"/>
-<div class="absolute inset-0 border-[20px] border-white/5 pointer-events-none"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none">
-<div class="text-[120px] font-display-lg text-white/5 select-none uppercase tracking-[0.3em] leading-none">ELITE</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full pt-24 pb-12 bg-brand-black text-white border-t border-brand-gold/20">
-<div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
-<div class="md:col-span-2 flex flex-col gap-8">
-<div class="flex items-center gap-4">
-<img alt="Logo" class="h-16 w-16 object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA"/>
-<div class="font-headline-md text-2xl font-bold tracking-tight uppercase">BORÅS <span class="text-brand-gold">KIF</span></div>
-</div>
-<p class="font-body-md text-white/40 max-w-sm leading-relaxed">
-                    Sedan 1932 har vi format fotbollshistorien i Borås. Vi förenar tradition med framtidstro i en miljö där varje individ ges möjlighet att skina.
-                </p>
-<div class="flex gap-6">
-<a class="text-white/40 hover:text-brand-gold transition-colors" href="#"><span class="material-symbols-outlined !text-xl">face_nod</span></a>
-<a class="text-white/40 hover:text-brand-gold transition-colors" href="#"><span class="material-symbols-outlined !text-xl">podcasts</span></a>
-<a class="text-white/40 hover:text-brand-gold transition-colors" href="#"><span class="material-symbols-outlined !text-xl">video_library</span></a>
-</div>
-</div>
-<div class="flex flex-col gap-6">
-<h4 class="font-label-bold text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-4">NAVIGERING</h4>
-<nav class="flex flex-col gap-4">
-<a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors" href="#">SPONSORS</a>
-<a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors" href="#">CONTACT US</a>
-<a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors" href="#">CLUB HISTORY</a>
-<a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors" href="#">PRIVACY POLICY</a>
-</nav>
-</div>
-<div class="flex flex-col gap-8">
-<h4 class="font-label-bold text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-4">NYHETSBREV</h4>
-<div class="flex flex-col gap-3">
-<input class="bg-white/5 border border-white/10 p-4 text-[10px] font-label-bold tracking-widest focus:border-brand-gold focus:outline-none text-white placeholder:text-white/20 uppercase" placeholder="DIN E-POSTADRESS" type="email"/>
-<button class="bg-brand-gold text-brand-black font-label-bold p-4 text-[10px] uppercase tracking-widest hover:bg-white transition-all gold-button-hover">PRENUMERERA</button>
-</div>
-</div>
-</div>
-<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-[10px] text-white/30 tracking-[0.2em]">© 2024 BORÅS KIF. ALL RIGHTS RESERVED.</p>
-<div class="text-[10px] text-white/30 tracking-[0.2em] flex gap-8">
-<span class="hover:text-white cursor-pointer transition-colors">DESIGNED FOR ATHLETIC PRESTIGE</span>
-</div>
-</div>
-</div>
-</footer>
-<script>
-    // Reveal Observer for smooth section entries
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }
-        });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('section').forEach(el => {
-        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-        observer.observe(el);
-    });
-</script>
-</body></html>
+<body class="bg-[#FBF9F8] text-brand-black font-body-md overflow-x-hidden">
+    <a href="../index.html" aria-label="Back to demo overview"
+        style="position:fixed;left:16px;bottom:16px;z-index:99999;display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9999px;background:rgba(13,13,13,.88);color:#d4af37;font:700 11px/1 system-ui,-apple-system,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(212,175,55,.55);backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.45)">←
+        Demo overview</a>
+    <!-- TopNavBar -->
+    <header class="w-full top-0 sticky z-50 bg-brand-black border-b border-brand-gold/30">
+        <nav class="flex justify-between items-center h-20 px-4 md:px-margin-desktop max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <img alt="Borås KIF Logo" class="h-12 w-12 object-contain"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA" />
+                <div class="font-headline-md text-headline-md font-bold tracking-tight text-white uppercase">
+                    BORÅS <span class="text-brand-gold">KIF</span>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors"
+                    href="../hem_bor_s_kif_desktop/code.html">HOME</a>
+                <a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors"
+                    href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
+                <a class="font-label-bold text-label-bold uppercase text-brand-gold border-b-2 border-brand-gold pb-1"
+                    href="code.html">A-TEAM</a>
+                <a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors"
+                    href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
+                <a class="font-label-bold text-label-bold uppercase text-white/70 hover:text-brand-gold transition-colors"
+                    href="#">NEWS</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block bg-brand-gold text-brand-black font-label-bold px-6 py-2 uppercase tracking-wider hover:bg-white transition-all active:scale-95 duration-150 gold-button-hover">MEMBER
+                    LOGIN</button>
+                <button class="md:hidden p-2 active:scale-95 transition-transform"
+                    onclick="document.getElementById('mobile-drawer').classList.toggle('-translate-x-full')">
+                    <span class="material-symbols-outlined text-brand-gold text-3xl">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <aside class="fixed inset-0 z-[60] -translate-x-full transition-transform duration-300" id="mobile-drawer">
+        <div class="bg-black/70 absolute inset-0"
+            onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full')"></div>
+        <div class="h-full w-72 bg-brand-black border-r border-brand-gold/20 flex flex-col gap-1 py-8 relative z-[61]">
+            <div class="px-6 mb-8"><span
+                    class="font-label-bold text-label-bold uppercase text-brand-gold tracking-widest text-sm">BORÅS
+                    KIF</span></div>
+            <a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm"
+                href="../hem_bor_s_kif_desktop/code.html">HOME</a>
+            <a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm"
+                href="../aktivitetskalender_bor_s_kif_desktop/code.html">CALENDAR</a>
+            <a class="flex items-center gap-4 px-6 py-4 text-brand-gold border-l-2 border-brand-gold bg-white/5 font-label-bold text-label-bold uppercase tracking-widest text-sm"
+                href="code.html">A-TEAM</a>
+            <a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm"
+                href="../juniorlag_bor_s_kif_desktop/code.html">JUNIOR TEAMS</a>
+            <a class="flex items-center gap-4 px-6 py-4 text-white/60 hover:text-brand-gold hover:bg-white/5 transition-all font-label-bold text-label-bold uppercase tracking-widest text-sm"
+                href="#">NEWS</a>
+        </div>
+    </aside>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative w-full h-[80vh] flex items-end overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtl_JZrbpaYVMDVP1ZzNztiDp26H3gtXOQzmrBWPMQVSO2GWcmdvvKxIcS7xBjhD5InUf3o0BvzTZg_7cISubZ-BCWRoIKVtp4wjsZG_5cao2FOd5fk63vfUI7Jiuz-2v8sDMQMVUtEUysE8dXZ2eoVcNBqZ3ylD9gzRfkvHSWFMZgo89YGNLElm8OZWdhgmU2TEneIymEGPSwv8Q4VqsbYg5yEeWvwGtV6Qa0f6ZfmSGQQPTsQg1fQFfrISR3sE4wg9K2yD_LgQ')">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-transparent"></div>
+            </div>
+            <div class="relative z-10 px-4 md:px-margin-desktop max-w-7xl mx-auto w-full pb-24">
+                <div
+                    class="inline-flex items-center gap-2 text-brand-gold font-label-bold uppercase tracking-[0.3em] mb-4">
+                    <span class="w-8 h-[1px] bg-brand-gold"></span>
+                    DIVISJON 2 MELLERSTA GÖTALAND
+                </div>
+                <h1
+                    class="font-display-lg text-[80px] md:text-[110px] text-white uppercase mb-4 leading-[0.85] tracking-tighter">
+                    A-LAGET <br />
+                    <span class="text-stroke-gold">BORÅS KIF</span>
+                </h1>
+                <p class="font-body-lg text-white/80 max-w-2xl border-l border-brand-gold pl-8 py-2">
+                    Upplev spetsen av Borås fotboll. En trupp definierad av teknisk briljans, lokal stolthet och en
+                    obeveklig ambition att nå toppen.
+                </p>
+            </div>
+        </section>
+        <!-- Stats & Matches -->
+        <section class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Recent Results -->
+                <div class="lg:col-span-4 flex flex-col gap-8">
+                    <h2 class="font-headline-lg text-headline-md uppercase tracking-widest text-brand-black">SENASTE
+                        RESULTAT</h2>
+                    <div class="space-y-4">
+                        <div
+                            class="bg-white border border-black/5 p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                            <div
+                                class="flex justify-between items-center text-[10px] tracking-[0.2em] font-label-bold text-brand-black/40 mb-6">
+                                <span>SERIEMATCH</span>
+                                <span>24 MAJ, 2024</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-label-bold text-sm tracking-widest">BORÅS KIF</span>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-3xl font-display-lg text-brand-black">3</span>
+                                    <span class="text-brand-gold">-</span>
+                                    <span class="text-3xl font-display-lg text-brand-black/30">1</span>
+                                </div>
+                                <span class="font-label-bold text-sm tracking-widest text-brand-black/40">ALINGSÅS
+                                    IF</span>
+                            </div>
+                            <div class="text-xs text-brand-gold font-label-bold tracking-widest uppercase">VINST (H)
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border border-black/5 p-8 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+                            <div
+                                class="flex justify-between items-center text-[10px] tracking-[0.2em] font-label-bold text-brand-black/40 mb-6">
+                                <span>SERIEMATCH</span>
+                                <span>18 MAJ, 2024</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-label-bold text-sm tracking-widest text-brand-black/40">SKENE
+                                    IF</span>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-3xl font-display-lg text-brand-black/30">0</span>
+                                    <span class="text-brand-gold">-</span>
+                                    <span class="text-3xl font-display-lg text-brand-black/30">0</span>
+                                </div>
+                                <span class="font-label-bold text-sm tracking-widest">BORÅS KIF</span>
+                            </div>
+                            <div class="text-xs text-brand-black/40 font-label-bold tracking-widest uppercase">OAVGJORT
+                                (B)</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Next Match -->
+                <div class="lg:col-span-4 bg-brand-black p-10 flex flex-col items-center text-center relative">
+                    <div
+                        class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_#C5A059_0%,_transparent_70%)]">
+                    </div>
+                    <div class="relative z-10 w-full h-full flex flex-col">
+                        <span class="font-label-bold text-[10px] tracking-[0.4em] text-brand-gold uppercase mb-12">NÄSTA
+                            MATCH</span>
+                        <div class="flex flex-col gap-2 mb-12">
+                            <div class="font-headline-lg text-3xl text-white tracking-widest uppercase">BORÅS KIF</div>
+                            <div class="font-display-lg text-brand-gold text-2xl italic">VS</div>
+                            <div class="font-headline-lg text-3xl text-white tracking-widest uppercase">GÖTENE IF</div>
+                        </div>
+                        <div class="mb-12 border-t border-b border-white/10 py-6">
+                            <div class="font-headline-md text-xl text-white mb-2 uppercase tracking-widest">BODAVALLEN
+                            </div>
+                            <div class="font-body-md text-white/50 tracking-widest text-sm uppercase">SÖNDAG 2 JUNI |
+                                16:00</div>
+                        </div>
+                        <button
+                            class="mt-auto w-full bg-brand-gold text-brand-black font-label-bold py-4 hover:bg-white transition-all uppercase tracking-[0.2em] text-xs gold-button-hover">
+                            KÖP BILJETTER
+                        </button>
+                    </div>
+                </div>
+                <!-- League Table -->
+                <div class="lg:col-span-4 flex flex-col gap-8">
+                    <h2 class="font-headline-lg text-headline-md uppercase tracking-widest text-brand-black">
+                        TABELLTOPPEN</h2>
+                    <div class="bg-white border border-black/5 shadow-sm overflow-hidden">
+                        <table class="w-full text-[12px] font-label-bold tracking-widest">
+                            <thead>
+                                <tr class="bg-brand-black text-white/50 text-left border-b border-brand-gold/20">
+                                    <th class="p-5 font-medium">POS</th>
+                                    <th class="p-5 font-medium">KLUBB</th>
+                                    <th class="p-5 font-medium text-center">M</th>
+                                    <th class="p-5 font-medium text-right text-brand-gold">P</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-black/5">
+                                <tr>
+                                    <td class="p-5 text-brand-black/40">01</td>
+                                    <td class="p-5">TIDAHOLMS GIF</td>
+                                    <td class="p-5 text-center">10</td>
+                                    <td class="p-5 text-right font-bold text-brand-black">24</td>
+                                </tr>
+                                <tr class="bg-brand-gold/5 relative">
+                                    <td class="p-5 text-brand-gold">02</td>
+                                    <td class="p-5 font-bold">BORÅS KIF</td>
+                                    <td class="p-5 text-center">10</td>
+                                    <td class="p-5 text-right font-bold text-brand-gold">22</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-5 text-brand-black/40">03</td>
+                                    <td class="p-5">GÖTENE IF</td>
+                                    <td class="p-5 text-center">10</td>
+                                    <td class="p-5 text-right font-bold text-brand-black">21</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-5 text-brand-black/40">04</td>
+                                    <td class="p-5">ALINGSÅS IF</td>
+                                    <td class="p-5 text-center">10</td>
+                                    <td class="p-5 text-right font-bold text-brand-black">19</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <a class="text-brand-gold font-label-bold text-xs tracking-widest uppercase flex items-center gap-2 hover:text-brand-black transition-colors"
+                        href="#">
+                        VISA HELA TABELLEN <span class="material-symbols-outlined !text-sm">trending_flat</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Player Roster -->
+        <section class="py-section-gap bg-[#F5F3F3]">
+            <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
+                <div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-6">
+                    <div>
+                        <h2 class="font-display-lg text-[64px] uppercase leading-none mb-6 tracking-tighter">TRUPPEN
+                        </h2>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                class="bg-brand-black text-white px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest">ALLA</button>
+                            <button
+                                class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">MÅLVAKTER</button>
+                            <button
+                                class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">FÖRSVAR</button>
+                            <button
+                                class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">MITTFÄLT</button>
+                            <button
+                                class="bg-transparent border border-black/10 text-brand-black/60 px-6 py-2 text-[10px] font-label-bold uppercase tracking-widest hover:border-brand-gold hover:text-brand-gold transition-all">ANFALL</button>
+                        </div>
+                    </div>
+                    <div class="font-label-bold text-[10px] tracking-[0.4em] text-brand-black/30">SÄSONG 23/24</div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <!-- Player Card -->
+                    <div
+                        class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <img alt="Hassan Kanaan"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src="4a3c2033-5d43-4959-934d-d90ae6f5c512.jpeg" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                            <div
+                                class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">
+                                10</div>
+                        </div>
+                        <div class="p-6 bg-white relative z-10">
+                            <div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">
+                                MITTFÄLTARE (C)</div>
+                            <h3
+                                class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">
+                                Hassan Kanaan</h3>
+                        </div>
+                    </div>
+                    <!-- Player Card -->
+                    <div
+                        class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <img alt="Andreas Nilsson"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZP9aLzzuUpSGaUEnmUXrleEqi62dVksqKWPnPdnTj8jZNNS30BQU8e98IVa3jiE_sImmlUi0Chv-ANseCJrgW1gUZj_w2NIt5N_QwO2nbPOVVpQ5gexhNNGVittsHuIisgF53GPWovyBkMPk2Y5SNX57Ep5Hf7Y1yCq9Q2_44c4U2F6g7C-GePLyb9lyq42Co4EHl75mKVBP91utuBP_rzZmlg9qOecd_rGeSrGIA9myszvQBc-QzjDybij8jISt36STkI5jYAg" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                            <div
+                                class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">
+                                10</div>
+                        </div>
+                        <div class="p-6 bg-white relative z-10">
+                            <div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">
+                                MITTFÄLTARE (C)</div>
+                            <h3
+                                class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">
+                                ANDREAS NILSSON</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <img alt="Erik Johansson"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBHSQUSPTVmMDOooTrQ5fh_raqfWfhiNP1oD0Jfo-_Z3-jTuI2llg0ul1UxGUZa85Be2SA-UhCMzxyAXgn46sPa3pBzG9IS1KbpP_wxb6mFPeIP1CPqqdtUaO9PYapKuGX-iUkXUW0hqtsMuE1ohcsSuxVufbviY9bylzKlJ_pui6YcwEMExhPN8mgDbizlJSBDJrLzBynkseGtZWjloek1S0jBFp7Qg78_xx6xdIMFG-rxovHxEWmHOYMOeoChy3n-BvCDDMQA" />
+                            <div
+                                class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">
+                                09</div>
+                        </div>
+                        <div class="p-6 bg-white">
+                            <div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">
+                                ANFALLARE</div>
+                            <h3
+                                class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">
+                                ERIK JOHANSSON</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <img alt="Marcus Berg"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQxDcXGivyzsvKVeKX1dSNiI52-ELGemp8e-P0c1Qv6Fe-I_nhP5hJ7IT5vDXiOvuA5Df_xXH_YJrEObNKXhaqXL4LqpWb8XaFwq5TVXoAopZ6XPXE5nntF_JT8LzhBoSK__1Tg4AyRtSDmVBqNQkSJ-6BJR9fviZW8uZT3yk4WDV1zo1Y8XVDlZ02GT_epDAMhi9eHZVx9w5aFMLgNZwl_W6DLelW1scYLKE8WR_59VGS2YE85O0ZbdZxzvu_Pe0jeTXwqCKJuA" />
+                            <div
+                                class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">
+                                04</div>
+                        </div>
+                        <div class="p-6 bg-white">
+                            <div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">
+                                FÖRSVARARE</div>
+                            <h3
+                                class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">
+                                MARCUS BERG</h3>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <img alt="Oskar Persson"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5s-0zgekQTxCEm98nKexpwhjWL0EYtvPhEyagKB68MslJGm3lXXSrpHuHubx11FIGBMsKuSQgrHqFmOE7D2BJiq3-X58fPkNDsNFqzNq2I7d_M-cRSKBq89-d1Gc6nwLB6P1BMVPzkL_M7VE0WzgSsr6m15-HUEzwLVvyNKdpV_-7VNr0t-tAVkxH7F0jSWGZJirRxPFFng1NlhiNcBd_EGO8tBAjpBemi7O4KIUG1X_2wwYHwcmN8X35IdKYEYc5Wu_8NmTjkg" />
+                            <div
+                                class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">
+                                01</div>
+                        </div>
+                        <div class="p-6 bg-white">
+                            <div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">
+                                MÅLVAKT</div>
+                            <h3
+                                class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">
+                                OSKAR PERSSON</h3>
+                        </div>
+                    </div>
+                    <!-- Player Card -->
+                    <div
+                        class="group relative bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                        <div
+                            class="relative h-[450px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                            <img alt="Hassan Kanaan"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                src="4a3c2033-5d43-4959-934d-d90ae6f5c512.jpeg" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                            <div
+                                class="absolute bottom-6 right-6 font-display-lg text-[80px] text-brand-gold/20 leading-none group-hover:text-brand-gold transition-colors">
+                                10</div>
+                        </div>
+                        <div class="p-6 bg-white relative z-10">
+                            <div class="text-[10px] font-label-bold text-brand-gold tracking-[0.2em] uppercase mb-1">
+                                MITTFÄLTARE (C)</div>
+                            <h3
+                                class="font-headline-md text-lg uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">
+                                Hassan Kanaan</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Staff & Recruitment -->
+        <section
+            class="py-section-gap px-4 md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="font-headline-lg text-headline-md uppercase tracking-widest text-brand-black mb-12">
+                    LEDARSTABEN</h2>
+                <div class="space-y-0">
+                    <div
+                        class="flex justify-between items-center py-6 border-b border-black/5 hover:bg-brand-gold/5 px-4 transition-colors group">
+                        <span class="font-headline-md text-lg tracking-widest">JOHAN LINDGREN</span>
+                        <span
+                            class="font-label-bold text-[10px] text-brand-gold tracking-widest uppercase">HUVUDTRÄNARE</span>
+                    </div>
+                    <div
+                        class="flex justify-between items-center py-6 border-b border-black/5 hover:bg-brand-gold/5 px-4 transition-colors group">
+                        <span class="font-headline-md text-lg tracking-widest">SARA EKSTRÖM</span>
+                        <span class="font-label-bold text-[10px] text-brand-gold tracking-widest uppercase">ASSISTERANDE
+                            TRÄNARE</span>
+                    </div>
+                    <div
+                        class="flex justify-between items-center py-6 border-b border-black/5 hover:bg-brand-gold/5 px-4 transition-colors group">
+                        <span class="font-headline-md text-lg tracking-widest">PETER ANDERSSON</span>
+                        <span
+                            class="font-label-bold text-[10px] text-brand-gold tracking-widest uppercase">MÅLVAKTSTRÄNARE</span>
+                    </div>
+                </div>
+                <div class="mt-16 bg-brand-black p-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full -mr-16 -mt-16 blur-3xl">
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-headline-md text-white text-xl uppercase tracking-widest mb-4 italic">
+                            REKRYTERING</h4>
+                        <p class="font-body-md text-white/60 mb-8 max-w-md">Är du en ambitiös talang redo för nästa
+                            steg? Vi letar ständigt efter spelare som delar vår vision om excellence.</p>
+                        <button
+                            class="bg-brand-gold text-brand-black font-label-bold px-10 py-3 uppercase text-xs tracking-[0.2em] hover:bg-white transition-all gold-button-hover">
+                            KONTAKTA OSS
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[600px] bg-brand-black relative group">
+                <img alt="Coaching Strategy"
+                    class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 transition-all duration-1000"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCekj7-pLTFHURFyxG69qAgMUtxjRpakmoaj_QPT8sag1Avt-DQm_XUaRy9xf6irt8c3FvXlzhivTGBoRs6LZveeNs5S1DS4nUtSDTy33twwc944Me7i-yp67bOfG_fur4O_LfUJXcLKaooXon3MVI4LlQZWKyX_nTZQFOpEjoeaxKUV1TpXPznqxfLO36Fv5eGCLuOtamW-70V5G61MTlb87o74j1zXpkMr3usHBRpW_I5wexUnNj1dBpMQY5YD0geGnOL1Y0JpA" />
+                <div class="absolute inset-0 border-[20px] border-white/5 pointer-events-none"></div>
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none">
+                    <div
+                        class="text-[120px] font-display-lg text-white/5 select-none uppercase tracking-[0.3em] leading-none">
+                        ELITE</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full pt-24 pb-12 bg-brand-black text-white border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+                <div class="md:col-span-2 flex flex-col gap-8">
+                    <div class="flex items-center gap-4">
+                        <img alt="Logo" class="h-16 w-16 object-contain brightness-0 invert"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXFRj6pKIoF0CroY9lRDSO00URsEvjNTotozx2pRglC3pv6rqITmgPJRi3KOHP-F2QeBXtJg0VGhmkt_VjssMSFGmo7ZZdun2IgaEqrc43JEN4oQjprIDbW_XeA2y7Bj9TpNSwW1qkX_yVC6Byb2KTGFEcvDrfJIR5ll6GHS8edICz9abfAu94F1e0X99Ufp8aGGk0xIsuoQzh_EuEEXuamP0kTyy4_0ld84cwLKxY0eXTDjvOYEg0c5vC4JmwjN8T2zERj4ERA" />
+                        <div class="font-headline-md text-2xl font-bold tracking-tight uppercase">BORÅS <span
+                                class="text-brand-gold">KIF</span></div>
+                    </div>
+                    <p class="font-body-md text-white/40 max-w-sm leading-relaxed">
+                        Sedan 1932 har vi format fotbollshistorien i Borås. Vi förenar tradition med framtidstro i en
+                        miljö där varje individ ges möjlighet att skina.
+                    </p>
+                    <div class="flex gap-6">
+                        <a class="text-white/40 hover:text-brand-gold transition-colors" href="#"><span
+                                class="material-symbols-outlined !text-xl">face_nod</span></a>
+                        <a class="text-white/40 hover:text-brand-gold transition-colors" href="#"><span
+                                class="material-symbols-outlined !text-xl">podcasts</span></a>
+                        <a class="text-white/40 hover:text-brand-gold transition-colors" href="#"><span
+                                class="material-symbols-outlined !text-xl">video_library</span></a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <h4 class="font-label-bold text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-4">NAVIGERING
+                    </h4>
+                    <nav class="flex flex-col gap-4">
+                        <a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors"
+                            href="#">SPONSORS</a>
+                        <a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors"
+                            href="#">CONTACT US</a>
+                        <a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors"
+                            href="#">CLUB HISTORY</a>
+                        <a class="text-xs text-white/60 hover:text-white tracking-widest uppercase transition-colors"
+                            href="#">PRIVACY POLICY</a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-8">
+                    <h4 class="font-label-bold text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-4">NYHETSBREV
+                    </h4>
+                    <div class="flex flex-col gap-3">
+                        <input
+                            class="bg-white/5 border border-white/10 p-4 text-[10px] font-label-bold tracking-widest focus:border-brand-gold focus:outline-none text-white placeholder:text-white/20 uppercase"
+                            placeholder="DIN E-POSTADRESS" type="email" />
+                        <button
+                            class="bg-brand-gold text-brand-black font-label-bold p-4 text-[10px] uppercase tracking-widest hover:bg-white transition-all gold-button-hover">PRENUMERERA</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-white/30 tracking-[0.2em]">© 2024 BORÅS KIF. ALL RIGHTS RESERVED.</p>
+                <div class="text-[10px] text-white/30 tracking-[0.2em] flex gap-8">
+                    <span class="hover:text-white cursor-pointer transition-colors">DESIGNED FOR ATHLETIC
+                        PRESTIGE</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Reveal Observer for smooth section entries
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
